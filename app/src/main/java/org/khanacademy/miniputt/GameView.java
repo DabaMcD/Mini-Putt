@@ -8,7 +8,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public class GameView extends View {
-
     public GameView(Context context) {
         super(context);
     }
