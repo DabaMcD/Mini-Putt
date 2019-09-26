@@ -20,6 +20,8 @@ public class GameView extends View {
     }
     @Override
     protected void onDraw(Canvas canvas) {
+
+
         super.onDraw(canvas);
     }
     public void draw() {
