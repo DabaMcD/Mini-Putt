@@ -1,7 +1,6 @@
 package org.khanacademy.miniputt;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Screen.setScreenDims(getWindowManager());
         gameView = findViewById(R.id.gameView);
-
         startMainThread();
     }
     private void startMainThread() {
