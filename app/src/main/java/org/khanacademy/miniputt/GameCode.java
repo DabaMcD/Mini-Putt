@@ -6,16 +6,20 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 
 class GameCode {
-    private final static char CENTER = 0;
-    private final static char TOP = 1;
-    private final static char BOTTOM = 2;
-    private final static char LEFT = 3;
-    private final static char RIGHT = 4;
-    private static char tah = LEFT;
-    private static char tav = BOTTOM;
+    // Text-specific variables-
+    private final static int CENTER = 0;
+    private final static int TOP = 1;
+    private final static int BOTTOM = 2;
+    private final static int LEFT = 3;
+    private final static int RIGHT = 4;
+    private static int tah = LEFT;
+    private static int tav = BOTTOM;
+
+    // Drawing variables
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
     private static Canvas canvas;
+
     static void draw(Canvas c) {
         canvas = c;
         pf.setStyle(Paint.Style.FILL);
@@ -60,6 +64,10 @@ class GameCode {
                 y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 2 : pf.getTextSize()),
                 pf
         );
+    }
+    private static void setTextAlign(int h, int v) {
+        tah = h;
+        tav = v;
     }
     private static void pjsCode() {
 
