@@ -27,6 +27,20 @@ class GameCode {
 
         pjsCode();
     }
+    private static void background(int r, int g, int b) {
+        Paint paint = new Paint();
+        paint.set(pf);
+        pf.setColor(Color.rgb(r, g, b));
+        canvas.drawRect(0, 0, 400, 400, pf);
+        pf.set(paint);
+    }
+    private static void background(int shade) {
+        Paint paint = new Paint();
+        paint.set(pf);
+        pf.setColor(Color.rgb(shade, shade, shade));
+        canvas.drawRect(0, 0, 400, 400, pf);
+        pf.set(paint);
+    }
     private static void noFill() {
         pf.setColor(Color.TRANSPARENT);
     }
