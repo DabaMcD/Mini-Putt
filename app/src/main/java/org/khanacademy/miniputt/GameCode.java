@@ -6,8 +6,13 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 
 class GameCode {
-    private char tah = 'l'; // Text Align Horizontal | l ==> left | c ==> center | r ==> right
-    private char tav = 'b'; // Text Align Vertical | b ==> bottom | c ==> center | t ==> top
+    private final static char CENTER = 0;
+    private final static char TOP = 1;
+    private final static char BOTTOM = 2;
+    private final static char LEFT = 3;
+    private final static char RIGHT = 4;
+    private static char tah = LEFT;
+    private static char tav = BOTTOM;
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
     private static Canvas canvas;
@@ -51,8 +56,8 @@ class GameCode {
     private static void text(String txt, float x, float y) {
         canvas.drawText(
                 txt,
-                x,
-                y,
+                x - ((tah == LEFT) ? 0 : (tah == CENTER) ? pf.measureText(txt) / 2 : pf.measureText(txt)),
+                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 2 : pf.getTextSize()),
                 pf
         );
     }
