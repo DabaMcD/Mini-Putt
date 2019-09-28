@@ -26,7 +26,11 @@ class GameCode {
         pf.setStyle(Paint.Style.FILL);
         ps.setStyle(Paint.Style.STROKE);
 
+        canvas.save();
+        canvas.translate((Screen.width - Screen.height) / 2, 0);
+        canvas.scale(Screen.height / 400, Screen.height / 400);
         pjsCode();
+        canvas.restore();
     }
     private static void background(int r, int g, int b) {
         Paint paint = new Paint();
@@ -93,6 +97,8 @@ class GameCode {
         canvas.drawPath(p, pf);
     }
     private static void pjsCode() {
-
+        background(255);
+        fill(0, 0, 255);
+        triangle(100, 100, 400, 400, 200, 100);
     }
 }
