@@ -3,6 +3,7 @@ package org.khanacademy.miniputt;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
 
 class GameCode {
@@ -82,6 +83,10 @@ class GameCode {
     private static void setTextAlign(int h, int v) {
         tah = h;
         tav = v;
+    }
+    private static void triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
+        Path p = new Path();
+        canvas.drawPath(p, pf);
     }
     private static void pjsCode() {
 
