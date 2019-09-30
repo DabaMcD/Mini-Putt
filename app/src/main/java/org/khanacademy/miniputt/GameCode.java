@@ -13,8 +13,8 @@ class GameCode {
     private final static int BOTTOM = 2;
     private final static int LEFT = 3;
     private final static int RIGHT = 4;
-    private static int tah = LEFT;
-    private static int tav = BOTTOM;
+    private static int tah = LEFT; // Text Align Horizontal
+    private static int tav = BOTTOM; // Text Align Vertical
 
     // Drawing variables
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
@@ -28,7 +28,7 @@ class GameCode {
 
         canvas.save();
         canvas.translate((Screen.width - Screen.height) / 2, 0);
-        canvas.scale(Screen.height / 400, Screen.height / 400);
+        canvas.scale(Screen.height / 400f, Screen.height / 400f, 0, 0);
         pjsCode();
         canvas.restore();
     }
@@ -43,7 +43,7 @@ class GameCode {
         Paint paint = new Paint();
         paint.set(pf);
         pf.setColor(Color.rgb(shade, shade, shade));
-        canvas.drawRect(0, 0, 400, 400, pf);
+        canvas.drawRect(0f, 0f, 400f, 400f, pf);
         pf.set(paint);
     }
     private static void noFill() {
@@ -90,15 +90,17 @@ class GameCode {
     }
     private static void triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
         Path p = new Path();
-        p.lineTo(x1, y1);
+        p.moveTo(x1, y1);
         p.lineTo(x2, y2);
         p.lineTo(x3, y3);
         p.close();
         canvas.drawPath(p, pf);
+        canvas.drawPath(p, ps);
     }
     private static void pjsCode() {
         background(255);
         fill(0, 0, 255);
-        triangle(100, 100, 400, 400, 200, 100);
+        noStroke();
+        triangle(100, 100, 400, 400, 100, 200);
     }
 }
