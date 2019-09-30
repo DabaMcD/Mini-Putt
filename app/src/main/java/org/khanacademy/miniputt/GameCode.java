@@ -55,7 +55,6 @@ class GameCode {
     private static float doty = 0;
     private static float speedX = 0;
     private static float speedY = 0;
-    private static float shotCount = 0;
     private static float shotDiminish = 0;
     private static boolean resetShot = false;
     private static float holePOSx = 300;
@@ -105,10 +104,7 @@ class GameCode {
     private static float PrevSlopeX = 0;
     private static float PrevSlopeY = 0;
     private static float PrevSpeedX = 0;
-    private static float PrevSpeedY = 0;
     private static String alertText = "";
-    private static boolean AutoComplete = false;
-    private static boolean AConoff = false;
     private static boolean slopeLEFT = false;
     private static boolean slopeRIGHT = false;
     private static boolean slopeUP = false;
@@ -174,6 +170,9 @@ class GameCode {
     private static void noStroke() {
         ps.setColor(Color.TRANSPARENT);
     }
+    private static void stroke(int r, int g, int b, float a) {
+        ps.setColor(Color.argb((int) a, r, g, b));
+    }
     private static void stroke(int r, int g, int b) {
         ps.setColor(Color.rgb(r, g, b));
     }
@@ -219,8 +218,31 @@ class GameCode {
         canvas.drawPath(p, pf);
         canvas.drawPath(p, ps);
     }
+    private static void arc(float x, float y, float w, float h, float start, float stop) {
+        RectF r = new RectF(x - w / 2, y - w / 2, x + w / 2, h + w / 2);
+        canvas.drawArc(r, start, stop - start, true, pf);
+        canvas.drawArc(r, start, stop - start, true, ps);
+    }
     private static float dist(float x1, float y1, float x2, float y2) {
         return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+    }//194
+    private static double sin(float degrees) {
+        return Math.sin(degrees * 2 * Math.PI / 360);
+    }
+    private static double cos(float degrees) {
+        return Math.cos(degrees * 2 * Math.PI / 360);
+    }
+    private static double tan(float degrees) {
+        return Math.tan(degrees * 2 * Math.PI / 360);
+    }
+    private static double asin(float degrees) {
+        return Math.asin(degrees * 2 * Math.PI / 360);
+    }
+    private static double acos(float degrees) {
+        return Math.acos(degrees * 2 * Math.PI / 360);
+    }
+    private static double atan(float degrees) {
+        return Math.atan(degrees * 2 * Math.PI / 360);
     }
     private static void pjsCode() {
         background(107, 72, 1);
