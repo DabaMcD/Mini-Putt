@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 
 class GameCode {
-    // Text-specific variables-
+    // Text-specific vars
     private final static int CENTER = 0;
     private final static int TOP = 1;
     private final static int BOTTOM = 2;
@@ -16,7 +16,7 @@ class GameCode {
     private static int tah = LEFT; // Text Align Horizontal
     private static int tav = BOTTOM; // Text Align Vertical
 
-    // Drawing variables
+    // Drawing vars
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
     private static Canvas canvas;
@@ -129,7 +129,7 @@ class GameCode {
     private static boolean tipDisplay = false;
     private static boolean endGame = false;
 
-    // Mouse stuff
+    // Mouse vars
     private static int mouseX, mouseY;
     private static boolean mouseJustReleased, mouseIsPressed;
 
@@ -162,8 +162,8 @@ class GameCode {
     private static void noFill() {
         pf.setColor(Color.TRANSPARENT);
     }
-    private static void fill(int r, int g, int b, int a) {
-        pf.setColor(Color.argb(a, r, g, b));
+    private static void fill(int r, int g, int b, float a) {
+        pf.setColor(Color.argb((int) a, r, g, b));
     }
     private static void fill(int r, int g, int b) {
         pf.setColor(Color.rgb(r, g, b));
@@ -228,7 +228,7 @@ class GameCode {
         var LS = [L1S, L2S, L3S, L4S, L5S, L6S, L7S, L8S, L9S, L10S, L11S, L12S, L13S, L14S, L15S, L16S, L17S, L18S];
         var Par = [2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2];
         var ParSum = [2, 5, 8, 11, 13, 15, 20, 22, 25, 28, 31, 34, 37, 40, 42, 46, 48, 50];
-        var LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
+        float  LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
         if (speedX <= 0.1 && speedY <= 0.1) {
             resetShot = true;
             speedX = 0;
@@ -1032,7 +1032,7 @@ class GameCode {
             rect(150, 103, 80, 195);
             fill(13, 184, 4);
             rect(270, 103, 63, 195);
-            for (var aRep = 0; aRep < 10; aRep += 1) {
+            for (int aRep = 0; aRep < 10; aRep += 1) {
                 stroke(0, 125, 0);
                 line(155, 110 + aRep * 20, 225, 105 + aRep * 20);
                 line(155, 110 + aRep * 20, 225, 115 + aRep * 20);
@@ -1118,7 +1118,7 @@ class GameCode {
             rect(155, 103, 70, 120);
             rect(225, 103, 70, 60);
             rect(295, 103, 68, 190);
-            for (var aRep = 0; aRep < 3; aRep += 1) {
+            for (int aRep = 0; aRep < 3; aRep += 1) {
                 stroke(90, 190, 90);
                 line(95 + aRep * 20, 110, 100 + aRep * 20, 157);
                 line(105 + aRep * 20, 110, 100 + aRep * 20, 157);
@@ -1237,7 +1237,7 @@ class GameCode {
                 text("There are 2 drop zones in this hole; use which ever you like.", 50, 75);
                 text("There's also a bridge. Go under it to get to the hole", 80, 360);
             }
-            for (var bRep = 0; bRep < 3; bRep += 1) {
+            for (int  bRep = 0; bRep < 3; bRep += 1) {
                 stroke(0, 125, 0);
                 line(175 + bRep * 20, 183, 180 + bRep * 20, 160);
                 line(185 + bRep * 20, 183, 180 + bRep * 20, 160);
@@ -1245,14 +1245,14 @@ class GameCode {
                 line(175 + bRep * 20, 235, 180 + bRep * 20, 258);
                 line(185 + bRep * 20, 235, 180 + bRep * 20, 258);
             }
-            for (var cRep = 0; cRep < 4; cRep += 1) {
+            for (int  cRep = 0; cRep < 4; cRep += 1) {
                 stroke(90, 190, 90);
                 line(269 + cRep * 20, 245, 274 + cRep * 20, 313);
                 line(279 + cRep * 20, 245, 274 + cRep * 20, 313);
                 line(125, 168 + cRep * 18, 156, 172 + cRep * 18);
                 line(125, 176 + cRep * 18, 156, 172 + cRep * 18);
             }
-            for (var aRep = 0; aRep < 10; aRep += 1) {
+            for (int  aRep = 0; aRep < 10; aRep += 1) {
                 stroke(0, 0, 0, 15 * aRep);
                 line(153 + aRep, 163, 153 + aRep, 237);
                 line(247 - aRep, 163, 247 - aRep, 237);
@@ -1448,7 +1448,7 @@ class GameCode {
             rect(108, 141, 55, 28);
             rect(238, 233, 55, 28);
             strokeWeight(1);
-            for (var bRep = 0; bRep < 3; bRep += 1) {
+            for (int  bRep = 0; bRep < 3; bRep += 1) {
                 stroke(0, 125, 0);
                 line(110 + bRep * 20, 168, 115 + bRep * 20, 143);
                 line(120 + bRep * 20, 168, 115 + bRep * 20, 143);
@@ -1704,7 +1704,7 @@ class GameCode {
             line(300, 230, 300, 286);
             line(130, 210, 280, 210);
             strokeWeight(1);
-            for (var bRep = 0; bRep < 7; bRep += 1) {
+            for (int  bRep = 0; bRep < 7; bRep += 1) {
                 stroke(90, 190, 90);
                 line(60 + bRep * 20, 118, 65 + bRep * 20, 182);
                 line(70 + bRep * 20, 118, 65 + bRep * 20, 182);
@@ -1930,7 +1930,7 @@ class GameCode {
             holePOSx = 178;
             holePOSy = 225;
             strokeWeight(1);
-            for (var bRep = 0; bRep < 45; bRep += 15) {
+            for (int  bRep = 0; bRep < 45; bRep += 15) {
                 stroke(0, 125, 0);
                 line(55 + bRep, 345, 60 + bRep, 150);
                 line(65 + bRep, 345, 60 + bRep, 150);
@@ -2159,14 +2159,14 @@ class GameCode {
             line(97, 180, 97, 298);
             line(303, 102, 303, 220);
             strokeWeight(1);
-            for (var bRep = 0; bRep < 42; bRep += 14) {
+            for (int  bRep = 0; bRep < 42; bRep += 14) {
                 stroke(0, 125, 0);
                 line(55 + bRep, 220, 60 + bRep, 155);
                 line(65 + bRep, 220, 60 + bRep, 155);
                 line(307 + bRep, 270, 312 + bRep, 150);
                 line(317 + bRep, 270, 312 + bRep, 150);
             }
-            for (var bRep = 0; bRep < 200; bRep += 20) {
+            for (int  bRep = 0; bRep < 200; bRep += 20) {
                 stroke(0, 125, 0);
                 line(154, 105 + bRep, 145, 110 + bRep);
                 line(154, 115 + bRep, 145, 110 + bRep);
@@ -2402,11 +2402,11 @@ class GameCode {
             stroke(0, 125, 0);
             line(228, 285, 150, 290);
             line(228, 295, 150, 290);
-            for (var bRep = 0; bRep < 100; bRep += 20) {
+            for (int  bRep = 0; bRep < 100; bRep += 20) {
                 line(198, 70 + bRep, 143, 75 + bRep);
                 line(198, 80 + bRep, 143, 75 + bRep);
             }
-            for (var cRep = 0; cRep < 3; cRep += 1) {
+            for (int  cRep = 0; cRep < 3; cRep += 1) {
                 stroke(0, 0, 0, 90 - cRep * 30);
                 line(277 - cRep, 85, 277 - cRep, 100);
                 line(277 - cRep, 107, 277 - cRep, 122);
@@ -2619,9 +2619,9 @@ class GameCode {
             fill(125);
             rect(97, 78, 100, 50);
             rect(192, 208, 95, 50);
-            var cX = 192;
-            var cY = 168;
-            var cD = 180;
+            float cX = 192;
+            float cY = 168;
+            float cD = 180;
             fill(13, 184, 4);
             rect(287, 78, 30, 40);
             rect(318, 78, 30, 184);
@@ -2630,7 +2630,7 @@ class GameCode {
             fill(3, 148, 8);
             rect(287, 118, 26, 140);
             strokeWeight(1);
-            for (var bRep = 0; bRep < 30; bRep += 15) {
+            for (int  bRep = 0; bRep < 30; bRep += 15) {
                 stroke(0, 125, 0);
                 line(288 + bRep, 255, 293 + bRep, 121);
                 line(298 + bRep, 255, 293 + bRep, 121);
@@ -2638,12 +2638,12 @@ class GameCode {
                 line(320 + bRep, 80, 325 + bRep, 260);
                 line(330 + bRep, 80, 325 + bRep, 260);
             }
-            for (var aRep = 0; aRep < 36; aRep += 12) {
+            for (int  aRep = 0; aRep < 36; aRep += 12) {
                 line(288, 80 + aRep, 314, 85 + aRep);
                 line(288, 90 + aRep, 314, 85 + aRep);
             }
             strokeWeight(4);
-            for (var cRep = 0; cRep < 16; cRep += 1) {
+            for (int  cRep = 0; cRep < 16; cRep += 1) {
                 if (selection === cRep && underGround) {
                     fill(230, 230, 28);
                 } else {
@@ -2652,7 +2652,7 @@ class GameCode {
                 stroke(125);
                 arc(cX, cY, cD, cD, -90 + cRep * 22.5, -67.5 + cRep * 22.5);
             }
-            for (var dRep = 0; dRep < 60; dRep += 20) {
+            for (int  dRep = 0; dRep < 60; dRep += 20) {
                 stroke(90, 190, 90);
                 strokeWeight(1);
                 line(292 + dRep, 265, 297 + dRep, 398);
@@ -2670,7 +2670,7 @@ class GameCode {
             strokeWeight(4);
             var FortuneString = ["+" + 1, -1, 0, "+"+ 2, -2, "Re", "+" + 3, -3, 0, "+" + 4, -4, 0, "+" + 5, -5, 0, "Spin"];
             textAlign(CENTER, CENTER);
-            for (var bRep = 0; bRep < 16; bRep += 1) {
+            for (int  bRep = 0; bRep < 16; bRep += 1) {
                 line(cos(bRep * 22.5 - 90) * 90 + cX, sin(bRep * 22.5 - 90 ) * 90 + cY, cX, cY);
                 fill(255);
                 text(FortuneString[bRep], cos(bRep * 22.5 - 80) * 70 + cX, sin(bRep * 22.5 - 80) * 70 + cY);
@@ -2965,7 +2965,7 @@ class GameCode {
                 }
                 stroke(234, 234, 0);
                 strokeWeight(5);
-                for (var dotRep = 1; dotRep < 6; dotRep += 1) {
+                for (int  dotRep = 1; dotRep < 6; dotRep += 1) {
                     point(ballPOSx + dotRep * dotx/4, ballPOSy + dotRep * doty/4);
                 }
             }
@@ -3001,7 +3001,7 @@ class GameCode {
             speedX = 0;
             speedY = 0;
             noFill();
-            for(var wRep = 0; wRep < 30; wRep += 10) {
+            for(int  wRep = 0; wRep < 30; wRep += 10) {
                 if (waterTime >= wRep) {
                     stroke(80, 150, 205, 255 + wRep * 5 - waterTime * 10);
                     ellipse(ballPOSx, ballPOSy, waterTime * 1.5 - wRep, waterTime * 1.5 - wRep);
@@ -3120,7 +3120,7 @@ class GameCode {
         line(15, dY - 40, 321, dY - 40);
         stroke(100);
         rect(362, dY - 70, 30, 30);
-        for(var lRep = 32; lRep < 311; lRep += 17) {
+        for(int  lRep = 32; lRep < 311; lRep += 17) {
             line(lRep, dY - 70, lRep, dY - 11);
         }
         textSize(18);
@@ -3130,7 +3130,7 @@ class GameCode {
         text(LST, 336, dY - 45);
         text(LST - ParSum[LevelSelect],  377, dY - 45);
         textAlign(LEFT, BOTTOM);
-        for(var sRep = 0; sRep < 18; sRep += 1) {
+        for(int  sRep = 0; sRep < 18; sRep += 1) {
             if (LevelSelect === sRep) {
                 fill(255, 0, 0);
             } else {
@@ -3278,17 +3278,16 @@ class GameCode {
 
         if (titleScreen) {
             pushMatrix();
-            var splashText = "8000+ Votes!";
-            var splashFill = color(200 - sin(frameCount) * 55, 200 + cos(frameCount) * 55, 200 + sin(frameCount) * 55);
+            String splashText = "8000+ Votes!";
             textAlign(LEFT, CENTER);
             textSize(25);
             var splashPart = "";
             translate(300, LevelMenu || tipDisplay ? 20 : 40);
-            for (var i = 0; i < splashText.length; i ++) {
+            for (int i = 0; i < splashText.length; i ++) {
                 fill(0, 0, 0, 100);
                 text(splashText[i], -textWidth(splashText)/2 + textWidth(splashPart) + 3, 2);
                 var sF = cos(frameCount * 8 - i * 20) * 40;
-                fill(red(splashFill) + sF, green(splashFill) + sF, blue(splashFill) + sF);
+                fill(200 - sin(frameCount) * 55, 200 + cos(frameCount) * 55, 200 + sin(frameCount) * 55);
                 text(splashText[i], -textWidth(splashText)/2 + textWidth(splashPart), 0);
                 splashPart += splashText[i];
             }
@@ -3393,7 +3392,7 @@ class GameCode {
             var code = [6, 1, 4];
             var codeArray = [a, b, c];
             if (!LevelMenu) {
-                for (var sRep = 0; sRep < 3; sRep += 1) {
+                for (int  sRep = 0; sRep < 3; sRep += 1) {
                     fill(130, 83, 3);
                     stroke(59, 39, 11);
                     rect(127 + sRep * 60, 255 - tY, 25, 25);
@@ -3460,8 +3459,8 @@ class GameCode {
                 textSize(12);
                 text("Unlock Level Select", 200, 244 - tY);
             } else {
-                for (var lRep = 0; lRep < 3; lRep += 1) {
-                    for (var mRep = 0; mRep < 6; mRep += 1) {
+                for (int  lRep = 0; lRep < 3; lRep += 1) {
+                    for (int  mRep = 0; mRep < 6; mRep += 1) {
                         fill(130, 83, 3);
                         stroke(59, 39, 11);
                         rect(60 + mRep * 50, 215 + lRep * 50 - tY, 30, 30);
