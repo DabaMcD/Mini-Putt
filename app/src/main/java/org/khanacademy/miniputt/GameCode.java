@@ -122,15 +122,19 @@ class GameCode {
     private static float a = 0;
     private static float b = 0;
     private static float c = 0;
-    private static float roll = 5;
     private static float tS = 7;
-    private static String onoffString = "ON";
+    private static String onOffString = "ON";
     private static float tipSelect = 0;
     private static float tY = 0;
     private static boolean tipDisplay = false;
     private static boolean endGame = false;
 
+    // Mouse stuff
+    private static int mouseX, mouseY;
+    private static boolean mouseJustReleased, mouseIsPressed;
+
     static void draw(Canvas c) {
+
         canvas = c;
         pf.setStyle(Paint.Style.FILL);
         ps.setStyle(Paint.Style.STROKE);
@@ -158,6 +162,9 @@ class GameCode {
     private static void noFill() {
         pf.setColor(Color.TRANSPARENT);
     }
+    private static void fill(int r, int g, int b, int a) {
+        pf.setColor(Color.argb(a, r, g, b));
+    }
     private static void fill(int r, int g, int b) {
         pf.setColor(Color.rgb(r, g, b));
     }
@@ -172,6 +179,9 @@ class GameCode {
     }
     private static void stroke(int shade) {
         ps.setColor(Color.rgb(shade, shade, shade));
+    }
+    private static void strokeWeight(float w) {
+        ps.setStrokeWidth(w);
     }
     private static void line(float x1, float y1, float x2, float y2) {
         canvas.drawLine(x1, y1, x2, y2, ps);
@@ -193,9 +203,12 @@ class GameCode {
                 pf
         );
     }
-    private static void setTextAlign(int h, int v) {
+    private static void textAlign(int h, int v) { // Use ints CENTER, LEFT, RIGHT, TOP or BOTTOM.
         tah = h;
         tav = v;
+    }
+    private static void textSize(float size) {
+        pf.setTextSize(size);
     }
     private static void triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
         Path p = new Path();
@@ -205,6 +218,9 @@ class GameCode {
         p.close();
         canvas.drawPath(p, pf);
         canvas.drawPath(p, ps);
+    }
+    private static float dist(float x1, float y1, float x2, float y2) {
+        return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
     }
     private static void pjsCode() {
         background(107, 72, 1);
@@ -3355,8 +3371,8 @@ class GameCode {
             if ((mouseIsPressed || mouseJustReleased) && mouseX >= 133 && mouseX <= 150 && mouseY >= 203 - tS - tY && mouseY <= 227 - tS - tY) {
                 fill(255);
                 if (mouseJustReleased) {
-                    if(tips){onoffString="OFF";tips=false;}
-                    else{onoffString="ON";tips=true;}
+                    if(tips){onOffString="OFF";tips=false;}
+                    else{onOffString="ON";tips=true;}
                 }
             } else {
                 fill(130, 83, 3);
@@ -3365,15 +3381,15 @@ class GameCode {
             if ((mouseIsPressed || mouseJustReleased) && mouseX >= 250 && mouseX <= 267 && mouseY >= 203 - tS && mouseY <= 227 - tS - tY) {
                 fill(255);
                 if (mouseJustReleased) {
-                    if(tips){onoffString="OFF";tips=false;}
-                    else{onoffString="ON";tips=true;}
+                    if(tips){onOffString="OFF";tips=false;}
+                    else{onOffString="ON";tips=true;}
                 }
             } else {
                 fill(130, 83, 3);
             }
             triangle(255, 207 - tS - tY, 255, 222 - tS - tY, 262, 215 - tS - tY);
             fill(255);
-            text("TIPS " + onoffString, 200, 215 - tS - tY);
+            text("TIPS " + onOffString, 200, 215 - tS - tY);
             var code = [6, 1, 4];
             var codeArray = [a, b, c];
             if (!LevelMenu) {
