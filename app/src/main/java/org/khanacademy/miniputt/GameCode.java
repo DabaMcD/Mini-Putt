@@ -21,6 +21,13 @@ class GameCode {
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
     private static Canvas canvas;
 
+    // Mouse vars
+    private static int mouseX, mouseY;
+    private static boolean mouseJustReleased, mouseIsPressed;
+    
+    // Misc vars
+    private static Path mp; // Miscellaneous Path
+
     // PJS vars
     private static float ballPOSx = 200;
     private static float ballPOSy = 200;
@@ -125,10 +132,6 @@ class GameCode {
     private static boolean tipDisplay = false;
     private static boolean endGame = false;
 
-    // Mouse vars
-    private static int mouseX, mouseY;
-    private static boolean mouseJustReleased, mouseIsPressed;
-
     static void draw(Canvas c) {
 
         canvas = c;
@@ -225,7 +228,7 @@ class GameCode {
     }
     private static float dist(float x1, float y1, float x2, float y2) {
         return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-    }//194
+    }//109
     private static double sin(float degrees) {
         return Math.sin(degrees * 2 * Math.PI / 360);
     }
@@ -244,6 +247,19 @@ class GameCode {
     private static double atan(float degrees) {
         return Math.atan(degrees * 2 * Math.PI / 360);
     }
+    private static void beginShape() {
+        mp = new Path();
+    }
+    private static void vertex(float x, float y) {
+        if (mp.isEmpty()) {
+            mp.moveTo(x, y);
+        } else {
+            mp.lineTo(x, y);
+        }
+    }
+    private static void endShape() {
+        mp.close();
+    }
     private static void pjsCode() {
         background(107, 72, 1);
 
@@ -258,8 +274,7 @@ class GameCode {
             if (shot && mouseJustReleased && !titleScreen && !endGame && !(mouseX > 170 && mouseX < 230 && mouseY <= 10) && !ScoreDisplay) {
                 speedX = powerX/4;
                 speedY = powerY/4;
-                shotDiminish = power/5 ;
-                shotCount += 1;
+                shotDiminish = power/5;
                 if (Level1) {L1S += 1;}
                 else if (Level2) {L2S += 1;}
                 else if (Level3) {L3S += 1;}
@@ -2666,7 +2681,7 @@ class GameCode {
             }
             strokeWeight(4);
             for (int  cRep = 0; cRep < 16; cRep += 1) {
-                if (selection === cRep && underGround) {
+                if (selection == cRep && underGround) {
                     fill(230, 230, 28);
                 } else {
                     fill(150);
@@ -2812,24 +2827,24 @@ class GameCode {
                 }
                 if (speedX <= 0.1) {
                     resetShot = false;
-                    if (selection === 0) {Bonus = 1;}
-                    if (selection === 1) {Bonus = -1;}
-                    if (selection === 3) {Bonus = 2;}
-                    if (selection === 4) {Bonus = -4;}
-                    if (selection === 5) {
+                    if (selection == 0) {Bonus = 1;}
+                    if (selection == 1) {Bonus = -1;}
+                    if (selection == 3) {Bonus = 2;}
+                    if (selection == 4) {Bonus = -4;}
+                    if (selection == 5) {
                         drop = true;
                         speedX = 0;
                         speedY = 0;
                         delayTimer = 0;
                         underGround = false;
                     }
-                    if (selection === 6) {Bonus = 3;}
-                    if (selection === 7) {Bonus = -3;}
-                    if (selection === 9) {Bonus = 4;}
-                    if (selection === 10) {Bonus = -4;}
-                    if (selection === 12) {Bonus = 5;}
-                    if (selection === 13) {Bonus = -5;}
-                    if (selection === 15) {speedX = random(10, 30);}
+                    if (selection == 6) {Bonus = 3;}
+                    if (selection == 7) {Bonus = -3;}
+                    if (selection == 9) {Bonus = 4;}
+                    if (selection == 10) {Bonus = -4;}
+                    if (selection == 12) {Bonus = 5;}
+                    if (selection == 13) {Bonus = -5;}
+                    if (selection == 15) {speedX = random(10, 30);}
                     textAlign(CENTER, BOTTOM);
                     textSize(20);
                     delayTimer += 3;
@@ -3153,7 +3168,7 @@ class GameCode {
         text(LST - ParSum[LevelSelect],  377, dY - 45);
         textAlign(LEFT, BOTTOM);
         for(int  sRep = 0; sRep < 18; sRep += 1) {
-            if (LevelSelect === sRep) {
+            if (LevelSelect == sRep) {
                 fill(255, 0, 0);
             } else {
                 fill(75);
@@ -3422,21 +3437,21 @@ class GameCode {
                     if ((mouseIsPressed || mouseJustReleased) && mouseX >= 115 + sRep * 60 && mouseX <= 122 + sRep * 60 && mouseY >= 260 - tY && mouseY <= 275 - tY) {
                         fill(255);
                         if (mouseJustReleased) {
-                            if(sRep===0){
+                            if(sRep==0){
                                 if(a>0){
                                     a-=1;
                                 }else{
                                     a=9;
                                 }
                             }
-                            if(sRep===1){
+                            if(sRep==1){
                                 if(b>0){
                                     b-=1;
                                 }else{
                                     b=9;
                                 }
                             }
-                            if(sRep===2){
+                            if(sRep==2){
                                 if(c>0){
                                     c-=1;
                                 }else{
@@ -3451,9 +3466,9 @@ class GameCode {
                     if ((mouseIsPressed || mouseJustReleased) && mouseX >= 157 + sRep * 60 && mouseX <= 164 + sRep * 60 && mouseY >= 260 - tY && mouseY <= 275 - tY) {
                         fill(255);
                         if (mouseJustReleased) {
-                            if(sRep===0){if(a<9){a+=1;}else{a=0;}}
-                            if(sRep===1){if(b<9){b+=1;}else{b=0;}}
-                            if(sRep===2){if(c<9){c+=1;}else{c=0;}}
+                            if(sRep==0){if(a<9){a+=1;}else{a=0;}}
+                            if(sRep==1){if(b<9){b+=1;}else{b=0;}}
+                            if(sRep==2){if(c<9){c+=1;}else{c=0;}}
                         }
                     } else {
                         fill(130, 83, 3);
@@ -3469,7 +3484,7 @@ class GameCode {
                 rect(162, 288 - tY, 76, 30);
                 if ((mouseIsPressed || mouseJustReleased) && mouseX >= 162 && mouseX <= 238 && mouseY >= 288 - tY && mouseY <= 318 - tY) {
                     fill(255);
-                    if (a === code[0] && b === code[1] && c === code[2] && mouseJustReleased) {
+                    if (a == code[0] && b == code[1] && c == code[2] && mouseJustReleased) {
                         LevelMenu = true;
                         tS = 35;
                     }
@@ -3489,24 +3504,24 @@ class GameCode {
                         if ((mouseIsPressed || mouseJustReleased) && mouseX >= 60 + mRep * 50 && mouseX <= 90 + mRep * 50 && mouseY >= 215 + lRep * 50 - tY && mouseY <= 245 + lRep * 50 + tY) {
                             fill(255);
                             if (mouseJustReleased) {
-                                if(mRep+1+lRep*6===1){Level1=true;LevelSelect=0;}
-                                if(mRep+1+lRep*6===2){Level2=true;LevelSelect=1;}
-                                if(mRep+1+lRep*6===3){Level3=true;LevelSelect=2;}
-                                if(mRep+1+lRep*6===4){Level4=true;LevelSelect=3;}
-                                if(mRep+1+lRep*6===5){Level5=true;LevelSelect=4;}
-                                if(mRep+1+lRep*6===6){Level6=true;LevelSelect=5;}
-                                if(mRep+1+lRep*6===7){Level7=true;LevelSelect=6;}
-                                if(mRep+1+lRep*6===8){Level8=true;LevelSelect=7;}
-                                if(mRep+1+lRep*6===9){Level9=true;LevelSelect=8;}
-                                if(mRep+1+lRep*6===10){Level10=true;LevelSelect=9;}
-                                if(mRep+1+lRep*6===11){Level11=true;LevelSelect=10;}
-                                if(mRep+1+lRep*6===12){Level12=true;LevelSelect=11;}
-                                if(mRep+1+lRep*6===13){Level13=true;LevelSelect=12;}
-                                if(mRep+1+lRep*6===14){Level14=true;LevelSelect=13;}
-                                if(mRep+1+lRep*6===15){Level15=true;LevelSelect=14;}
-                                if(mRep+1+lRep*6===16){Level16=true;LevelSelect=15;}
-                                if(mRep+1+lRep*6===17){Level17=true;LevelSelect=16;}
-                                if(mRep+1+lRep*6===18){Level18=true;LevelSelect=17;}
+                                if(mRep+1+lRep*6==1){Level1=true;LevelSelect=0;}
+                                if(mRep+1+lRep*6==2){Level2=true;LevelSelect=1;}
+                                if(mRep+1+lRep*6==3){Level3=true;LevelSelect=2;}
+                                if(mRep+1+lRep*6==4){Level4=true;LevelSelect=3;}
+                                if(mRep+1+lRep*6==5){Level5=true;LevelSelect=4;}
+                                if(mRep+1+lRep*6==6){Level6=true;LevelSelect=5;}
+                                if(mRep+1+lRep*6==7){Level7=true;LevelSelect=6;}
+                                if(mRep+1+lRep*6==8){Level8=true;LevelSelect=7;}
+                                if(mRep+1+lRep*6==9){Level9=true;LevelSelect=8;}
+                                if(mRep+1+lRep*6==10){Level10=true;LevelSelect=9;}
+                                if(mRep+1+lRep*6==11){Level11=true;LevelSelect=10;}
+                                if(mRep+1+lRep*6==12){Level12=true;LevelSelect=11;}
+                                if(mRep+1+lRep*6==13){Level13=true;LevelSelect=12;}
+                                if(mRep+1+lRep*6==14){Level14=true;LevelSelect=13;}
+                                if(mRep+1+lRep*6==15){Level15=true;LevelSelect=14;}
+                                if(mRep+1+lRep*6==16){Level16=true;LevelSelect=15;}
+                                if(mRep+1+lRep*6==17){Level17=true;LevelSelect=16;}
+                                if(mRep+1+lRep*6==18){Level18=true;LevelSelect=17;}
                                 titleScreen = false;
                             }
                         } else {
@@ -3530,7 +3545,7 @@ class GameCode {
             rect(100, 92, 200, 50);
             rect(100, 150, 200, 110);
             textSize(12);
-            text((LST - ParSum[LevelSelect] + Bonus) < -11 && restart === 0 ? "The code to unlock\nLevel Select is (6, 1, 4)." : "You must get a score less\nthan -12 with no restarts to be\nshown the Level Select code", 200, 290);
+            text((LST - ParSum[LevelSelect] + Bonus) < -11 && restart == 0 ? "The code to unlock\nLevel Select is (6, 1, 4)." : "You must get a score less\nthan -12 with no restarts to be\nshown the Level Select code", 200, 290);
             fill(255);
             textSize(35);
             text("Game Over", 200, 115);
@@ -3547,7 +3562,7 @@ class GameCode {
             } else {
                 textDiminish = 255;
             }
-            if (dY === 0) {
+            if (dY == 0) {
                 fill(255, 255, 0, textDiminish);
                 textSize(12);
                 text("^Score Card^", 200, 15);
