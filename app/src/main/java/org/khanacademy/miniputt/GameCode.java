@@ -74,25 +74,25 @@ class GameCode {
     private static float eY = 320;
     private static float oldX = 0;
     private static float oldY = 0;
-    private static float L1S = 0;
-    private static float L2S = 0;
-    private static float L3S = 0;
-    private static float L4S = 0;
-    private static float L5S = 0;
-    private static float L6S = 0;
-    private static float L7S = 0;
-    private static float L8S = 0;
-    private static float L9S = 0;
-    private static float L10S = 0;
-    private static float L11S = 0;
-    private static float L12S = 0;
-    private static float L13S = 0;
-    private static float L14S = 0;
-    private static float L15S = 0;
-    private static float L16S = 0;
-    private static float L17S = 0;
-    private static float L18S = 0;
-    private static float LevelSelect = 0;
+    private static int L1S = 0;
+    private static int L2S = 0;
+    private static int L3S = 0;
+    private static int L4S = 0;
+    private static int L5S = 0;
+    private static int L6S = 0;
+    private static int L7S = 0;
+    private static int L8S = 0;
+    private static int L9S = 0;
+    private static int L10S = 0;
+    private static int L11S = 0;
+    private static int L12S = 0;
+    private static int L13S = 0;
+    private static int L14S = 0;
+    private static int L15S = 0;
+    private static int L16S = 0;
+    private static int L17S = 0;
+    private static int L18S = 0;
+    private static int LevelSelect = 0;
     private static boolean ScoreDisplay = false;
     private static float dY = 0;
     private static float restart = 0;
@@ -284,13 +284,22 @@ class GameCode {
     private static void endShape() {
         mp.close();
     }
+    private static double random(float high) {
+        return high * Math.random();
+    }
+    private static double random(float low, float high) {
+        return (high - low) * Math.random() + low;
+    }
+    private static int round(float num) {
+        return (int) num;
+    }
     private static void pjsCode() {
         background(107, 72, 1);
 
-        var LS = [L1S, L2S, L3S, L4S, L5S, L6S, L7S, L8S, L9S, L10S, L11S, L12S, L13S, L14S, L15S, L16S, L17S, L18S];
-        var Par = [2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2];
-        var ParSum = [2, 5, 8, 11, 13, 15, 20, 22, 25, 28, 31, 34, 37, 40, 42, 46, 48, 50];
-        float  LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
+        int[] LS = {L1S, L2S, L3S, L4S, L5S, L6S, L7S, L8S, L9S, L10S, L11S, L12S, L13S, L14S, L15S, L16S, L17S, L18S};
+        int[] Par = {2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2};
+        int[] ParSum = {2, 5, 8, 11, 13, 15, 20, 22, 25, 28, 31, 34, 37, 40, 42, 46, 48, 50};
+        int  LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
         if (speedX <= 0.1 && speedY <= 0.1) {
             resetShot = true;
             speedX = 0;
@@ -2868,7 +2877,7 @@ class GameCode {
                     if (selection == 10) {Bonus = -4;}
                     if (selection == 12) {Bonus = 5;}
                     if (selection == 13) {Bonus = -5;}
-                    if (selection == 15) {speedX = random(10, 30);}
+                    if (selection == 15) {speedX = (float) random(10, 30);}
                     textAlign(CENTER, BOTTOM);
                     textSize(20);
                     delayTimer += 3;
