@@ -108,8 +108,8 @@ class GameCode {
     private static boolean underWater = false;
     private static float waterTime = 0;
     private static boolean tips = true;
-    private static float PrevSlopeX = 0;
-    private static float PrevSlopeY = 0;
+    private static boolean PrevSlopeX = false;
+    private static boolean PrevSlopeY = false;
     private static float PrevSpeedX = 0;
     private static String alertText = "";
     private static boolean slopeLEFT = false;
@@ -205,6 +205,20 @@ class GameCode {
                 pf
         );
     }
+    private static void text(int txt, float x, float y) {
+        canvas.drawText(
+                String.valueOf(txt),
+                x - ((tah == LEFT) ? 0 : (tah == CENTER) ? pf.measureText(String.valueOf(txt)) / 2 : pf.measureText(String.valueOf(txt))),
+                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 2 : pf.getTextSize()),
+                pf
+        );
+    }
+    private static float textWidth(String txt) {
+        return pf.measureText(txt);
+    }
+    private static float textWidth(int txt) {
+        return pf.measureText(String.valueOf(txt));
+    }
     private static void textAlign(int h, int v) { // Use ints CENTER, LEFT, RIGHT, TOP or BOTTOM.
         tah = h;
         tav = v;
@@ -217,6 +231,16 @@ class GameCode {
         p.moveTo(x1, y1);
         p.lineTo(x2, y2);
         p.lineTo(x3, y3);
+        p.close();
+        canvas.drawPath(p, pf);
+        canvas.drawPath(p, ps);
+    }
+    private static void quad(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
+        Path p = new Path();
+        p.moveTo(x1, y1);
+        p.lineTo(x2, y2);
+        p.lineTo(x3, y3);
+        p.lineTo(x4, y4);
         p.close();
         canvas.drawPath(p, pf);
         canvas.drawPath(p, ps);
@@ -3004,8 +3028,8 @@ class GameCode {
         //Ball
         strokeWeight(1);
         if (Level17) {
-            stroke(200 - delayTimer * 20);
-            fill(255 - delayTimer * 25.5);
+            stroke((int) (200 - delayTimer * 20));
+            fill((int) (255 - delayTimer * 25.5));
         } else {
             stroke(200);
             fill(255);
@@ -3034,7 +3058,7 @@ class GameCode {
             for(int  wRep = 0; wRep < 30; wRep += 10) {
                 if (waterTime >= wRep) {
                     stroke(80, 150, 205, 255 + wRep * 5 - waterTime * 10);
-                    ellipse(ballPOSx, ballPOSy, waterTime * 1.5 - wRep, waterTime * 1.5 - wRep);
+                    ellipse(ballPOSx, ballPOSy, (float) (waterTime * 1.5 - wRep), (float) (waterTime * 1.5 - wRep));
                 }
             }
             if (waterTime >= 60) {
@@ -3136,7 +3160,7 @@ class GameCode {
         }
         if (!titleScreen && !endGame) {
             if (restart > 0) {
-                text(restart, 35, dY + 23);
+                text(String.valueOf(restart), 35, dY + 23);
             }
             textSize(12);
             text("Hole " + (LevelSelect + 1), 45, dY + 18);
@@ -3174,7 +3198,7 @@ class GameCode {
                 text(Par[sRep], 19 + sRep * 17, dY - 15);
             }
             textSize(9);
-            text(sRep + 1, 19 + sRep * 17, dY - 70);
+            text(String.valueOf(sRep + 1), 19 + sRep * 17, dY - 70);
             textSize(18);
         }
         noFill();
@@ -3291,32 +3315,31 @@ class GameCode {
         PrevSlopeX = slopeX;
         PrevSlopeY = slopeY;
         PrevSpeedX = speedX;
-        PrevSpeedY = speedY;
         oldX = ballPOSx;
         oldY = ballPOSy;
 
-        var tipString = [
-        "If you're backed up against a wall and can't draw\nback far enough, aim the other way for a rebound.", "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
+        String[] tipString = {
+                "If you're backed up against a wall and can't draw\nback far enough, aim the other way for a rebound.", "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
                 "Use the walls to your advantage. If there is no straight\nshot, go for the rebound and try for the hole in one.",
                 "If you are having trouble with a hole, try short, controlled\nshots to get to the hole, then restart the hole and see if you\ncan replicate that with fewer putts.",
                 "Put your mouse over the score card a the top of\nthe screen to check your progress while you play.",
                 "Don't go into bunkers; they stop your ball almost immediately\nand are very difficult to get out of. Treat them with caution.",
                 "Slopes can come in handy when trying to get the ball\naround a corner, but they can also slow the ball down or\nsend it backwards, so aim carefully.",
                 "Water will reset your ball without resetting\nyour strokes, so avoid it at all costs."
-];
+        };
 
 
         if (titleScreen) {
             pushMatrix();
-            String splashText = "8000+ Votes!";
+            String[] splashText = {"8", "0", "0", "0", "+", " ", "V", "o", "t", "e", "s", "!"};
             textAlign(LEFT, CENTER);
             textSize(25);
-            var splashPart = "";
+            String splashPart = "";
             translate(300, LevelMenu || tipDisplay ? 20 : 40);
             for (int i = 0; i < splashText.length; i ++) {
                 fill(0, 0, 0, 100);
                 text(splashText[i], -textWidth(splashText)/2 + textWidth(splashPart) + 3, 2);
-                var sF = cos(frameCount * 8 - i * 20) * 40;
+                float sF = cos(frameCount * 8 - i * 20) * 40;
                 fill(200 - sin(frameCount) * 55, 200 + cos(frameCount) * 55, 200 + sin(frameCount) * 55);
                 text(splashText[i], -textWidth(splashText)/2 + textWidth(splashPart), 0);
                 splashPart += splashText[i];
@@ -3419,8 +3442,8 @@ class GameCode {
             triangle(255, 207 - tS - tY, 255, 222 - tS - tY, 262, 215 - tS - tY);
             fill(255);
             text("TIPS " + onOffString, 200, 215 - tS - tY);
-            var code = [6, 1, 4];
-            var codeArray = [a, b, c];
+            int[] code = {6, 1, 4};
+            int[] codeArray = {a, b, c};
             if (!LevelMenu) {
                 for (int  sRep = 0; sRep < 3; sRep += 1) {
                     fill(130, 83, 3);
