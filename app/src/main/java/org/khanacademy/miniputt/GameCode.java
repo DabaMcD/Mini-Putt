@@ -119,7 +119,7 @@ class GameCode {
     private static boolean bunker = false;
     private static boolean UsedCommands = false;
     private static float delayTimer = 0;
-    private static float selection = 0;
+    private static int selection = 0;
     private static float Bonus = 0;
     private static boolean LevelMenu = false;
     private static float a = 0;
@@ -229,22 +229,22 @@ class GameCode {
     private static float dist(float x1, float y1, float x2, float y2) {
         return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
     }//109
-    private static double sin(float degrees) {
+    private static double sin(double degrees) {
         return Math.sin(degrees * 2 * Math.PI / 360);
     }
-    private static double cos(float degrees) {
+    private static double cos(double degrees) {
         return Math.cos(degrees * 2 * Math.PI / 360);
     }
-    private static double tan(float degrees) {
+    private static double tan(double degrees) {
         return Math.tan(degrees * 2 * Math.PI / 360);
     }
-    private static double asin(float degrees) {
+    private static double asin(double degrees) {
         return Math.asin(degrees * 2 * Math.PI / 360);
     }
-    private static double acos(float degrees) {
+    private static double acos(double degrees) {
         return Math.acos(degrees * 2 * Math.PI / 360);
     }
-    private static double atan(float degrees) {
+    private static double atan(double degrees) {
         return Math.atan(degrees * 2 * Math.PI / 360);
     }
     private static void beginShape() {
@@ -2687,7 +2687,7 @@ class GameCode {
                     fill(150);
                 }
                 stroke(125);
-                arc(cX, cY, cD, cD, -90 + cRep * 22.5, -67.5 + cRep * 22.5);
+                arc(cX, cY, cD, cD, (float) (-90 + cRep * 22.5), (float) (-67.5 + cRep * 22.5));
             }
             for (int  dRep = 0; dRep < 60; dRep += 20) {
                 stroke(90, 190, 90);
@@ -2705,12 +2705,12 @@ class GameCode {
             }
             stroke(125);
             strokeWeight(4);
-            var FortuneString = ["+" + 1, -1, 0, "+"+ 2, -2, "Re", "+" + 3, -3, 0, "+" + 4, -4, 0, "+" + 5, -5, 0, "Spin"];
+            String[] FortuneString = {"+1", "-1", "0", "+2", "-2", "Re", "+3", "-3", "0", "+4", "-4", "0", "+5", "-5", "0", "Spin"};
             textAlign(CENTER, CENTER);
             for (int  bRep = 0; bRep < 16; bRep += 1) {
-                line(cos(bRep * 22.5 - 90) * 90 + cX, sin(bRep * 22.5 - 90 ) * 90 + cY, cX, cY);
+                line((float) (cos(bRep * 22.5 - 90) * 90 + cX), (float) (sin(bRep * 22.5 - 90 ) * 90 + cY), cX, cY);
                 fill(255);
-                text(FortuneString[bRep], cos(bRep * 22.5 - 80) * 70 + cX, sin(bRep * 22.5 - 80) * 70 + cY);
+                text(FortuneString[bRep], (float) (cos(bRep * 22.5 - 80) * 70 + cX), (float) (sin(bRep * 22.5 - 80) * 70 + cY));
             }
             textAlign(LEFT, BOTTOM);
             noStroke();
@@ -2862,13 +2862,6 @@ class GameCode {
                 }
             }
         }
-
-
-
-
-
-
-
 
         //Hole
         noStroke();
