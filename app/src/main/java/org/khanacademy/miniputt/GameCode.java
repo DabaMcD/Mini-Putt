@@ -293,6 +293,27 @@ class GameCode {
     private static int round(float num) {
         return (int) num;
     }
+    private static void point(float x, float y) {
+        canvas.drawPoint(x, y, ps);
+    }
+    private static void pushMatrix() {
+        canvas.save();
+    }
+    private static void popMatrix() {
+        canvas.restore();
+    }
+    private static void resetMatrix() {
+        canvas.restoreToCount(1);
+        canvas.save();
+        canvas.translate((Screen.width - Screen.height) / 2, 0);
+        canvas.scale(Screen.height / 400f, Screen.height / 400f, 0, 0);
+    }
+    private static void translate(float x, float y) {
+        canvas.translate(x, y);
+    }
+    private static void rotate(float degrees) {
+        canvas.rotate((float) (degrees * 2 * Math.PI / 360), 0, 0);
+    }
     private static void pjsCode() {
         background(107, 72, 1);
 
