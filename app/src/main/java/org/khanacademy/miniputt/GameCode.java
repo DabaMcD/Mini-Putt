@@ -22,11 +22,13 @@ class GameCode {
     private static Canvas canvas;
 
     // Mouse vars
-    private static int mouseX, mouseY;
-    private static boolean mouseJustReleased, mouseIsPressed;
+    static int mouseX, mouseY;
+    static boolean mouseJustReleased, mouseIsPressed;
     
     // Misc vars
     private static Path mp; // Miscellaneous Path
+    static long frameCount = 0;
+    static int mpf; // Millis per frame
 
     // PJS vars
     private static float ballPOSx = 200;
@@ -122,18 +124,18 @@ class GameCode {
     private static int selection = 0;
     private static float Bonus = 0;
     private static boolean LevelMenu = false;
-    private static float a = 0;
-    private static float b = 0;
-    private static float c = 0;
+    private static int a = 0;
+    private static int b = 0;
+    private static int c = 0;
     private static float tS = 7;
     private static String onOffString = "ON";
-    private static float tipSelect = 0;
+    private static int tipSelect = 0;
     private static float tY = 0;
     private static boolean tipDisplay = false;
     private static boolean endGame = false;
 
     static void draw(Canvas c) {
-
+        frameCount ++;
         canvas = c;
         pf.setStyle(Paint.Style.FILL);
         ps.setStyle(Paint.Style.STROKE);
@@ -143,6 +145,8 @@ class GameCode {
         canvas.scale(Screen.height / 400f, Screen.height / 400f, 0, 0);
         pjsCode();
         canvas.restore();
+
+        mouseJustReleased = false;
     }
     private static void background(int r, int g, int b) {
         Paint paint = new Paint();
@@ -252,7 +256,7 @@ class GameCode {
     }
     private static float dist(float x1, float y1, float x2, float y2) {
         return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-    }//109
+    }
     private static double sin(double degrees) {
         return Math.sin(degrees * 2 * Math.PI / 360);
     }
@@ -284,13 +288,13 @@ class GameCode {
     private static void endShape() {
         mp.close();
     }
-    private static double random(float high) {
+    private static double random(double high) {
         return high * Math.random();
     }
-    private static double random(float low, float high) {
+    private static double random(double low, double high) {
         return (high - low) * Math.random() + low;
     }
-    private static int round(float num) {
+    private static int round(double num) {
         return (int) num;
     }
     private static void point(float x, float y) {
@@ -313,6 +317,9 @@ class GameCode {
     }
     private static void rotate(float degrees) {
         canvas.rotate((float) (degrees * 2 * Math.PI / 360), 0, 0);
+    }
+    private static void frameRate(int fps) {
+        mpf = 1000 / fps;
     }
     private static void pjsCode() {
         background(107, 72, 1);
@@ -3337,7 +3344,7 @@ class GameCode {
             slopeUP = false;
             slopeDOWN = false;
         }
-        if (underGround && Level18  && selection !== 15) {
+        if (underGround && Level18  && selection != 15) {
             if (PrevSpeedX < speedX) {
                 speedX = PrevSpeedX;
             }
@@ -3368,10 +3375,10 @@ class GameCode {
             translate(300, LevelMenu || tipDisplay ? 20 : 40);
             for (int i = 0; i < splashText.length; i ++) {
                 fill(0, 0, 0, 100);
-                text(splashText[i], -textWidth(splashText)/2 + textWidth(splashPart) + 3, 2);
+                text(splashText[i], -textWidth("")/2 + textWidth(splashPart) + 3, 2);
                 float sF = cos(frameCount * 8 - i * 20) * 40;
                 fill(200 - sin(frameCount) * 55, 200 + cos(frameCount) * 55, 200 + sin(frameCount) * 55);
-                text(splashText[i], -textWidth(splashText)/2 + textWidth(splashPart), 0);
+                text(splashText[i], -textWidth("")/2 + textWidth(splashPart), 0);
                 splashPart += splashText[i];
             }
             popMatrix();
@@ -3615,6 +3622,5 @@ class GameCode {
             }
             textAlign(BOTTOM, LEFT);
         }
-        mouseJustReleased = false;
     }
 }
