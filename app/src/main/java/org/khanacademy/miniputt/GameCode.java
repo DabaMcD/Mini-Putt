@@ -3376,8 +3376,7 @@ class GameCode {
             for (int i = 0; i < splashText.length; i ++) {
                 fill(0, 0, 0, 100);
                 text(splashText[i], -textWidth("")/2 + textWidth(splashPart) + 3, 2);
-                float sF = cos(frameCount * 8 - i * 20) * 40;
-                fill(200 - sin(frameCount) * 55, 200 + cos(frameCount) * 55, 200 + sin(frameCount) * 55);
+                fill((int) (200 - sin(frameCount) * 55), (int) (200 + cos(frameCount) * 55), (int) (200 + sin(frameCount) * 55));
                 text(splashText[i], -textWidth("")/2 + textWidth(splashPart), 0);
                 splashPart += splashText[i];
             }
@@ -3480,7 +3479,6 @@ class GameCode {
             fill(255);
             text("TIPS " + onOffString, 200, 215 - tS - tY);
             int[] code = {6, 1, 4};
-            int[] codeArray = {a, b, c};
             if (!LevelMenu) {
                 for (int  sRep = 0; sRep < 3; sRep += 1) {
                     fill(130, 83, 3);
