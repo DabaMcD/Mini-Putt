@@ -22,12 +22,12 @@ class GameCode {
     private static Canvas canvas;
 
     // Mouse vars
-    static int mouseX, mouseY;
-    static boolean mouseJustReleased, mouseIsPressed;
+    private static float mouseX, mouseY;
+    private static boolean mouseJustReleased, mouseIsPressed;
     
     // Misc vars
     private static Path mp; // Miscellaneous Path
-    static long frameCount = 0;
+    private static long frameCount = 0;
     static int mpf; // Millis per frame
 
     // PJS vars
@@ -147,6 +147,18 @@ class GameCode {
         canvas.restore();
 
         mouseJustReleased = false;
+    }
+    static void setMouseX(float mouseX) {
+        GameCode.mouseX = mouseX * 400f / Screen.height;
+    }
+    static void setMouseY(float mouseY) {
+        GameCode.mouseY = (mouseY - (Screen.width - Screen.height) / 2f) * 400f / Screen.height;
+    }
+    static void setMouseJustReleased(boolean mouseJustReleased) {
+        GameCode.mouseJustReleased = mouseJustReleased;
+    }
+    static void setMouseIsPressed(boolean mouseIsPressed) {
+        GameCode.mouseIsPressed = mouseIsPressed;
     }
     private static void background(int r, int g, int b) {
         Paint paint = new Paint();

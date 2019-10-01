@@ -8,17 +8,18 @@ class Touch {
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                v.performClick();
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: // When user's finger touches screen
-                        GameCode.mouseIsPressed = true;
-                        break;
-                    case MotionEvent.ACTION_MOVE: // When user's finger drags across screen
+                        GameCode.setMouseIsPressed(true);
                         break;
                     case MotionEvent.ACTION_UP: // When user's finger is picked up off screen
-                        GameCode.mouseIsPressed = false;
-                        GameCode.mouseJustReleased = false;
+                        GameCode.setMouseIsPressed(false);
+                        GameCode.setMouseJustReleased(false);
                         break;
                 }
+                GameCode.setMouseX(event.getX());
+                GameCode.setMouseY(event.getY());
                 return true;
             }
         });
