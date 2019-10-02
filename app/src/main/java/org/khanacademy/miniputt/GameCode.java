@@ -217,7 +217,7 @@ class GameCode {
         canvas.drawText(
                 txt,
                 x - ((tah == LEFT) ? 0 : (tah == CENTER) ? pf.measureText(txt) / 2 : pf.measureText(txt)),
-                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 2 : pf.getTextSize()),
+                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 3 : pf.getTextSize()),
                 pf
         );
     }
@@ -225,9 +225,22 @@ class GameCode {
         canvas.drawText(
                 String.valueOf(txt),
                 x - ((tah == LEFT) ? 0 : (tah == CENTER) ? pf.measureText(String.valueOf(txt)) / 2 : pf.measureText(String.valueOf(txt))),
-                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 2 : pf.getTextSize()),
+                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 3 : pf.getTextSize()),
                 pf
         );
+    }
+    private static void drawMultilineText(String str, int x, int y, Paint paint, Canvas canvas) {
+        int lineHeight = 0;
+        int yoffset = 0;
+        String[] lines = str.split("\n");
+
+        // set height of each line (height of text + 20%)
+        lineHeight = (int) (pf.getTextSize() * 1.2f);
+        // draw each line
+        for (int i = 0; i < lines.length; ++i) {
+            canvas.drawText(lines[i], x, y + yoffset, paint);
+            yoffset = yoffset + lineHeight;
+        }
     }
     private static float textWidth(String txt) {
         return pf.measureText(txt);
@@ -3380,7 +3393,7 @@ class GameCode {
 
         if (titleScreen) {
             pushMatrix();
-            String[] splashText = {"8", "0", "0", "0", "+", " ", "V", "o", "t", "e", "s", "!"};
+            String[] splashText = {"1", "0", ",", "0", "0", "0", "+", " ", "V", "o", "t", "e", "s", "!"};
             textAlign(LEFT, CENTER);
             textSize(25);
             String splashPart = "";
@@ -3426,8 +3439,6 @@ class GameCode {
             textSize(10);
             fill(0);
             text(tipString[tipSelect], 200, 290 + tS + tY);
-
-
 
             fill(30, 168, 2);
             strokeWeight(5);
