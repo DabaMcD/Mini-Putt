@@ -13,6 +13,7 @@ class GameCode {
     private final static int BOTTOM = 2;
     private final static int LEFT = 3;
     private final static int RIGHT = 4;
+    private static float tl; // Text Leading: the vertical distance between adjacent lines of text
     private static int tah = LEFT; // Text Align Horizontal
     private static int tav = BOTTOM; // Text Align Vertical
 
@@ -212,6 +213,9 @@ class GameCode {
         RectF r = new RectF(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
         canvas.drawOval(r, pf);
         canvas.drawOval(r, ps);
+    }
+    private static void textLeading(float dist) {
+        tl = dist;
     }
     private static void text(String txt, float x, float y) {
         canvas.drawText(
