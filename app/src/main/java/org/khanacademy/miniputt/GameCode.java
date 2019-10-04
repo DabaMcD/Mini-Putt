@@ -14,7 +14,8 @@ class GameCode {
     private final static int LEFT = 3;
     private final static int RIGHT = 4;
     private static float tl; // Text Leading: the vertical distance between adjacent lines of text
-    private static float ta; // Text Descent: the vertical distance between the
+    private static float ta; // Text Ascent: the vertical distance between the "inner floor" and the "outer ceiling" of the text
+    private static float td; // Text Descent: the vertical distance between the "inner floor" and the "outer floor" of the text
     private static int tah = LEFT; // Text Align Horizontal
     private static int tav = BOTTOM; // Text Align Vertical
 
@@ -241,8 +242,6 @@ class GameCode {
         int yoffset = 0;
         String[] lines = str.split("\n");
 
-        // set height of each line (height of text + 20%)
-        lineHeight = (int) (pf.getTextSize() * 1.2f);
         // draw each line
         for (int i = 0; i < lines.length; ++i) {
             canvas.drawText(lines[i], x, y + yoffset, paint);
@@ -258,12 +257,15 @@ class GameCode {
             return;
         }
         pf.setTextSize(size);
+        ta = pf.getTextSize() * 0.716f;
+        td = pf.getTextSize() * 0.211f;
+        tl = pf.getTextSize() * 1.149f;
     }
     private static float textWidth(String txt) {
         float w = 0;
         String[] lines = txt.split("\n");
-        for (int i = 0; i < lines.length; i ++) {
-            w = pf.measureText(lines[i]) > w ? pf.measureText(lines[i]) : w;
+        for (String line : lines) {
+            w = pf.measureText(line) > w ? pf.measureText(line) : w;
         }
         return w;
     }
@@ -3411,17 +3413,17 @@ class GameCode {
 
         if (titleScreen) {
             pushMatrix();
-            String[] splashText = {"1", "0", ",", "0", "0", "0", "+", " ", "V", "o", "t", "e", "s", "!"};
+            final String[] splashText = "10,000+ votes!".split("");
             textAlign(LEFT, CENTER);
             textSize(25);
             String splashPart = "";
             translate(300, LevelMenu || tipDisplay ? 20 : 40);
-            for (int i = 0; i < splashText.length; i ++) {
+            for (String txt : splashText) {
                 fill(0, 0, 0, 100);
-                text(splashText[i], -textWidth("")/2 + textWidth(splashPart) + 3, 2);
+                text(txt, -textWidth("") / 2 + textWidth(splashPart) + 3, 2);
                 fill((int) (200 - sin(frameCount) * 55), (int) (200 + cos(frameCount) * 55), (int) (200 + sin(frameCount) * 55));
-                text(splashText[i], -textWidth("")/2 + textWidth(splashPart), 0);
-                splashPart += splashText[i];
+                text(txt, -textWidth("") / 2 + textWidth(splashPart), 0);
+                splashPart += txt;
             }
             popMatrix();
             resetShot = false;
