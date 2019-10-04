@@ -150,10 +150,10 @@ class GameCode {
         mouseJustReleased = false;
     }
     static void setMouseX(float mouseX) {
-        GameCode.mouseX = mouseX * 400f / Screen.height;
+        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * 400f / Screen.height;
     }
     static void setMouseY(float mouseY) {
-        GameCode.mouseY = (mouseY - (Screen.width - Screen.height) / 2f) * 400f / Screen.height;
+        GameCode.mouseY = mouseY * 400f / Screen.height;
     }
     static void setMouseJustReleased(boolean mouseJustReleased) {
         GameCode.mouseJustReleased = mouseJustReleased;
@@ -346,6 +346,12 @@ class GameCode {
     }
     private static void rotate(float degrees) {
         canvas.rotate((float) (degrees * 2 * Math.PI / 360), 0, 0);
+    }
+    private static void scale(float sx, float sy) {
+        canvas.scale(sx, sy, 0, 0);
+    }
+    private static void scale(float s) {
+        canvas.scale(s, s, 0, 0);
     }
     private static void frameRate(int fps) {
         mpf = 1000 / fps;
