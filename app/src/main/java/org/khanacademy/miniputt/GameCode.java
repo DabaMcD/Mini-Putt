@@ -14,10 +14,13 @@ class GameCode {
     private final static int LEFT = 3;
     private final static int RIGHT = 4;
     private static float tl; // Text Leading: the vertical distance between adjacent lines of text
+    private static float ta; // Text Descent: the vertical distance between the
     private static int tah = LEFT; // Text Align Horizontal
     private static int tav = BOTTOM; // Text Align Vertical
 
     // Drawing vars
+    private final static float ocw = 400; // Original Canvas Width
+    private final static float och = 400; // Original Canvas Height
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
     private static Canvas canvas;
@@ -143,17 +146,17 @@ class GameCode {
 
         canvas.save();
         canvas.translate((Screen.width - Screen.height) / 2, 0);
-        canvas.scale(Screen.height / 400f, Screen.height / 400f, 0, 0);
+        canvas.scale(Screen.height / och, Screen.height / och, 0, 0);
         pjsCode();
         canvas.restore();
 
         mouseJustReleased = false;
     }
     static void setMouseX(float mouseX) {
-        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * 400f / Screen.height;
+        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * och / Screen.height;
     }
     static void setMouseY(float mouseY) {
-        GameCode.mouseY = mouseY * 400f / Screen.height;
+        GameCode.mouseY = mouseY * och / Screen.height;
     }
     static void setMouseJustReleased(boolean mouseJustReleased) {
         GameCode.mouseJustReleased = mouseJustReleased;
@@ -246,18 +249,23 @@ class GameCode {
             yoffset = yoffset + lineHeight;
         }
     }
-    private static float textWidth(String txt) {
-        return pf.measureText(txt);
-    }
-    private static float textWidth(int txt) {
-        return pf.measureText(String.valueOf(txt));
-    }
     private static void textAlign(int h, int v) { // Use ints CENTER, LEFT, RIGHT, TOP or BOTTOM.
         tah = h;
         tav = v;
     }
     private static void textSize(float size) {
+        if (size < 0) {
+            return;
+        }
         pf.setTextSize(size);
+    }
+    private static float textWidth(String txt) {
+        float w = 0;
+        String[] lines = txt.split("\n");
+        for (int i = 0; i < lines.length; i ++) {
+            w = pf.measureText(lines[i]) > w ? pf.measureText(lines[i]) : w;
+        }
+        return w;
     }
     private static void triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
         Path p = new Path();
