@@ -238,14 +238,11 @@ class GameCode {
         );
     }
     private static void drawMultilineText(String str, int x, int y, Paint paint, Canvas canvas) {
-        int lineHeight = 0;
-        int yoffset = 0;
         String[] lines = str.split("\n");
 
-        // draw each line
-        for (int i = 0; i < lines.length; ++i) {
-            canvas.drawText(lines[i], x, y + yoffset, paint);
-            yoffset = yoffset + lineHeight;
+
+        for (int i = 0; i < lines.length; i ++) {
+            canvas.drawText(lines[i], x, y + i * tl, paint);
         }
     }
     private static void textAlign(int h, int v) { // Use ints CENTER, LEFT, RIGHT, TOP or BOTTOM.
