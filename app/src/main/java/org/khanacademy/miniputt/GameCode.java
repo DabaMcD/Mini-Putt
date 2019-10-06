@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 
 class GameCode {
-    // Text-specific vars
+    // Text vars
     private final static int CENTER = 0;
     private final static int TOP = 1;
     private final static int BOTTOM = 2;
@@ -356,12 +356,6 @@ class GameCode {
     }
     private static void popMatrix() {
         canvas.restore();
-    }
-    private static void resetMatrix() {
-        canvas.restoreToCount(1);
-        canvas.save();
-        canvas.translate((Screen.width - Screen.height) / 2, 0);
-        canvas.scale(Screen.height / 400f, Screen.height / 400f, 0, 0);
     }
     private static void translate(float x, float y) {
         canvas.translate(x, y);
@@ -3303,11 +3297,12 @@ class GameCode {
         line(321, dY - 40, 350, dY - 40);
         fill(75);
         textSize(9);
+        pushMatrix();
         translate(12, dY - 32);
         rotate(-90);
         text("STROKES", 0, 0);
         text("PAR", -23, 0);
-        resetMatrix();
+        popMatrix();
         text("SCORE", 361, dY - 28);
         strokeWeight(1);
         textSize(13);
