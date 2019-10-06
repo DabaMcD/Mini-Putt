@@ -236,11 +236,11 @@ class GameCode {
 
         pushMatrix();
         if (tav == BOTTOM) {
-            translate(0, y + tl * (lines.length - 1) - td);
+            translate(0, y - tl * (lines.length - 1) - td);
         } else if (tav == BASELINE) {
             translate(0, y);
         } else if (tav == CENTER) {
-            translate(0, y + tl * (lines.length - 1) / 2 + ta / 2);
+            translate(0, y - tl * (lines.length - 1) / 2 + ta / 2);
         } else { // Text Align Vertical = TOP
             translate(0, y + ta);
         }
