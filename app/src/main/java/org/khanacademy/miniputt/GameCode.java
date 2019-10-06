@@ -13,6 +13,7 @@ class GameCode {
     private final static int BOTTOM = 2;
     private final static int LEFT = 3;
     private final static int RIGHT = 4;
+    private final static int BASELINE = 5;
     private static float tl; // Text Leading: the vertical distance between adjacent lines of text
     private static float ta; // Text Ascent: the vertical distance between the "inner floor" and the "outer ceiling" of the text
     private static float td; // Text Descent: the vertical distance between the "inner floor" and the "outer floor" of the text
@@ -222,12 +223,7 @@ class GameCode {
         tl = dist;
     }
     private static void text(String txt, float x, float y) {
-        canvas.drawText(
-                txt,
-                x - ((tah == LEFT) ? 0 : (tah == CENTER) ? pf.measureText(txt) / 2 : pf.measureText(txt)),
-                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 3 : pf.getTextSize()),
-                pf
-        );
+        drawMultilineText(txt, x, y);
     }
     private static void text(int txt, float x, float y) {
         canvas.drawText(
@@ -237,12 +233,31 @@ class GameCode {
                 pf
         );
     }
-    private static void drawMultilineText(String str, int x, int y, Paint paint, Canvas canvas) {
+    private static void drawMultilineText(String str, float x, float y) {
         String[] lines = str.split("\n");
 
+        if (tah == BOTTOM) {
+            translate(0, (float) (y + pf.getTextSize() * 1.149 * (lines.length - 1) - pf.getTextSize() * 0.211)); // Y value is inner floor of top line of text
+        } else if (tah == BASELINE) {
+            translate(0, (float) (y + pf.getTextSize() * 1.149 * (lines.length - 1)));
+        } else if (tah == CENTER) {
+            translate(0, (float) (y + pf.getTextSize() * 0.575 * (lines.length - 1) + pf.getTextSize() * 0.26));
+        } else {
+            translate(0, (float) (y + pf.getTextSize() * 0.716));
+        }
 
-        for (int i = 0; i < lines.length; i ++) {
-            canvas.drawText(lines[i], x, y + i * tl, paint);
+        if (tav == LEFT) {
+            for (int i = 0; i < lines.length; i++) {
+                canvas.drawText(lines[i], x, i * tl, pf);
+            }
+        } else if (tav == CENTER) {
+            for (int i = 0; i < lines.length; i++) {
+                canvas.drawText(lines[i], x - textWidth(lines[i]) / 2, i * tl, pf);
+            }
+        } else { // Text Align Vertical = RIGHT
+            for (int i = 0; i < lines.length; i++) {
+                canvas.drawText(lines[i], x - textWidth(lines[i]), i * tl, pf);
+            }
         }
     }
     private static void textAlign(int h, int v) { // Use ints CENTER, LEFT, RIGHT, TOP or BOTTOM.
