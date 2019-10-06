@@ -140,6 +140,9 @@ class GameCode {
     private static boolean tipDisplay = false;
     private static boolean endGame = false;
 
+    static void init() {
+        ps.setStrokeCap(Paint.Cap.ROUND);
+    }
     static void draw(Canvas c) {
         frameCount ++;
         canvas = c;
@@ -237,8 +240,8 @@ class GameCode {
         } else if (tav == BASELINE) {
             translate(0, y);
         } else if (tav == CENTER) {
-            translate(0, (float) (y + tl * (lines.length - 1) / 2 + pf.getTextSize() * 0.26));
-        } else {
+            translate(0, y + tl * (lines.length - 1) / 2 + ta / 2);
+        } else { // Text Align Vertical = TOP
             translate(0, y + ta);
         }
 
@@ -302,8 +305,8 @@ class GameCode {
         canvas.drawArc(r, start, stop - start, true, pf);
         canvas.drawArc(r, start, stop - start, true, ps);
     }
-    private static float dist(float x1, float y1, float x2, float y2) {
-        return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+    private static double dist(double x1, double y1, double x2, double y2) {
+        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
     }
     private static double sin(double degrees) {
         return Math.sin(degrees * 2 * Math.PI / 360);
@@ -442,9 +445,9 @@ class GameCode {
                 }
             }
         }
-        power = dist(mouseX, mouseY, ballPOSx, ballPOSy);
-        powerX = dist(mouseX, 0, ballPOSx, 0);
-        powerY = dist(0, mouseY, 0, ballPOSy);
+        power = (float) dist(mouseX, mouseY, ballPOSx, ballPOSy);
+        powerX = (float) dist(mouseX, 0, ballPOSx, 0);
+        powerY = (float) dist(0, mouseY, 0, ballPOSy);
 
         slopeX = false;
         slopeY = false;
