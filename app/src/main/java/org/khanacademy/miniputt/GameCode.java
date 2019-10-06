@@ -226,39 +226,36 @@ class GameCode {
         drawMultilineText(txt, x, y);
     }
     private static void text(int txt, float x, float y) {
-        canvas.drawText(
-                String.valueOf(txt),
-                x - ((tah == LEFT) ? 0 : (tah == CENTER) ? pf.measureText(String.valueOf(txt)) / 2 : pf.measureText(String.valueOf(txt))),
-                y + ((tav == BOTTOM) ? 0 : (tav == CENTER) ? pf.getTextSize() / 3 : pf.getTextSize()),
-                pf
-        );
+        drawMultilineText(String.valueOf(txt), x, y);
     }
     private static void drawMultilineText(String str, float x, float y) {
         String[] lines = str.split("\n");
 
-        if (tah == BOTTOM) {
-            translate(0, (float) (y + pf.getTextSize() * 1.149 * (lines.length - 1) - pf.getTextSize() * 0.211)); // Y value is inner floor of top line of text
-        } else if (tah == BASELINE) {
-            translate(0, (float) (y + pf.getTextSize() * 1.149 * (lines.length - 1)));
-        } else if (tah == CENTER) {
-            translate(0, (float) (y + pf.getTextSize() * 0.575 * (lines.length - 1) + pf.getTextSize() * 0.26));
+        pushMatrix();
+        if (tav == BOTTOM) {
+            translate(0, y + tl * (lines.length - 1) - td);
+        } else if (tav == BASELINE) {
+            translate(0, y);
+        } else if (tav == CENTER) {
+            translate(0, (float) (y + tl * (lines.length - 1) / 2 + pf.getTextSize() * 0.26));
         } else {
-            translate(0, (float) (y + pf.getTextSize() * 0.716));
+            translate(0, y + ta);
         }
 
-        if (tav == LEFT) {
+        if (tah == LEFT) {
             for (int i = 0; i < lines.length; i++) {
                 canvas.drawText(lines[i], x, i * tl, pf);
             }
-        } else if (tav == CENTER) {
+        } else if (tah == CENTER) {
             for (int i = 0; i < lines.length; i++) {
                 canvas.drawText(lines[i], x - textWidth(lines[i]) / 2, i * tl, pf);
             }
-        } else { // Text Align Vertical = RIGHT
+        } else { // Text Align Horizontal = RIGHT
             for (int i = 0; i < lines.length; i++) {
                 canvas.drawText(lines[i], x - textWidth(lines[i]), i * tl, pf);
             }
         }
+        popMatrix();
     }
     private static void textAlign(int h, int v) { // Use ints CENTER, LEFT, RIGHT, TOP or BOTTOM.
         tah = h;
