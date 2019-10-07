@@ -301,9 +301,10 @@ class GameCode {
         canvas.drawPath(p, ps);
     }
     private static void arc(float x, float y, float w, float h, float start, float stop) {
-        RectF r = new RectF(x - w / 2, y - w / 2, x + w / 2, h + w / 2);
+        RectF r = new RectF(x - w / 2, y - h / 2, x + w / 2, y + h / 2);
+        canvas.drawArc(r, start, stop - start, false, ps);
+        r = new RectF(x - w / 2 + ps.getStrokeWidth() / 2, y - h / 2 + ps.getStrokeWidth() / 2, x + w / 2 - ps.getStrokeWidth() / 2, y + h / 2 - ps.getStrokeWidth() / 2);
         canvas.drawArc(r, start, stop - start, true, pf);
-        canvas.drawArc(r, start, stop - start, true, ps);
     }
     private static double dist(double x1, double y1, double x2, double y2) {
         return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
@@ -338,6 +339,8 @@ class GameCode {
     }
     private static void endShape() {
         mp.close();
+        canvas.drawPath(mp, pf);
+        canvas.drawPath(mp, ps);
     }
     private static double random(double high) {
         return high * Math.random();
@@ -3408,7 +3411,8 @@ class GameCode {
         oldY = ballPOSy;
 
         String[] tipString = {
-                "If you're backed up against a wall and can't draw\nback far enough, aim the other way for a rebound.", "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
+                "If you're backed up against a wall and can't draw\nback far enough, aim the other way for a rebound.",
+                "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
                 "Use the walls to your advantage. If there is no straight\nshot, go for the rebound and try for the hole in one.",
                 "If you are having trouble with a hole, try short, controlled\nshots to get to the hole, then restart the hole and see if you\ncan replicate that with fewer putts.",
                 "Put your mouse over the score card a the top of\nthe screen to check your progress while you play.",
