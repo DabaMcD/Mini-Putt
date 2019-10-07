@@ -174,7 +174,7 @@ class GameCode {
         Paint paint = new Paint();
         paint.set(pf);
         pf.setColor(Color.rgb(r, g, b));
-        canvas.drawRect(0, 0, 400, 400, pf);
+        canvas.drawRect(0f, 0f, 400f, 400f, pf);
         pf.set(paint);
     }
     private static void background(int shade) {
@@ -219,7 +219,7 @@ class GameCode {
         canvas.drawRect(x, y, x + w, y + h, ps);
     }
     private static void ellipse(float x, float y, float w, float h) {
-        RectF r = new RectF(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
+        RectF r = new RectF(x - (w / 2f), y - (h / 2f), x + (w / 2f), y + (h / 2f));
         canvas.drawOval(r, pf);
         canvas.drawOval(r, ps);
     }
@@ -461,10 +461,10 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 100, 300, 200);
+            rect(50f, 100f, 300f, 200f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(75, 165, 40, 70);
+            rect(75f, 165f, 40f, 70);
             strokeWeight(1);
             dX1 = 75;
             dX2 = 115;
@@ -482,8 +482,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Click to drop your ball in the dark green zone, then click again to putt it.", 35, 90);
-                text("The farther back you hold the putter, the harder the putt.", 65, 320);
+                text("Click to drop your ball in the dark green zone, then click again to putt it.", 35f, 90f);
+                text("The farther back you hold the putter, the harder the putt.", 65f, 320f);
             }
             //Boundaries
             if (ballPOSy >= 295) {
@@ -509,13 +509,13 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(100, 80, 200, 300);
+            rect(100f, 80f, 200f, 300f);
             fill(92, 62, 1);
-            rect(175, 80, 10, 225);
-            rect(215, 80, 10, 225);
+            rect(175f, 80f, 10f, 225f);
+            rect(215f, 80f, 10f, 225f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(110, 90, 55, 40);
+            rect(110f, 90f, 55f, 40f);
             dX1 = 110;
             dX2 = 165;
             dY1 = 90;
@@ -533,8 +533,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Make your way around obstacles to get to the hole.", 77, 70);
-                text("<--- Restart Hole", 40, 30);
+                text("Make your way around obstacles to get to the hole.", 77f, 70f);
+                text("<--- Restart Hole", 40f, 30f);
             }
             //Boundaries
             if (ballPOSy >= 375) {
@@ -592,19 +592,19 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(100, 50, 200, 300);
+            rect(100f, 50f, 200f, 300f);
             fill(128, 86, 2);
-            rect(100, 50, 70, 50);
-            rect(230, 50, 70, 50);
+            rect(100f, 50f, 70f, 50f);
+            rect(230f, 50f, 70f, 50f);
             strokeWeight(6);
             stroke(110);
-            line(160, 290, 240, 290);
-            line(105, 230, 145, 230);
-            line(255, 230, 295, 230);
-            line(160, 170, 240, 170);
+            line(160f, 290f, 240f, 290f);
+            line(105f, 230f, 145f, 230f);
+            line(255f, 230f, 295f, 230f);
+            line(160f, 170f, 240f, 170f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(160, 300, 80, 40);
+            rect(160f, 300f, 80f, 40f);
             strokeWeight(1);
             holePOSx = 200;
             holePOSy = 79;
@@ -622,8 +622,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("The faster your ball is going the more accurate you have to be to get it in the hole.", 5, 45);
-                text("If it is going too fast it can't go in the hole at all", 88, 370);
+                text("The faster your ball is going the more accurate you have to be to get it in the hole.", 5f, 45f);
+                text("If it is going too fast it can't go in the hole at all", 88f, 370f);
             }
             //Boundaries
             if (ballPOSy >= 345) {
@@ -715,14 +715,14 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(30, 110, 340, 210);
+            rect(30f, 110f, 340f, 210f);
             fill(128, 86, 2);
-            rect(30, 250, 70, 70);
-            line(30, 250, 270, 250);
-            line(110, 180, 370, 180);
+            rect(30f, 250f, 70f, 70f);
+            line(30f, 250f, 270f, 250f);
+            line(110f, 180f, 370f, 180f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(105, 255, 40, 61);
+            rect(105f, 255f, 40f, 61f);
             strokeWeight(1);
             dX1 = 105;
             dX2 = 145;
@@ -740,8 +740,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Put your mouse over the tab at the top to see your score card", 50, 105);
-                text("^SCORE CARD^", 161, 20);
+                text("Put your mouse over the tab at the top to see your score card", 50f, 105f);
+                text("^SCORE CARD^", 161f, 20f);
             }
             //Boundaries
             if (ballPOSy >= 315) {
@@ -795,7 +795,7 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 120, 300, 160);
+            rect(50f, 120f, 300f, 160f);
             dX1 = 75;
             dX2 = 115;
             dY1 = 165;
@@ -820,7 +820,7 @@ class GameCode {
             line(250, linePOS + 120, 250, linePOS + 200);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(75, 165, 40, 70);
+            rect(75f, 165f, 40f, 70f);
             strokeWeight(1);
             if (tips) {
                 if (textDiminish > 0) {
@@ -832,7 +832,7 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Some obstacles may move, aim accordingly.", 95, 105);
+                text("Some obstacles may move, aim accordingly.", 95f, 105f);
             }
             //Boundaries
             if (ballPOSy >= 275) {
@@ -892,19 +892,19 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 100, 300, 200);
+            rect(50f, 100f, 300f, 200f);
             stroke(153, 103, 3);
-            line(200, 105, 200, 190);
-            line(200, 295, 200, 210);
-            line(175, 190, 225, 190);
-            line(175, 210, 225, 210);
+            line(200f, 105f, 200f, 190f);
+            line(200f, 295f, 200f, 210f);
+            line(175f, 190f, 225f, 190f);
+            line(175f, 210f, 225f, 210f);
             stroke(100);
             line(170, 131 + linePOS, 170, 189 + linePOS);
             line(230, 209 - linePOS, 230, 271 - linePOS);
-            line(310, 191, 310, 208);
+            line(310f, 191f, 310f, 208f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(75, 165, 40, 70);
+            rect(75f, 165f, 40f, 70f);
             strokeWeight(1);
             if (linePOS <= 0) {
                 lineUP = false;
@@ -1023,31 +1023,31 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(30, 110, 340, 210);
+            rect(30f, 110f, 340f, 210f);
             fill(128, 86, 2);
-            line(30, 180, 280, 180);
-            line(220, 250, 350, 250);
-            line(220, 250, 220, 230);
-            line(220, 180, 220, 200);
-            line(110, 225, 220, 225);
-            line(90, 205, 220, 205);
-            line(110, 225, 110, 300);
-            line(90, 205, 90, 300);
-            line(50, 300, 90, 300);
-            line(50, 235, 50, 300);
-            line(50, 235, 60, 235);
-            line(60, 235, 60, 205);
-            line(30, 205, 60, 205);
-            line(110, 300, 350, 300);
-            line(350, 300, 350, 250);
+            line(30f, 180f, 280f, 180f);
+            line(220f, 250f, 350f, 250f);
+            line(220f, 250f, 220f, 230f);
+            line(220f, 180f, 220f, 200f);
+            line(110f, 225f, 220f, 225f);
+            line(90f, 205f, 220f, 205f);
+            line(110f, 225f, 110f, 300f);
+            line(90f, 205f, 90f, 300f);
+            line(50f, 300f, 90f, 300f);
+            line(50f, 235f, 50f, 300f);
+            line(50f, 235f, 60f, 235f);
+            line(60f, 235f, 60f, 205f);
+            line(30f, 205f, 60f, 205f);
+            line(110f, 300f, 350f, 300f);
+            line(350f, 300f, 350f, 250f);
             noStroke();
-            rect(113, 253, 235, 45);
-            rect(113, 228, 105, 25);
-            rect(63, 183, 25, 115);
-            rect(33, 183, 185, 20);
-            rect(53, 238, 25, 60);
+            rect(113f, 253f, 235f, 45f);
+            rect(113f, 228f, 105f, 25f);
+            rect(63f, 183f, 25f, 115f);
+            rect(33f, 183f, 185f, 20f);
+            rect(53f, 238f, 25f, 60f);
             fill(0, 0, 0, 100);
-            rect(35, 115, 80, 61);
+            rect(35f, 115f, 80f, 61f);
             dX1 = 35;
             dX2 = 115;
             dY1 = 115;
@@ -1065,7 +1065,7 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("There are some bugs in this hole, sorry.", 105, 340);
+                text("There are some bugs in this hole, sorry.", 105f, 340f);
             }
             //Boundaries
             if (ballPOSy >= 315) {
@@ -1176,15 +1176,15 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 100, 300, 200);
+            rect(50f, 100f, 300f, 200f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(75, 165, 40, 70);
+            rect(75f, 165f, 40f, 70f);
             strokeWeight(1);
             fill(3, 148, 8);
-            rect(150, 103, 80, 195);
+            rect(150f, 103f, 80f, 195f);
             fill(13, 184, 4);
-            rect(270, 103, 63, 195);
+            rect(270f, 103f, 63f, 195f);
             for (int aRep = 0; aRep < 10; aRep += 1) {
                 stroke(0, 125, 0);
                 line(155, 110 + aRep * 20, 225, 105 + aRep * 20);
@@ -1210,15 +1210,15 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("This hole introduces slopes. The arrows point to the bottom\nwhile the large end is at the top.", 52, 80);
+                text("This hole introduces slopes. The arrows point to the bottom\nwhile the large end is at the top.", 52f, 80f);
                 stroke(255, 255, 0, textDiminish);
                 strokeWeight(3);
-                line(50, 350, 150, 350);
-                line(150, 350, 230, 325);
-                line(230, 325, 270, 325);
-                line(270, 325, 333, 350);
-                line(333, 350, 350, 350);
-                text("<SIDE VIEW", 300, 370);
+                line(50f, 350f, 150f, 350f);
+                line(150f, 350f, 230f, 325f);
+                line(230f, 325f, 270f, 325f);
+                line(270f, 325f, 333f, 350f);
+                line(333f, 350f, 350f, 350f);
+                text("<SIDE VIEW", 300f, 370f);
             }
             //Boundaries
             if (ballPOSy >= 295) {
@@ -1250,11 +1250,11 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(35, 100, 330, 250);
-            line(35, 290, 291, 290);
+            rect(35f, 100f, 330f, 250f);
+            line(35f, 290f, 291f, 290f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(41, 145, 40, 100);
+            rect(41f, 145f, 40f, 100f);
             dX1 = 41;
             dX2 = 81;
             dY1 = 145;
@@ -1263,31 +1263,31 @@ class GameCode {
             holePOSy = 320;
             strokeWeight(1);
             fill(3, 148, 8);
-            rect(85, 168, 70, 120);
-            rect(155, 228, 70, 60);
-            rect(225, 168, 70, 120);
+            rect(85f, 168f, 70f, 120f);
+            rect(155f, 228f, 70f, 60f);
+            rect(225f, 168f, 70f, 120f);
             fill(13, 184, 4);
-            rect(85, 103, 70, 60);
-            rect(155, 103, 70, 120);
-            rect(225, 103, 70, 60);
-            rect(295, 103, 68, 190);
+            rect(85f, 103f, 70f, 60f);
+            rect(155f, 103f, 70f, 120f);
+            rect(225f, 103f, 70f, 60f);
+            rect(295f, 103f, 68f, 190f);
             for (int aRep = 0; aRep < 3; aRep += 1) {
                 stroke(90, 190, 90);
-                line(95 + aRep * 20, 110, 100 + aRep * 20, 157);
-                line(105 + aRep * 20, 110, 100 + aRep * 20, 157);
-                line(165 + aRep * 20, 110, 170 + aRep * 20, 217);
-                line(175 + aRep * 20, 110, 170 + aRep * 20, 217);
-                line(235 + aRep * 20, 110, 240 + aRep * 20, 157);
-                line(245 + aRep * 20, 110, 240 + aRep * 20, 157);
-                line(305 + aRep * 20, 110, 310 + aRep * 20, 288);
-                line(315 + aRep * 20, 110, 310 + aRep * 20, 288);
+                line(95f + aRep * 20f, 110f, 100f + aRep * 20f, 157f);
+                line(105f + aRep * 20f, 110f, 100f + aRep * 20f, 157f);
+                line(165f + aRep * 20f, 110f, 170f + aRep * 20f, 217f);
+                line(175f + aRep * 20f, 110f, 170f + aRep * 20f, 217f);
+                line(235f + aRep * 20f, 110f, 240f + aRep * 20f, 157f);
+                line(245f + aRep * 20f, 110f, 240f + aRep * 20f, 157f);
+                line(305f + aRep * 20f, 110f, 310f + aRep * 20f, 288f);
+                line(315f + aRep * 20f, 110f, 310f + aRep * 20f, 288f);
                 stroke(0, 125, 0);
-                line(95 + aRep * 20, 282, 100 + aRep * 20, 175);
-                line(105 + aRep * 20, 282, 100 + aRep * 20, 175);
-                line(165 + aRep * 20, 282, 170 + aRep * 20, 235);
-                line(175 + aRep * 20, 282, 170 + aRep * 20, 235);
-                line(235 + aRep * 20, 282, 240 + aRep * 20, 175);
-                line(245 + aRep * 20, 282, 240 + aRep * 20, 175);
+                line(95f + aRep * 20f, 282f, 100f + aRep * 20f, 175f);
+                line(105f + aRep * 20f, 282f, 100f + aRep * 20f, 175f);
+                line(165f + aRep * 20f, 282f, 170f + aRep * 20f, 235f);
+                line(175f + aRep * 20f, 282f, 170f + aRep * 20f, 235f);
+                line(235f + aRep * 20f, 282f, 240f + aRep * 20f, 175f);
+                line(245f + aRep * 20f, 282f, 240f + aRep * 20f, 175f);
             }
             //Boundaries
             if (ballPOSy >= 345) {
@@ -1343,28 +1343,28 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 80, 300, 260);
-            line(50, 160, 160, 160);
-            line(240, 160, 350, 160);
+            rect(50f, 80f, 300f, 260f);
+            line(50f, 160f, 160f, 160f);
+            line(240f, 160f, 350f, 160f);
             fill(128, 86, 2);
-            rect(140, 240, 20, 20);
-            rect(240, 240, 20, 100);
-            rect(115, 265, 20, 20);
+            rect(140f, 240f, 20f, 20f);
+            rect(240f, 240f, 20f, 100f);
+            rect(115f, 265f, 20f, 20f);
             stroke(0, 158, 0);
             stroke(100);
-            line(165, 160, 165, 258);
-            line(235, 160, 235, 258);
+            line(165f, 160f, 165f, 258f);
+            line(235f, 160f, 235f, 258f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(55, 85, 70, 71);
-            rect(276, 85, 70, 71);
+            rect(55f, 85f, 70f, 71f);
+            rect(276f, 85f, 70f, 71f);
             strokeWeight(1);
             fill(3, 148, 8);
-            rect(168, 157, 65, 30);
+            rect(168f, 157f, 65f, 30f);
             fill(13, 184, 4);
-            rect(168, 231, 65, 30);
-            rect(120, 163, 43, 75);
-            rect(263, 238, 85, 82);
+            rect(168f, 231f, 65f, 30f);
+            rect(120f, 163f, 43f, 75f);
+            rect(263f, 238f, 85f, 82f);
             if (mouseX <= 125) {
                 dX1 = 55;
                 dX2 = 125;
@@ -1387,28 +1387,28 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("There are 2 drop zones in this hole; use which ever you like.", 50, 75);
-                text("There's also a bridge. Go under it to get to the hole", 80, 360);
+                text("There are 2 drop zones in this hole; use which ever you like.", 50f, 75f);
+                text("There's also a bridge. Go under it to get to the hole", 80f, 360f);
             }
             for (int  bRep = 0; bRep < 3; bRep += 1) {
                 stroke(0, 125, 0);
-                line(175 + bRep * 20, 183, 180 + bRep * 20, 160);
-                line(185 + bRep * 20, 183, 180 + bRep * 20, 160);
+                line(175f + bRep * 20f, 183f, 180f + bRep * 20f, 160f);
+                line(185f + bRep * 20f, 183f, 180f + bRep * 20f, 160f);
                 stroke(90, 190, 90);
-                line(175 + bRep * 20, 235, 180 + bRep * 20, 258);
-                line(185 + bRep * 20, 235, 180 + bRep * 20, 258);
+                line(175f + bRep * 20f, 235f, 180f + bRep * 20f, 258f);
+                line(185f + bRep * 20f, 235f, 180f + bRep * 20f, 258f);
             }
             for (int  cRep = 0; cRep < 4; cRep += 1) {
                 stroke(90, 190, 90);
-                line(269 + cRep * 20, 245, 274 + cRep * 20, 313);
-                line(279 + cRep * 20, 245, 274 + cRep * 20, 313);
-                line(125, 168 + cRep * 18, 156, 172 + cRep * 18);
-                line(125, 176 + cRep * 18, 156, 172 + cRep * 18);
+                line(269f + cRep * 20f, 245f, 274f + cRep * 20f, 313f);
+                line(279f + cRep * 20f, 245f, 274f + cRep * 20f, 313f);
+                line(125f, 168f + cRep * 18f, 156f, 172f + cRep * 18f);
+                line(125f, 176f + cRep * 18f, 156f, 172f + cRep * 18f);
             }
             for (int  aRep = 0; aRep < 10; aRep += 1) {
                 stroke(0, 0, 0, 15 * aRep);
-                line(153 + aRep, 163, 153 + aRep, 237);
-                line(247 - aRep, 163, 247 - aRep, 237);
+                line(153f + aRep, 163f, 153f + aRep, 237f);
+                line(247f - aRep, 163f, 247f - aRep, 237f);
             }
             //Boundaries
             if (ballPOSy >= 335) {
@@ -1561,21 +1561,21 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 90, 300, 220);
+            rect(50f, 90f, 300f, 220f);
             fill(128, 86, 2);
-            rect(50, 90, 55, 75);
-            rect(50, 235, 55, 75);
-            rect(295, 90, 55, 75);
-            rect(295, 235, 55, 75);
-            rect(165, 143, 70, 115);
+            rect(50f, 90f, 55f, 75f);
+            rect(50f, 235f, 55f, 75f);
+            rect(295f, 90f, 55f, 75f);
+            rect(295f, 235f, 55f, 75f);
+            rect(165f, 143f, 70f, 115f);
             noStroke();
             fill(107, 72, 1);
-            rect(48, 88, 55, 75);
-            rect(48, 238, 55, 75);
-            rect(298, 88, 55, 75);
-            rect(298, 238, 55, 75);
+            rect(48f, 88f, 55f, 75f);
+            rect(48f, 238f, 55f, 75f);
+            rect(298f, 88f, 55f, 75f);
+            rect(298f, 238f, 55f, 75f);
             fill(0, 0, 0, 100);
-            rect(55, 170, 40, 61);
+            rect(55f, 170f, 40f, 61f);
             dX1 = 55;
             dX2 = 95;
             dY1 = 170;
@@ -1594,24 +1594,24 @@ class GameCode {
                 linePOS += 1.5;
             }
             fill(13, 184, 4);
-            rect(108, 233, 55, 28);
-            rect(238, 141, 55, 28);
-            rect(238, 170, 55, 64);
+            rect(108f, 233f, 55f, 28f);
+            rect(238f, 141f, 55f, 28f);
+            rect(238f, 170f, 55f, 64f);
             fill(3, 148, 8);
-            rect(108, 141, 55, 28);
-            rect(238, 233, 55, 28);
+            rect(108f, 141f, 55f, 28f);
+            rect(238f, 233f, 55f, 28f);
             strokeWeight(1);
             for (int  bRep = 0; bRep < 3; bRep += 1) {
                 stroke(0, 125, 0);
-                line(110 + bRep * 20, 168, 115 + bRep * 20, 143);
-                line(120 + bRep * 20, 168, 115 + bRep * 20, 143);
-                line(240 + bRep * 20, 259, 245 + bRep * 20, 235);
-                line(250 + bRep * 20, 259, 245 + bRep * 20, 235);
+                line(110f + bRep * 20f, 168f, 115f + bRep * 20f, 143f);
+                line(120f + bRep * 20f, 168f, 115f + bRep * 20f, 143f);
+                line(240f + bRep * 20f, 259f, 245f + bRep * 20f, 235f);
+                line(250f + bRep * 20f, 259f, 245f + bRep * 20f, 235f);
                 stroke(90, 190, 90);
-                line(110 + bRep * 20, 235, 115 + bRep * 20, 259);
-                line(120 + bRep * 20, 235, 115 + bRep * 20, 259);
-                line(240 + bRep * 20, 143, 245 + bRep * 20, 168);
-                line(250 + bRep * 20, 143, 245 + bRep * 20, 168);
+                line(110f + bRep * 20f, 235f, 115f + bRep * 20f, 259f);
+                line(120f + bRep * 20f, 235f, 115f + bRep * 20f, 259f);
+                line(240f + bRep * 20f, 143f, 245f + bRep * 20f, 168f);
+                line(250f + bRep * 20f, 143f, 245f + bRep * 20f, 168f);
                 line(240, 175 + bRep * 20, 288, 180 + bRep * 20);
                 line(240, 185 + bRep * 20, 288, 180 + bRep * 20);
             }
@@ -1767,17 +1767,17 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 100, 300, 200);
+            rect(50f, 100f, 300f, 200f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(75, 165, 40, 70);
+            rect(75f, 165f, 40f, 70f);
             strokeWeight(2);
             fill(199, 190, 91);
-            rect(140, 210, 40, 88);
-            rect(220, 103, 40, 88);
+            rect(140f, 210f, 40f, 88f);
+            rect(220f, 103f, 40f, 88f);
             stroke(163, 163, 95);
-            arc(160, 210, 40, 40, 180, 360);
-            arc(240, 190, 40, 40, 0, 180);
+            arc(160f, 210f, 40f, 40f, 180f, 360f);
+            arc(240f, 190f, 40f, 40f, 0f, 180f);
             line(140, 210, 140, 296);
             line(180, 210, 180, 296);
             line(220, 105, 220, 190);
@@ -1792,7 +1792,7 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("This hole contains bunkers. Try to avoid them.", 90, 90);
+                text("This hole contains bunkers. Try to avoid them.", 90f, 90f);
             }
             holePOSx = 300;
             holePOSy = 200;
@@ -1836,23 +1836,23 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 110, 300, 180);
+            rect(50f, 110f, 300f, 180f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(55, 215, 52, 71);
+            rect(55f, 215f, 52f, 71f);
             fill(13, 184, 4);
-            rect(53, 113, 295, 75);
+            rect(53f, 113f, 295f, 75f);
             stroke(173, 116, 2);
             fill(92, 62, 1);
-            rect(195, 110, 10, 75);
+            rect(195f, 110f, 10f, 75f);
             noStroke();
             strokeWeight(2);
             fill(199, 190, 91);
-            rect(110, 230, 190, 58);
-            rect(130, 210, 150, 78);
+            rect(110f, 230f, 190f, 58f);
+            rect(130f, 210f, 150f, 78f);
             stroke(163, 163, 95);
-            arc(130, 230, 40, 40, 180, 270);
-            arc(280, 230, 40, 40, 270, 360);
+            arc(130f, 230f, 40f, 40f, 180f, 270f);
+            arc(280f, 230f, 40f, 40f, 270f, 360f);
             line(110, 230, 110, 286);
             line(300, 230, 300, 286);
             line(130, 210, 280, 210);
@@ -1926,25 +1926,25 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 100, 300, 200);
+            rect(50f, 100f, 300f, 200f);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(75, 165, 40, 70);
+            rect(75f, 165f, 40f, 70f);
             strokeWeight(2);
             fill(199, 190, 91);
-            rect(170, 285, 178, 13);
-            rect(190, 265, 138, 33);
-            rect(325, 103, 23, 195);
-            rect(170, 103, 178, 13);
-            rect(190, 103, 138, 33);
-            rect(305, 245, 20, 20);
-            rect(305, 136, 20, 20);
+            rect(170f, 285f, 178f, 13f);
+            rect(190f, 265f, 138f, 33f);
+            rect(325f, 103f, 23f, 195f);
+            rect(170f, 103f, 178f, 13f);
+            rect(190f, 103f, 138f, 33f);
+            rect(305f, 245f, 20f, 20f);
+            rect(305f, 136f, 20f, 20f);
             stroke(163, 163, 95);
-            arc(190, 285, 40, 40, 180, 270);
-            arc(190, 116, 40, 40, 90, 180);
+            arc(190f, 285f, 40f, 40f, 180f, 270f);
+            arc(190f, 116f, 40f, 40f, 90f, 180f);
             fill(30, 168, 2);
-            arc(305, 156, 40, 40, 270, 360);
-            arc(305, 245, 40, 40, 0, 90);
+            arc(305f, 156f, 40f, 40f, 270f, 360f);
+            arc(305f, 245f, 40f, 40f, 0f, 90f);
             line(170, 285, 170, 296);
             line(170, 104, 170, 116);
             line(190, 265, 302, 265);
@@ -1952,13 +1952,13 @@ class GameCode {
             line(325, 156, 325, 245);
             fill(0, 115, 220);
             noStroke();
-            rect(170, 180, 125, 40);
-            rect(190, 160, 85, 80);
+            rect(170f, 180f, 125f, 40f);
+            rect(190f, 160f, 85f, 80f);
             stroke(80, 150, 205);
-            arc(190, 180, 40, 40, 180, 270);
-            arc(275, 180, 40, 40, 270, 360);
-            arc(275, 220, 40, 40, 0, 90);
-            arc(190, 220, 40, 40, 90, 180);
+            arc(190f, 180f, 40f, 40f, 180f, 270f);
+            arc(275f, 180f, 40f, 40f, 270f, 360f);
+            arc(275f, 220f, 40f, 40f, 0f, 90f);
+            arc(190f, 220f, 40f, 40f, 90f, 180f);
             line(170, 180, 170, 220);
             line(190, 160, 275, 160);
             line(295, 180, 295, 220);
@@ -1973,7 +1973,7 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Don't putt your ball into the water", 120, 90);
+                text("Don't putt your ball into the water", 120f, 90f);
             }
             holePOSx = 310;
             holePOSy = 200;
@@ -2050,7 +2050,7 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 50, 300, 300);
+            rect(50f, 50f, 300f, 300f);
             line(50, 100, 300, 100);
             line(300, 100, 300, 300);
             line(100, 300, 300, 300);
@@ -2062,20 +2062,20 @@ class GameCode {
             line(150, 200, 200, 200);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(55, 55, 40, 40);
+            rect(55f, 55f, 40f, 40f);
             fill(13, 184, 4);
-            rect(97, 53, 205, 45);
-            rect(53, 103, 199, 45);
-            rect(103, 153, 100, 45);
-            rect(303, 53, 45, 250);
-            rect(253, 103, 45, 150);
-            rect(204, 153, 44, 50);
+            rect(97f, 53f, 205f, 45f);
+            rect(53f, 103f, 199f, 45f);
+            rect(103f, 153f, 100f, 45f);
+            rect(303f, 53f, 45f, 250f);
+            rect(253f, 103f, 45f, 150f);
+            rect(204f, 153f, 44f, 50f);
             fill(3, 148, 8);
-            rect(53, 148, 45, 200);
-            rect(103, 198, 45, 100);
-            rect(203, 203, 45, 45);
-            rect(99, 303, 249, 45);
-            rect(149, 253, 149, 45);
+            rect(53f, 148f, 45f, 200f);
+            rect(103f, 198f, 45f, 100f);
+            rect(203f, 203f, 45f, 45f);
+            rect(99f, 303f, 249f, 45f);
+            rect(149f, 253f, 149f, 45f);
             dX1 = 55;
             dX2 = 95;
             dY1 = 55;
@@ -2274,23 +2274,23 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 100, 300, 200);
+            rect(50f, 100f, 300f, 200f);
             noStroke();
             fill(13, 184, 4);
-            rect(162, 103, 15, 195);
-            rect(202, 103, 15, 195);
-            rect(242, 103, 15, 195);
+            rect(162f, 103f, 15f, 195f);
+            rect(202f, 103f, 15f, 195f);
+            rect(242f, 103f, 15f, 195f);
             fill(3, 148, 8);
-            rect(142, 103, 15, 195);
-            rect(182, 103, 15, 195);
-            rect(222, 103, 15, 195);
-            rect(53, 153, 45, 70);
-            rect(304, 147, 44, 130);
+            rect(142f, 103f, 15f, 195f);
+            rect(182f, 103f, 15f, 195f);
+            rect(222f, 103f, 15f, 195f);
+            rect(53f, 153f, 45f, 70f);
+            rect(304f, 147f, 44f, 130f);
             fill(0, 0, 0, 100);
-            rect(55, 225, 38, 71);
+            rect(55f, 225f, 38f, 71f);
             fill(0, 115, 220);
-            rect(98, 103, 30, 195);
-            rect(272, 103, 30, 195);
+            rect(98f, 103f, 30f, 195f);
+            rect(272f, 103f, 30f, 195f);
             stroke(80, 150, 205);
             strokeWeight(2);
             line(98, 104, 98, 296);
@@ -2305,8 +2305,8 @@ class GameCode {
             line(267, 275 - linePOS, 307, 275 - linePOS);
             noStroke();
             fill(125);
-            rect(98, 108 + linePOS, 30, 15);
-            rect(272, 278 - linePOS, 30, 15);
+            rect(98f, 108f + linePOS, 30f, 15f);
+            rect(272f, 278f - linePOS, 30f, 15f);
             strokeWeight(5);
             stroke(173, 116, 2);
             line(97, 180, 97, 298);
@@ -2495,20 +2495,20 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 65, 230, 100);
-            rect(50, 230, 250, 120);
+            rect(50f, 65f, 230f, 100f);
+            rect(50f, 230f, 250f, 120f);
             line(150, 280, 220, 280);
             line(150, 300, 220, 300);
             fill(128, 86, 2);
-            rect(200, 230, 25, 50);
-            rect(200, 300, 25, 50);
-            rect(225, 230, 75, 25);
-            rect(225, 325, 75, 25);
+            rect(200f, 230f, 25f, 50f);
+            rect(200f, 300f, 25f, 50f);
+            rect(225f, 230f, 75f, 25f);
+            rect(225f, 325f, 75f, 25f);
             noStroke();
-            rect(205, 233, 50, 20);
-            rect(205, 328, 50, 20);
+            rect(205f, 233f, 50f, 20f);
+            rect(205f, 328f, 50f, 20f);
             fill(0, 0, 0, 100);
-            rect(55, 255, 40, 70);
+            rect(55f, 255f, 40f, 70f);
             strokeWeight(2);
             fill(175);
             stroke(125);
@@ -2550,8 +2550,8 @@ class GameCode {
             noStroke();
             strokeWeight(1);
             fill(3, 148, 8);
-            rect(148, 283, 80, 15);
-            rect(140, 68, 60, 95);
+            rect(148f, 283f, 80f, 15f);
+            rect(140f, 68f, 60f, 95f);
             stroke(0, 125, 0);
             line(228, 285, 150, 290);
             line(228, 295, 150, 290);
@@ -2576,7 +2576,7 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Go into one of the holes to send the ball out the other side", 60, 60);
+                text("Go into one of the holes to send the ball out the other side", 60f, 60f);
             }
             dX1 = 55;
             dX2 = 95;
@@ -2760,28 +2760,28 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 75, 300, 250);
-            rect(284, 325, 66, 100);
+            rect(50f, 75f, 300f, 250f);
+            rect(284f, 325f, 66f, 100f);
             line(284, 260, 315, 260);
             line(315, 120, 315, 260);
             fill(133, 89, 2);
-            rect(99, 75, 185, 185);
+            rect(99f, 75f, 185f, 185f);
             noStroke();
             fill(30, 168, 2);
-            rect(287, 320, 61, 10);
+            rect(287f, 320f, 61f, 10f);
             fill(125);
-            rect(97, 78, 100, 50);
-            rect(192, 208, 95, 50);
+            rect(97f, 78f, 100f, 50f);
+            rect(192f, 208f, 95f, 50f);
             float cX = 192;
             float cY = 168;
             float cD = 180;
             fill(13, 184, 4);
-            rect(287, 78, 30, 40);
-            rect(318, 78, 30, 184);
-            rect(287, 263, 60, 140);
-            rect(53, 263, 44, 60);
+            rect(287f, 78f, 30f, 40f);
+            rect(318f, 78f, 30f, 184f);
+            rect(287f, 263f, 60f, 140f);
+            rect(53f, 263f, 44f, 60f);
             fill(3, 148, 8);
-            rect(287, 118, 26, 140);
+            rect(287f, 118f, 26f, 140f);
             strokeWeight(1);
             for (int  bRep = 0; bRep < 30; bRep += 15) {
                 stroke(0, 125, 0);
@@ -2826,12 +2826,12 @@ class GameCode {
             for (int  bRep = 0; bRep < 16; bRep += 1) {
                 line((float) (cos(bRep * 22.5 - 90) * 90 + cX), (float) (sin(bRep * 22.5 - 90 ) * 90 + cY), cX, cY);
                 fill(255);
-                text(FortuneString[bRep], (float) (cos(bRep * 22.5 - 80) * 70 + cX), (float) (sin(bRep * 22.5 - 80) * 70 + cY));
+                text(FortuneString[bRep], (float) (cos(bRep * 22.5f - 80f) * 70f + cX), (float) (sin(bRep * 22.5f - 80f) * 70f + cY));
             }
             textAlign(LEFT, BOTTOM);
             noStroke();
             fill(0, 0, 0, 100);
-            rect(55, 80, 40, 70);
+            rect(55f, 80f, 40f, 70f);
             strokeWeight(1);
             if (tips) {
                 if (textDiminish > 0) {
@@ -2843,7 +2843,7 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Putt your ball into the wheel or play it safe and go around", 63, 70);
+                text("Putt your ball into the wheel or play it safe and go around", 63f, 70f);
             }
             dX1 = 55;
             dX2 = 95;
@@ -2965,7 +2965,7 @@ class GameCode {
                     textSize(20);
                     delayTimer += 3;
                     fill(255, 255, 255, 255 - delayTimer);
-                    text("Prize:  " + FortuneString[selection], 200, 70);
+                    text("Prize:  " + FortuneString[selection], 200f, 70f);
                     textAlign(LEFT, BOTTOM);
                     if (delayTimer >= 255) {
                         shotUP = true;
@@ -2991,12 +2991,12 @@ class GameCode {
             speedY = 0;
             resetShot = false;
             fill(51, 39, 5);
-            rect(eX + 10, eY, 180, 60);
-            rect(eX, eY + 10, 200, 40);
-            ellipse(eX + 10, eY + 10, 20, 20);
-            ellipse(eX + 190, eY + 10, 20, 20);
-            ellipse(eX + 10, eY + 50, 20, 20);
-            ellipse(eX + 190, eY + 50, 20, 20);
+            rect(eX + 10f, eY, 180f, 60f);
+            rect(eX, eY + 10f, 200f, 40f);
+            ellipse(eX + 10f, eY + 10f, 20f, 20f);
+            ellipse(eX + 190f, eY + 10f, 20f, 20f);
+            ellipse(eX + 10f, eY + 50f, 20f, 20f);
+            ellipse(eX + 190f, eY + 50f, 20f, 20f);
             if ((mouseIsPressed || mouseJustReleased) && mouseX > eX + 20 && mouseX < eX + 180 && mouseY > eY && mouseY < eY + 60) {
                 fill(150);
                 if (mouseJustReleased) {
@@ -3052,8 +3052,8 @@ class GameCode {
                 fill(60);
             }
             textSize(32);
-            text("Next Hole", eX + 15, eY + 48);
-            triangle(eX + 165, eY + 40, eX + 165, eY + 20, eX + 180, eY + 30);
+            text("Next Hole", eX + 15f, eY + 48f);
+            triangle(eX + 165f, eY + 40f, eX + 165f, eY + 20f, eX + 180f, eY + 30f);
             textSize(12);
 
         }
@@ -3082,7 +3082,7 @@ class GameCode {
             }
             fill(0);
             if (!titleScreen && !endGame && !ScoreDisplay) {
-                text(mouseIsPressed ? "drop" : "", mouseX - 12, mouseY - 30);
+                text(mouseIsPressed ? "drop" : "", mouseX - 12f, mouseY - 30f);
                 if (mouseJustReleased) {
                     drop = false;
                 }
@@ -3092,8 +3092,8 @@ class GameCode {
             if (resetShot && !water && !titleScreen && !endGame && (mouseIsPressed || mouseJustReleased)) {
                 stroke(0);
                 fill(0);
-                ellipse(mouseX - 5, mouseY, 10, 4);
-                line(mouseX - 8, mouseY, mouseX - 11, mouseY - 20);
+                ellipse(mouseX - 5f, mouseY, 10f, 4f);
+                line(mouseX - 8f, mouseY, mouseX - 11f, mouseY - 20f);
                 shot = true;
                 if (mouseX > ballPOSx) {
                     shotLEFT = true;
@@ -3183,7 +3183,7 @@ class GameCode {
         }
         fill(185);
         noStroke();
-        rect(0, dY - 80, 400, 80);
+        rect(0f, dY - 80f, 400f, 80f);
         fill(175);
         quad(0, dY - 80, 0, dY, 5, dY - 5, 5, dY - 75);
         quad(400, dY - 80, 400, dY, 395, dY - 5, 395, dY - 75);
@@ -3202,8 +3202,8 @@ class GameCode {
         noFill();
         //Restart
         if (!titleScreen && !endGame) {
-            arc(18, dY + 18, 22, 22, 120, 240);
-            arc(18, dY + 18, 22, 22, -60, 60);
+            arc(18f, dY + 18f, 22f, 22f, 120f, 240f);
+            arc(18f, dY + 18f, 22f, 22f, -60f, 60f);
             noStroke();
             if (Level18 && !endGame) {
                 fill(255, 0, 0);
@@ -3218,7 +3218,7 @@ class GameCode {
         if ((mouseIsPressed || mouseJustReleased) && dist(mouseX, mouseY, 18, dY + 18) <= 11 && !titleScreen && !Level18) {
             fill(0);
             if (!drop) {
-                text("Restart Hole", 5, dY + 42);
+                text("Restart Hole", 5f, dY + 42f);
             }
             if (mouseJustReleased) {
                 drop = true;
@@ -3252,29 +3252,29 @@ class GameCode {
         }
         if (!titleScreen && !endGame) {
             if (restart > 0) {
-                text(restart, 35, dY + 23);
+                text(restart, 35f, dY + 23f);
             }
             textSize(12);
-            text("Hole " + (LevelSelect + 1), 45, dY + 18);
-            text("Par  " + Par[LevelSelect], 280, dY + 18);
-            text("Strokes " + LS[LevelSelect], 330, dY + 18);
+            text("Hole " + (LevelSelect + 1), 45f, dY + 18f);
+            text("Par  " + Par[LevelSelect], 280f, dY + 18f);
+            text("Strokes " + LS[LevelSelect], 330f, dY + 18f);
         }
         noFill();
         stroke(100);
         strokeWeight(2);
-        rect(15, dY - 70, 306, 60);
-        line(15, dY - 40, 321, dY - 40);
+        rect(15f, dY - 70f, 306, 60f);
+        line(15f, dY - 40f, 321f, dY - 40f);
         stroke(100);
-        rect(362, dY - 70, 30, 30);
+        rect(362f, dY - 70f, 30f, 30f);
         for(int  lRep = 32; lRep < 311; lRep += 17) {
             line(lRep, dY - 70, lRep, dY - 11);
         }
         textSize(18);
         fill(75);
         textAlign(CENTER, BOTTOM);
-        text(ParSum[LevelSelect], 336, dY - 15);
-        text(LST, 336, dY - 45);
-        text(LST - ParSum[LevelSelect],  377, dY - 45);
+        text(ParSum[LevelSelect], 336f, dY - 15f);
+        text(LST, 336f, dY - 45f);
+        text(LST - ParSum[LevelSelect],  377f, dY - 45f);
         textAlign(LEFT, BOTTOM);
         for(int sRep = 0; sRep < 18; sRep += 1) {
             if (LevelSelect == sRep) {
@@ -3283,37 +3283,37 @@ class GameCode {
                 fill(75);
             }
             if (LS[sRep] > 0) {
-                text(LS[sRep], 19 + sRep * 17, dY - 45);
+                text(LS[sRep], 19f + sRep * 17f, dY - 45f);
             }
             fill(75);
             if (LevelSelect >= sRep) {
-                text(Par[sRep], 19 + sRep * 17, dY - 15);
+                text(Par[sRep], 19f + sRep * 17f, dY - 15f);
             }
             textSize(9);
-            text(sRep + 1, 19 + sRep * 17, dY - 70);
+            text(sRep + 1, 19f + sRep * 17f, dY - 70f);
             textSize(18);
         }
         noFill();
         stroke(255, 0, 0);
-        rect(15 + LevelSelect * 17, dY - 70, 17, 60);
+        rect(15f + LevelSelect * 17f, dY - 70f, 17f, 60f);
         stroke(0, 0, 255);
-        rect(321, dY - 70, 30, 60);
+        rect(321f, dY - 70f, 30f, 60f);
         line(321, dY - 40, 350, dY - 40);
         fill(75);
         textSize(9);
         pushMatrix();
         translate(12, dY - 32);
         rotate(-90);
-        text("STROKES", 0, 0);
-        text("PAR", -23, 0);
+        text("STROKES", 0f, 0f);
+        text("PAR", -23f, 0f);
         popMatrix();
-        text("SCORE", 361, dY - 28);
+        text("SCORE", 361f, dY - 28f);
         strokeWeight(1);
         textSize(13);
 
 
         fill(255, 255, 255, textDiminishB);
-        text(alertText, 20, 380);
+        text(alertText, 20f, 380f);
         if (textDiminishB > 0) {
             textDiminishB -= 5;
         }
@@ -3432,9 +3432,9 @@ class GameCode {
             translate(200, LevelMenu || tipDisplay ? 20 : 40);
             for (String txt : splashText) {
                 fill(0, 0, 0, 100);
-                text(txt, -textWidth("") / 2 + textWidth(splashPart) + 3, 2);
+                text(txt, -textWidth("") / 2f + textWidth(splashPart) + 3f, 2f);
                 fill((int) (200 - sin(frameCount) * 55), (int) (200 + cos(frameCount) * 55), (int) (200 + sin(frameCount) * 55));
-                text(txt, -textWidth("") / 2 + textWidth(splashPart), 0);
+                text(txt, -textWidth("") / 2f + textWidth(splashPart), 0f);
                 splashPart += txt;
             }
             popMatrix();
@@ -3460,42 +3460,42 @@ class GameCode {
             fill(185);
             quad(170, 323 + tS + tY, 182, 330 + tS + tY, 218, 330 + tS + tY, 230, 323 + tS + tY);
             noStroke();
-            rect(50, 258 + tS + tY, 300, 65);
+            rect(50f, 258f + tS + tY, 300f, 65f);
             fill(175);
-            quad(50, 258 + tS + tY, 55, 263 + tS + tY, 55, 318 + tS + tY, 50, 323 + tS + tY);
-            quad(350, 258 + tS + tY, 345, 263 + tS + tY, 345, 318 + tS + tY, 350, 323 + tS + tY);
+            quad(50f, 258f + tS + tY, 55f, 263f + tS + tY, 55f, 318f + tS + tY, 50f, 323f + tS + tY);
+            quad(350f, 258f + tS + tY, 345f, 263f + tS + tY, 345f, 318f + tS + tY, 350f, 323f + tS + tY);
             fill(200);
-            quad(50, 258 + tS + tY, 55, 263 + tS + tY, 345, 263 + tS + tY, 350, 258 + tS + tY);
-            quad(50, 323 + tS + tY, 55, 318 + tS + tY, 345, 318 + tS + tY, 350, 323 + tS + tY);
+            quad(50f, 258f + tS + tY, 55f, 263f + tS + tY, 345f, 263f + tS + tY, 350f, 258f + tS + tY);
+            quad(50f, 323f + tS + tY, 55f, 318f + tS + tY, 345f, 318f + tS + tY, 350f, 323f + tS + tY);
             textAlign(CENTER, CENTER);
             textSize(10);
             fill(0);
-            text(tipString[tipSelect], 200, 290 + tS + tY);
+            text(tipString[tipSelect], 200f, 290f + tS + tY);
 
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 80 - tS - tY, 300, 240 + tS * 2);
+            rect(50f, 80f - tS - tY, 300f, 240f + tS * 2f);
             fill(130, 83, 3);
             strokeWeight(4);
             stroke(59, 39, 11);
-            rect(155, 160 - tS - tY, 90, 30);
-            rect(150, 200 - tS - tY, 100, 30);
+            rect(155f, 160f - tS - tY, 90f, 30f);
+            rect(150f, 200f - tS - tY, 100f, 30f);
             fill(41, 23, 0);
             textSize(52);
-            text("MINI PUTT", 200, 120 - tS - tY);
+            text("MINI PUTT", 200f, 120f - tS - tY);
             textSize(54);
             fill(122, 82, 1);
-            text("MINI PUTT", 200, 120 - tS - tY);
+            text("MINI PUTT", 200f, 120f - tS - tY);
             fill(255);
             textSize(56);
-            text("MINI PUTT", 200, 120 - tS - tY);
+            text("MINI PUTT", 200f, 120f - tS - tY);
             textAlign(LEFT, BOTTOM);
             textSize(12);
             fill(168, 113, 2);
-            text("Originally created by Matt", 5, 395);
+            text("Originally created by Matt", 5f, 395f);
             textAlign(RIGHT, BOTTOM);
-            text("on Khan Academy", 395, 395);
+            text("on Khan Academy", 395f, 395f);
             textAlign(CENTER, CENTER);
             if ((mouseIsPressed || mouseJustReleased) && mouseX >= 155 && mouseX <= 245 && mouseY >= 160 - tS - tY && mouseY <= 190 - tS - tY) {
                 if (mouseJustReleased) {
@@ -3508,9 +3508,9 @@ class GameCode {
                 fill(179, 135, 69);
             }
             textSize(19);
-            text("START", 191, 175 - tS - tY);
+            text("START", 191f, 175f - tS - tY);
             noStroke();
-            triangle(227, 168 - tS - tY, 240, 175 - tS - tY, 227, 182 - tS - tY);
+            triangle(227f, 168f - tS - tY, 240f, 175f - tS - tY, 227f, 182f - tS - tY);
             if ((mouseIsPressed || mouseJustReleased) && mouseX >= 133 && mouseX <= 150 && mouseY >= 203 - tS - tY && mouseY <= 227 - tS - tY) {
                 fill(255);
                 if (mouseJustReleased) {
@@ -3520,7 +3520,7 @@ class GameCode {
             } else {
                 fill(130, 83, 3);
             }
-            triangle(145, 207 - tS - tY, 145, 222 - tS - tY, 138, 215 - tS - tY);
+            triangle(145f, 207f - tS - tY, 145f, 222f - tS - tY, 138f, 215f - tS - tY);
             if ((mouseIsPressed || mouseJustReleased) && mouseX >= 250 && mouseX <= 267 && mouseY >= 203 - tS && mouseY <= 227 - tS - tY) {
                 fill(255);
                 if (mouseJustReleased) {
@@ -3530,15 +3530,15 @@ class GameCode {
             } else {
                 fill(130, 83, 3);
             }
-            triangle(255, 207 - tS - tY, 255, 222 - tS - tY, 262, 215 - tS - tY);
+            triangle(255f, 207f - tS - tY, 255, 222f - tS - tY, 262f, 215f - tS - tY);
             fill(255);
-            text("TIPS " + onOffString, 200, 215 - tS - tY);
+            text("TIPS " + onOffString, 200f, 215f - tS - tY);
             int[] code = {6, 1, 4};
             if (!LevelMenu) {
                 for (int  sRep = 0; sRep < 3; sRep += 1) {
                     fill(130, 83, 3);
                     stroke(59, 39, 11);
-                    rect(127 + sRep * 60, 255 - tY, 25, 25);
+                    rect(127f + sRep * 60f, 255f - tY, 25f, 25f);
                     noStroke();
                     if ((mouseIsPressed || mouseJustReleased) && mouseX >= 115 + sRep * 60 && mouseX <= 122 + sRep * 60 && mouseY >= 260 - tY && mouseY <= 275 - tY) {
                         fill(255);
@@ -3568,7 +3568,7 @@ class GameCode {
                     } else {
                         fill(130, 83, 3);
                     }
-                    triangle(122 + sRep * 60, 260 - tY, 122 + sRep * 60, 275 - tY, 115 + sRep * 60, 268 - tY);
+                    triangle(122f + sRep * 60f, 260f - tY, 122f + sRep * 60f, 275f - tY, 115f + sRep * 60f, 268f - tY);
                     if ((mouseIsPressed || mouseJustReleased) && mouseX >= 157 + sRep * 60 && mouseX <= 164 + sRep * 60 && mouseY >= 260 - tY && mouseY <= 275 - tY) {
                         fill(255);
                         if (mouseJustReleased) {
@@ -3579,15 +3579,15 @@ class GameCode {
                     } else {
                         fill(130, 83, 3);
                     }
-                    triangle(157 + sRep * 60, 260 - tY, 157 + sRep * 60, 275 - tY, 164 + sRep * 60, 268 - tY);
+                    triangle(157f + sRep * 60f, 260f - tY, 157f + sRep * 60f, 275f - tY, 164f + sRep * 60f, 268f - tY);
                 }
                 fill(255);
-                text(a, 139, 268 - tY);
-                text(b, 199, 268 - tY);
-                text(c, 259, 268 - tY);
+                text(a, 139f, 268f - tY);
+                text(b, 199f, 268f - tY);
+                text(c, 259f, 268f - tY);
                 fill(130, 83, 3);
                 stroke(59, 39, 11);
-                rect(162, 288 - tY, 76, 30);
+                rect(162f, 288f - tY, 76f, 30f);
                 if ((mouseIsPressed || mouseJustReleased) && mouseX >= 162 && mouseX <= 238 && mouseY >= 288 - tY && mouseY <= 318 - tY) {
                     fill(255);
                     if (a == code[0] && b == code[1] && c == code[2] && mouseJustReleased) {
@@ -3597,16 +3597,16 @@ class GameCode {
                 } else {
                     fill(179, 135, 69);
                 }
-                text("ENTER", 200, 302 - tY);
+                text("ENTER", 200f, 302f - tY);
                 fill(130, 83, 3);
                 textSize(12);
-                text("Unlock Level Select", 200, 244 - tY);
+                text("Unlock Level Select", 200f, 244f - tY);
             } else {
                 for (int  lRep = 0; lRep < 3; lRep += 1) {
                     for (int  mRep = 0; mRep < 6; mRep += 1) {
                         fill(130, 83, 3);
                         stroke(59, 39, 11);
-                        rect(60 + mRep * 50, 215 + lRep * 50 - tY, 30, 30);
+                        rect(60f + mRep * 50f, 215f + lRep * 50f - tY, 30f, 30f);
                         if ((mouseIsPressed || mouseJustReleased) && mouseX >= 60 + mRep * 50 && mouseX <= 90 + mRep * 50 && mouseY >= 215 + lRep * 50 - tY && mouseY <= 245 + lRep * 50 + tY) {
                             fill(255);
                             if (mouseJustReleased) {
@@ -3633,7 +3633,7 @@ class GameCode {
                         } else {
                             fill(179, 135, 69);
                         }
-                        text(mRep + 1 + lRep * 6, 75 + mRep * 50, 230 + lRep * 50 - tY);
+                        text(mRep + 1 + lRep * 6, 75f + mRep * 50f, 230f + lRep * 50f - tY);
                     }
                 }
             }
@@ -3644,24 +3644,24 @@ class GameCode {
             fill(30, 168, 2);
             strokeWeight(5);
             stroke(173, 116, 2);
-            rect(50, 80, 300, 240);
+            rect(50f, 80f, 300f, 240f);
             fill(130, 83, 3);
             strokeWeight(4);
             stroke(59, 39, 11);
-            rect(100, 92, 200, 50);
-            rect(100, 150, 200, 110);
+            rect(100f, 92f, 200f, 50f);
+            rect(100f, 150f, 200f, 110f);
             textSize(12);
-            text((LST - ParSum[LevelSelect] + Bonus) < -11 && restart == 0 ? "The code to unlock\nLevel Select is (6, 1, 4)." : "You must get a score less\nthan -12 with no restarts to be\nshown the Level Select code", 200, 290);
+            text((LST - ParSum[LevelSelect] + Bonus) < -11 && restart == 0 ? "The code to unlock\nLevel Select is (6, 1, 4)." : "You must get a score less\nthan -12 with no restarts to be\nshown the Level Select code", 200f, 290f);
             fill(255);
             textSize(35);
-            text("Game Over", 200, 115);
+            text("Game Over", 200f, 115f);
             textSize(15);
             if (!UsedCommands) {
-                text("Bonus = " + (int) Bonus + "\n(negative is better)", 200, 173);
-                text("Score = " + (int) (LST - ParSum[LevelSelect] + Bonus) + "\n(including bonus)", 200, 212);
-                text("Restarts =  " + restart, 200, 245);
+                text("Bonus = " + (int) Bonus + "\n(negative is better)", 200f, 173f);
+                text("Score = " + (int) (LST - ParSum[LevelSelect] + Bonus) + "\n(including bonus)", 200f, 212f);
+                text("Restarts =  " + restart, 200f, 245f);
             } else {
-                text("No Score; Used Commands", 200, 200);
+                text("No Score; Used Commands", 200f, 200f);
             }
             if (textDiminish > 0) {
                 textDiminish -= 10;
@@ -3671,7 +3671,7 @@ class GameCode {
             if (dY == 0) {
                 fill(255, 255, 0, textDiminish);
                 textSize(12);
-                text("^Score Card^", 200, 15);
+                text("^Score Card^", 200f, 15f);
             }
             textAlign(BOTTOM, LEFT);
         }
