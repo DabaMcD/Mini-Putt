@@ -104,7 +104,7 @@ class GameCode {
     private static int LevelSelect = 0;
     private static boolean ScoreDisplay = false;
     private static float dY = 0;
-    private static float restart = 0;
+    private static int restart = 0;
     private static float linePOS = 0;
     private static boolean lineUP = false;
     private static float grav = 1;
@@ -3252,7 +3252,7 @@ class GameCode {
         }
         if (!titleScreen && !endGame) {
             if (restart > 0) {
-                text(String.valueOf(restart), 35, dY + 23);
+                text(restart, 35, dY + 23);
             }
             textSize(12);
             text("Hole " + (LevelSelect + 1), 45, dY + 18);
@@ -3276,7 +3276,7 @@ class GameCode {
         text(LST, 336, dY - 45);
         text(LST - ParSum[LevelSelect],  377, dY - 45);
         textAlign(LEFT, BOTTOM);
-        for(int  sRep = 0; sRep < 18; sRep += 1) {
+        for(int sRep = 0; sRep < 18; sRep += 1) {
             if (LevelSelect == sRep) {
                 fill(255, 0, 0);
             } else {
@@ -3290,7 +3290,7 @@ class GameCode {
                 text(Par[sRep], 19 + sRep * 17, dY - 15);
             }
             textSize(9);
-            text(String.valueOf(sRep + 1), 19 + sRep * 17, dY - 70);
+            text(sRep + 1, 19 + sRep * 17, dY - 70);
             textSize(18);
         }
         noFill();
@@ -3429,7 +3429,7 @@ class GameCode {
             textAlign(LEFT, CENTER);
             textSize(25);
             String splashPart = "";
-            translate(300, LevelMenu || tipDisplay ? 20 : 40);
+            translate(200, LevelMenu || tipDisplay ? 20 : 40);
             for (String txt : splashText) {
                 fill(0, 0, 0, 100);
                 text(txt, -textWidth("") / 2 + textWidth(splashPart) + 3, 2);
@@ -3657,8 +3657,8 @@ class GameCode {
             text("Game Over", 200, 115);
             textSize(15);
             if (!UsedCommands) {
-                text("Bonus = " + Bonus + "\n(negative is better)", 200, 173);
-                text("Score = " + (LST - ParSum[LevelSelect] + Bonus) + "\n(including bonus)", 200, 212);
+                text("Bonus = " + (int) Bonus + "\n(negative is better)", 200, 173);
+                text("Score = " + (int) (LST - ParSum[LevelSelect] + Bonus) + "\n(including bonus)", 200, 212);
                 text("Restarts =  " + restart, 200, 245);
             } else {
                 text("No Score; Used Commands", 200, 200);
