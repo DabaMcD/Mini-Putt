@@ -35,6 +35,7 @@ class GameCode {
     private static Path mp; // Miscellaneous Path
     private static long frameCount = 0;
     static int mpf; // Millis per frame
+    private static String angleMode = "degrees";
 
     // PJS vars
     private static float ballPOSx = 200;
@@ -363,8 +364,8 @@ class GameCode {
     private static void translate(float x, float y) {
         canvas.translate(x, y);
     }
-    private static void rotate(float degrees) {
-        canvas.rotate((float) (degrees * 2 * Math.PI / 360), 0, 0);
+    private static void rotate(float angle) {
+        canvas.rotate((angleMode.equals("degrees")) ? angle : (float) (angle * 360 / (2 * Math.PI)), 0, 0);
     }
     private static void scale(float sx, float sy) {
         canvas.scale(sx, sy, 0, 0);
