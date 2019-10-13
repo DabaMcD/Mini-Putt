@@ -3490,12 +3490,10 @@ class GameCode {
             fill(255);
             textSize(56);
             text("MINI PUTT", 200f, 120f - tS - tY);
-            textAlign(LEFT, BOTTOM);
             textSize(12);
             fill(168, 113, 2);
-            text("Originally created by Matt", 5f, 395f);
             textAlign(RIGHT, BOTTOM);
-            text("on Khan Academy", 395f, 395f);
+            text("Originally created by Matt on Khan Academy", 395f, 395f);
             textAlign(CENTER, CENTER);
             if ((mouseIsPressed || mouseJustReleased) && mouseX >= 155 && mouseX <= 245 && mouseY >= 160 - tS - tY && mouseY <= 190 - tS - tY) {
                 if (mouseJustReleased) {
