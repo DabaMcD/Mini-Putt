@@ -200,7 +200,7 @@ class GameCode {
         ps.setColor(Color.TRANSPARENT);
     }
     private static void stroke(int r, int g, int b, float a) {
-        ps.setColor(Color.argb((int) a, r, g, b));
+        ps.setColor(Color.argb((int) (a > 0 ? (a < 255 ? a : 255) : 0), r, g, b));
     }
     private static void stroke(int r, int g, int b) {
         ps.setColor(Color.rgb(r, g, b));
