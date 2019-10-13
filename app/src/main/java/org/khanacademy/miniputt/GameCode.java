@@ -815,9 +815,9 @@ class GameCode {
             }
             strokeWeight(6);
             stroke(100);
-            line(150, linePOS + 120, 150, linePOS + 200);
-            line(200, 280 - linePOS, 200, 200 - linePOS);
-            line(250, linePOS + 120, 250, linePOS + 200);
+            line(150f, linePOS + 120f, 150f, linePOS + 200f);
+            line(200f, 280f - linePOS, 200f, 200f - linePOS);
+            line(250f, linePOS + 120f, 250f, linePOS + 200f);
             noStroke();
             fill(0, 0, 0, 100);
             rect(75f, 165f, 40f, 70f);
@@ -899,8 +899,8 @@ class GameCode {
             line(175f, 190f, 225f, 190f);
             line(175f, 210f, 225f, 210f);
             stroke(100);
-            line(170, 131 + linePOS, 170, 189 + linePOS);
-            line(230, 209 - linePOS, 230, 271 - linePOS);
+            line(170f, 131f + linePOS, 170f, 189f + linePOS);
+            line(230f, 209f - linePOS, 230f, 271f - linePOS);
             line(310f, 191f, 310f, 208f);
             noStroke();
             fill(0, 0, 0, 100);
@@ -1187,11 +1187,11 @@ class GameCode {
             rect(270f, 103f, 63f, 195f);
             for (int aRep = 0; aRep < 10; aRep += 1) {
                 stroke(0, 125, 0);
-                line(155, 110 + aRep * 20, 225, 105 + aRep * 20);
-                line(155, 110 + aRep * 20, 225, 115 + aRep * 20);
+                line(155f, 110f + aRep * 20f, 225f, 105f + aRep * 20f);
+                line(155f, 110f + aRep * 20f, 225f, 115f + aRep * 20f);
                 stroke(90, 190, 90);
-                line(328, 110 + aRep * 20, 275, 105 + aRep * 20);
-                line(328, 110 + aRep * 20, 275, 115 + aRep * 20);
+                line(328f, 110f + aRep * 20f, 275f, 105f + aRep * 20f);
+                line(328f, 110f + aRep * 20f, 275f, 115f + aRep * 20f);
             }
             noStroke();
             dX1 = 75;
@@ -1612,14 +1612,14 @@ class GameCode {
                 line(120f + bRep * 20f, 235f, 115f + bRep * 20f, 259f);
                 line(240f + bRep * 20f, 143f, 245f + bRep * 20f, 168f);
                 line(250f + bRep * 20f, 143f, 245f + bRep * 20f, 168f);
-                line(240, 175 + bRep * 20, 288, 180 + bRep * 20);
-                line(240, 185 + bRep * 20, 288, 180 + bRep * 20);
+                line(240f, 175f + bRep * 20f, 288f, 180f + bRep * 20f);
+                line(240f, 185f + bRep * 20f, 288f, 180f + bRep * 20f);
             }
             strokeWeight(5);
             stroke(100);
-            line(104, 170 + (4 * linePOS)/3, 104, 190 + (4 * linePOS)/3);
-            line(110 + linePOS, 165, 130 + linePOS, 165);
-            line(160 - linePOS, 235, 140 - linePOS, 235);
+            line(104f, 170f + (4f * linePOS) / 3f, 104f, 190f + (4f * linePOS) / 3f);
+            line(110f + linePOS, 165f, 130f + linePOS, 165f);
+            line(160f - linePOS, 235f, 140f - linePOS, 235f);
             //Boundaries
             if (ballPOSy >= 305) {
                 ballPOSy = 305;
@@ -1778,10 +1778,10 @@ class GameCode {
             stroke(163, 163, 95);
             arc(160f, 210f, 40f, 40f, 180f, 360f);
             arc(240f, 190f, 40f, 40f, 0f, 180f);
-            line(140, 210, 140, 296);
-            line(180, 210, 180, 296);
-            line(220, 105, 220, 190);
-            line(260, 105, 260, 190);
+            line(140f, 210f, 140f, 296f);
+            line(180f, 210f, 180f, 296f);
+            line(220f, 105f, 220f, 190f);
+            line(260f, 105f, 260f, 190f);
             if (tips) {
                 if (textDiminish > 0) {
                     if (drop) {
@@ -1853,49 +1853,49 @@ class GameCode {
             stroke(163, 163, 95);
             arc(130f, 230f, 40f, 40f, 180f, 270f);
             arc(280f, 230f, 40f, 40f, 270f, 360f);
-            line(110, 230, 110, 286);
-            line(300, 230, 300, 286);
-            line(130, 210, 280, 210);
+            line(110f, 230f, 110f, 286f);
+            line(300f, 230f, 300f, 286f);
+            line(130f, 210f, 280f, 210f);
             strokeWeight(1);
             for (int  bRep = 0; bRep < 7; bRep += 1) {
                 stroke(90, 190, 90);
-                line(60 + bRep * 20, 118, 65 + bRep * 20, 182);
-                line(70 + bRep * 20, 118, 65 + bRep * 20, 182);
-                line(210 + bRep * 20, 118, 215 + bRep * 20, 182);
-                line(220 + bRep * 20, 118, 215 + bRep * 20, 182);
+                line(60f + bRep * 20f, 118f, 65f + bRep * 20f, 182f);
+                line(70f + bRep * 20f, 118f, 65f + bRep * 20f, 182f);
+                line(210f + bRep * 20f, 118f, 215f + bRep * 20f, 182f);
+                line(220f + bRep * 20f, 118f, 215f + bRep * 20f, 182f);
             }
-            dX1 = 55;
-            dX2 = 107;
-            dY1 = 215;
-            dY2 = 286;
-            holePOSx = 325;
-            holePOSy = 260;
+            dX1 = 55f;
+            dX2 = 107f;
+            dY1 = 215f;
+            dY2 = 286f;
+            holePOSx = 325f;
+            holePOSy = 260f;
             //Boundaries
-            if (ballPOSy >= 285) {
-                ballPOSy = 285;
+            if (ballPOSy >= 285f) {
+                ballPOSy = 285f;
                 shotUP = true;
             }
-            if (ballPOSx >= 345) {
-                ballPOSx = 345;
+            if (ballPOSx >= 345f) {
+                ballPOSx = 345f;
                 shotLEFT = true;
             }
-            if (ballPOSy <= 116) {
-                ballPOSy = 116;
+            if (ballPOSy <= 116f) {
+                ballPOSy = 116f;
                 shotUP = false;
             }
-            if (ballPOSx <= 56) {
-                ballPOSx = 56;
+            if (ballPOSx <= 56f) {
+                ballPOSx = 56f;
                 shotLEFT = false;
             }
-            if (ballPOSy <= 188) {
-                if (oldX < 190 && ballPOSx >= 190) {
-                    oldX = 189;
-                    ballPOSx = 189;
+            if (ballPOSy <= 188f) {
+                if (oldX < 190f && ballPOSx >= 190f) {
+                    oldX = 189f;
+                    ballPOSx = 189f;
                     shotLEFT = true;
                 }
-                if (oldX > 211 && ballPOSx <= 211) {
-                    oldX = 212;
-                    ballPOSx = 212;
+                if (oldX > 211f && ballPOSx <= 211f) {
+                    oldX = 212f;
+                    ballPOSx = 212f;
                     shotLEFT = false;
                 }
             }
@@ -1945,11 +1945,11 @@ class GameCode {
             fill(30, 168, 2);
             arc(305f, 156f, 40f, 40f, 270f, 360f);
             arc(305f, 245f, 40f, 40f, 0f, 90f);
-            line(170, 285, 170, 296);
-            line(170, 104, 170, 116);
-            line(190, 265, 302, 265);
-            line(190, 136, 302, 136);
-            line(325, 156, 325, 245);
+            line(170f, 285f, 170f, 296f);
+            line(170f, 104f, 170f, 116f);
+            line(190f, 265f, 302f, 265f);
+            line(190f, 136f, 302f, 136f);
+            line(325f, 156f, 325f, 245f);
             fill(0, 115, 220);
             noStroke();
             rect(170f, 180f, 125f, 40f);
@@ -1959,10 +1959,10 @@ class GameCode {
             arc(275f, 180f, 40f, 40f, 270f, 360f);
             arc(275f, 220f, 40f, 40f, 0f, 90f);
             arc(190f, 220f, 40f, 40f, 90f, 180f);
-            line(170, 180, 170, 220);
-            line(190, 160, 275, 160);
-            line(295, 180, 295, 220);
-            line(190, 240, 275, 240);
+            line(170f, 180f, 170f, 220f);
+            line(190f, 160f, 275f, 160f);
+            line(295f, 180f, 295f, 220f);
+            line(190f, 240f, 275f, 240f);
             if (tips) {
                 if (textDiminish > 0) {
                     if (drop) {
@@ -2051,15 +2051,15 @@ class GameCode {
             strokeWeight(5);
             stroke(173, 116, 2);
             rect(50f, 50f, 300f, 300f);
-            line(50, 100, 300, 100);
-            line(300, 100, 300, 300);
-            line(100, 300, 300, 300);
-            line(100, 150, 100, 300);
-            line(100, 150, 250, 150);
-            line(250, 150, 250, 250);
-            line(150, 250, 250, 250);
-            line(150, 200, 150, 250);
-            line(150, 200, 200, 200);
+            line(50f, 100f, 300f, 100f);
+            line(300f, 100f, 300f, 300f);
+            line(100f, 300f, 300f, 300f);
+            line(100f, 150f, 100f, 300f);
+            line(100f, 150f, 250f, 150f);
+            line(250f, 150f, 250f, 250f);
+            line(150f, 250f, 250f, 250f);
+            line(150f, 200f, 150f, 250f);
+            line(150f, 200f, 200f, 200f);
             noStroke();
             fill(0, 0, 0, 100);
             rect(55f, 55f, 40f, 40f);
@@ -2085,29 +2085,29 @@ class GameCode {
             strokeWeight(1);
             for (int  bRep = 0; bRep < 45; bRep += 15) {
                 stroke(0, 125, 0);
-                line(55 + bRep, 345, 60 + bRep, 150);
-                line(65 + bRep, 345, 60 + bRep, 150);
-                line(345, 305 + bRep, 100, 310 + bRep);
-                line(345, 315 + bRep, 100, 310 + bRep);
-                line(105 + bRep, 295, 110 + bRep, 200);
-                line(115 + bRep, 295, 110 + bRep, 200);
-                line(295, 255 + bRep, 150, 260 + bRep);
-                line(295, 265 + bRep, 150, 260 + bRep);
-                line(245, 205 + bRep, 205, 210 + bRep);
-                line(245, 215 + bRep, 205, 210 + bRep);
+                line(55f + bRep, 345f, 60f + bRep, 150f);
+                line(65f + bRep, 345f, 60f + bRep, 150f);
+                line(345f, 305f + bRep, 100f, 310f + bRep);
+                line(345f, 315f + bRep, 100f, 310f + bRep);
+                line(105f + bRep, 295f, 110f + bRep, 200f);
+                line(115f + bRep, 295f, 110f + bRep, 200f);
+                line(295f, 255f + bRep, 150f, 260f + bRep);
+                line(295f, 265f + bRep, 150f, 260f + bRep);
+                line(245f, 205f + bRep, 205f, 210f + bRep);
+                line(245f, 215f + bRep, 205f, 210f + bRep);
                 stroke(90, 190, 90);
-                line(100, 55 + bRep, 300, 60 + bRep);
-                line(100, 65 + bRep, 300, 60 + bRep);
-                line(305 + bRep, 55, 310 + bRep, 300);
-                line(315 + bRep, 55, 310 + bRep, 300);
-                line(55, 105 + bRep, 250, 110 + bRep);
-                line(55, 115 + bRep, 250, 110 + bRep);
-                line(255 + bRep, 105, 260 + bRep, 250);
-                line(265 + bRep, 105, 260 + bRep, 250);
-                line(105, 155 + bRep, 200, 160 + bRep);
-                line(105, 165 + bRep, 200, 160 + bRep);
-                line(205 + bRep, 155, 210 + bRep, 200);
-                line(215 + bRep, 155, 210 + bRep, 200);
+                line(100f, 55f + bRep, 300f, 60f + bRep);
+                line(100f, 65f + bRep, 300f, 60f + bRep);
+                line(305f + bRep, 55f, 310f + bRep, 300f);
+                line(315f + bRep, 55f, 310f + bRep, 300f);
+                line(55f, 105f + bRep, 250f, 110f + bRep);
+                line(55f, 115f + bRep, 250f, 110f + bRep);
+                line(255f + bRep, 105f, 260f + bRep, 250f);
+                line(265f + bRep, 105f, 260f + bRep, 250f);
+                line(105f, 155f + bRep, 200f, 160f + bRep);
+                line(105f, 165f + bRep, 200f, 160f + bRep);
+                line(205f + bRep, 155f, 210f + bRep, 200f);
+                line(215f + bRep, 155f, 210f + bRep, 200f);
             }
             //Boundaries
             if (ballPOSy >= 345) {
@@ -2293,47 +2293,47 @@ class GameCode {
             rect(272f, 103f, 30f, 195f);
             stroke(80, 150, 205);
             strokeWeight(2);
-            line(98, 104, 98, 296);
-            line(128, 104, 128, 296);
-            line(272, 104, 272, 296);
-            line(302, 104, 302, 296);
+            line(98f, 104f, 98f, 296f);
+            line(128f, 104f, 128f, 296f);
+            line(272f, 104f, 272f, 296f);
+            line(302f, 104f, 302f, 296f);
             stroke(100);
             strokeWeight(5);
-            line(93, 105 + linePOS, 133, 105 + linePOS);
-            line(93, 125 + linePOS, 133, 125 + linePOS);
-            line(267, 295 - linePOS, 307, 295 - linePOS);
-            line(267, 275 - linePOS, 307, 275 - linePOS);
+            line(93f, 105f + linePOS, 133f, 105f + linePOS);
+            line(93f, 125f + linePOS, 133f, 125f + linePOS);
+            line(267f, 295f - linePOS, 307f, 295f - linePOS);
+            line(267f, 275f - linePOS, 307f, 275f - linePOS);
             noStroke();
             fill(125);
             rect(98f, 108f + linePOS, 30f, 15f);
             rect(272f, 278f - linePOS, 30f, 15f);
             strokeWeight(5);
             stroke(173, 116, 2);
-            line(97, 180, 97, 298);
-            line(303, 102, 303, 220);
+            line(97f, 180f, 97f, 298f);
+            line(303f, 102f, 303f, 220f);
             strokeWeight(1);
             for (int  bRep = 0; bRep < 42; bRep += 14) {
                 stroke(0, 125, 0);
-                line(55 + bRep, 220, 60 + bRep, 155);
-                line(65 + bRep, 220, 60 + bRep, 155);
-                line(307 + bRep, 270, 312 + bRep, 150);
-                line(317 + bRep, 270, 312 + bRep, 150);
+                line(55f + bRep, 220f, 60f + bRep, 155f);
+                line(65f + bRep, 220f, 60f + bRep, 155f);
+                line(307f + bRep, 270f, 312f + bRep, 150f);
+                line(317f + bRep, 270f, 312f + bRep, 150f);
             }
             for (int  bRep = 0; bRep < 200; bRep += 20) {
                 stroke(0, 125, 0);
-                line(154, 105 + bRep, 145, 110 + bRep);
-                line(154, 115 + bRep, 145, 110 + bRep);
-                line(194, 105 + bRep, 185, 110 + bRep);
-                line(194, 115 + bRep, 185, 110 + bRep);
-                line(234, 105 + bRep, 225, 110 + bRep);
-                line(234, 115 + bRep, 225, 110 + bRep);
+                line(154f, 105f + bRep, 145f, 110f + bRep);
+                line(154f, 115f + bRep, 145f, 110f + bRep);
+                line(194f, 105f + bRep, 185f, 110f + bRep);
+                line(194f, 115f + bRep, 185f, 110f + bRep);
+                line(234f, 105f + bRep, 225f, 110f + bRep);
+                line(234f, 115f + bRep, 225f, 110f + bRep);
                 stroke(90, 190, 90);
-                line(165, 105 + bRep, 174, 110 + bRep);
-                line(165, 115 + bRep, 174, 110 + bRep);
-                line(205, 105 + bRep, 214, 110 + bRep);
-                line(205, 115 + bRep, 214, 110 + bRep);
-                line(245, 105 + bRep, 254, 110 + bRep);
-                line(245, 115 + bRep, 254, 110 + bRep);
+                line(165f, 105f + bRep, 174f, 110f + bRep);
+                line(165f, 115f + bRep, 174f, 110f + bRep);
+                line(205f, 105f + bRep, 214f, 110f + bRep);
+                line(205f, 115f + bRep, 214f, 110f + bRep);
+                line(245f, 105f + bRep, 254f, 110f + bRep);
+                line(245f, 115f + bRep, 254f, 110f + bRep);
             }
             if (linePOS <= 0) {
                 lineUP = false;
@@ -2346,12 +2346,12 @@ class GameCode {
             } else {
                 linePOS += 1;
             }
-            dX1 = 55;
-            dX2 = 95;
-            dY1 = 225;
-            dY2 = 296;
-            holePOSx = 325;
-            holePOSy = 125;
+            dX1 = 55f;
+            dX2 = 95f;
+            dY1 = 225f;
+            dY2 = 296f;
+            holePOSx = 325f;
+            holePOSy = 125f;
             //Boundaries
             if (ballPOSy >= 295) {
                 ballPOSy = 295;
@@ -2513,39 +2513,39 @@ class GameCode {
             fill(175);
             stroke(125);
             beginShape();
-            vertex(303, 310);
-            vertex(303, 325);
-            vertex(335, 325);
-            vertex(335, 107);
-            vertex(283, 107);
-            vertex(283, 122);
-            vertex(320, 122);
-            vertex(320, 310);
-            vertex(303, 310);
+            vertex(303f, 310f);
+            vertex(303f, 325f);
+            vertex(335f, 325f);
+            vertex(335f, 107f);
+            vertex(283f, 107f);
+            vertex(283f, 122f);
+            vertex(320f, 122f);
+            vertex(320f, 310f);
+            vertex(303f, 310f);
             endShape();
             beginShape();
-            vertex(303, 282);
-            vertex(303, 297);
-            vertex(360, 297);
-            vertex(360, 85);
-            vertex(283, 85);
-            vertex(283, 100);
-            vertex(345, 100);
-            vertex(345, 282);
-            vertex(303, 282);
+            vertex(303f, 282f);
+            vertex(303f, 297f);
+            vertex(360f, 297f);
+            vertex(360f, 85f);
+            vertex(283f, 85f);
+            vertex(283f, 100f);
+            vertex(345f, 100f);
+            vertex(345f, 282f);
+            vertex(303f, 282f);
             endShape();
             beginShape();
-            vertex(277, 228);
-            vertex(292, 228);
-            vertex(292, 205);
-            vertex(307, 185);
-            vertex(307, 142);
-            vertex(283, 130);
-            vertex(283, 150);
-            vertex(292, 155);
-            vertex(292, 180);
-            vertex(277, 200);
-            vertex(277, 228);
+            vertex(277f, 228f);
+            vertex(292f, 228f);
+            vertex(292f, 205f);
+            vertex(307f, 185f);
+            vertex(307f, 142f);
+            vertex(283f, 130f);
+            vertex(283f, 150f);
+            vertex(292f, 155f);
+            vertex(292f, 180f);
+            vertex(277f, 200f);
+            vertex(277f, 228f);
             endShape();
             noStroke();
             strokeWeight(1);
@@ -2553,17 +2553,17 @@ class GameCode {
             rect(148f, 283f, 80f, 15f);
             rect(140f, 68f, 60f, 95f);
             stroke(0, 125, 0);
-            line(228, 285, 150, 290);
-            line(228, 295, 150, 290);
+            line(228f, 285f, 150f, 290f);
+            line(228f, 295f, 150f, 290f);
             for (int  bRep = 0; bRep < 100; bRep += 20) {
-                line(198, 70 + bRep, 143, 75 + bRep);
-                line(198, 80 + bRep, 143, 75 + bRep);
+                line(198f, 70f + bRep, 143f, 75f + bRep);
+                line(198f, 80f + bRep, 143f, 75f + bRep);
             }
             for (int  cRep = 0; cRep < 3; cRep += 1) {
                 stroke(0, 0, 0, 90 - cRep * 30);
-                line(277 - cRep, 85, 277 - cRep, 100);
-                line(277 - cRep, 107, 277 - cRep, 122);
-                line(277 - cRep, 130, 277 - cRep, 145);
+                line(277f - cRep, 85f, 277f - cRep, 100f);
+                line(277f - cRep, 107f, 277f - cRep, 122f);
+                line(277f - cRep, 130f, 277f - cRep, 145f);
             }
             noStroke();
             if (tips) {
@@ -2762,8 +2762,8 @@ class GameCode {
             stroke(173, 116, 2);
             rect(50f, 75f, 300f, 250f);
             rect(284f, 325f, 66f, 100f);
-            line(284, 260, 315, 260);
-            line(315, 120, 315, 260);
+            line(284f, 260f, 315f, 260f);
+            line(315f, 120f, 315f, 260f);
             fill(133, 89, 2);
             rect(99f, 75f, 185f, 185f);
             noStroke();
@@ -2785,15 +2785,15 @@ class GameCode {
             strokeWeight(1);
             for (int  bRep = 0; bRep < 30; bRep += 15) {
                 stroke(0, 125, 0);
-                line(288 + bRep, 255, 293 + bRep, 121);
-                line(298 + bRep, 255, 293 + bRep, 121);
+                line(288f + bRep, 255f, 293f + bRep, 121f);
+                line(298f + bRep, 255f, 293f + bRep, 121f);
                 stroke(90, 190, 90);
-                line(320 + bRep, 80, 325 + bRep, 260);
-                line(330 + bRep, 80, 325 + bRep, 260);
+                line(320f + bRep, 80f, 325f + bRep, 260f);
+                line(330f + bRep, 80f, 325f + bRep, 260f);
             }
             for (int  aRep = 0; aRep < 36; aRep += 12) {
-                line(288, 80 + aRep, 314, 85 + aRep);
-                line(288, 90 + aRep, 314, 85 + aRep);
+                line(288f, 80f + aRep, 314f, 85f + aRep);
+                line(288f, 90f + aRep, 314f, 85f + aRep);
             }
             strokeWeight(4);
             for (int  cRep = 0; cRep < 16; cRep += 1) {
@@ -2808,23 +2808,23 @@ class GameCode {
             for (int  dRep = 0; dRep < 60; dRep += 20) {
                 stroke(90, 190, 90);
                 strokeWeight(1);
-                line(292 + dRep, 265, 297 + dRep, 398);
-                line(302 + dRep, 265, 297 + dRep, 398);
-                line(55, 268 + dRep, 95, 273 + dRep);
-                line(55, 278 + dRep, 95, 273 + dRep);
+                line(292f + dRep, 265f, 297f + dRep, 398f);
+                line(302f + dRep, 265f, 297f + dRep, 398f);
+                line(55f, 268f + dRep, 95f, 273f + dRep);
+                line(55f, 278f + dRep, 95f, 273f + dRep);
                 stroke(105);
                 strokeWeight(2);
-                line(100 + dRep/2, 94, 110 + dRep/2, 100);
-                line(100 + dRep/2, 106, 110 + dRep/2, 100);
-                line(254 + dRep/2, 234, 264 + dRep/2, 240);
-                line(254 + dRep/2, 246, 264 + dRep/2, 240);
+                line(100f + dRep/2f, 94f, 110f + dRep/2f, 100f);
+                line(100f + dRep/2f, 106f, 110f + dRep/2f, 100f);
+                line(254f + dRep/2f, 234f, 264f + dRep/2f, 240f);
+                line(254f + dRep/2f, 246f, 264f + dRep/2f, 240f);
             }
             stroke(125);
-            strokeWeight(4);
+            strokeWeight(4f);
             String[] FortuneString = {"+1", "-1", "0", "+2", "-2", "Re", "+3", "-3", "0", "+4", "-4", "0", "+5", "-5", "0", "Spin"};
             textAlign(CENTER, CENTER);
             for (int  bRep = 0; bRep < 16; bRep += 1) {
-                line((float) (cos(bRep * 22.5 - 90) * 90 + cX), (float) (sin(bRep * 22.5 - 90 ) * 90 + cY), cX, cY);
+                line((float) (cos(bRep * 22.5f - 90f) * 90f + cX), (float) (sin(bRep * 22.5f - 90f) * 90f + cY), cX, cY);
                 fill(255);
                 text(FortuneString[bRep], (float) (cos(bRep * 22.5f - 80f) * 70f + cX), (float) (sin(bRep * 22.5f - 80f) * 70f + cY));
             }
@@ -3185,17 +3185,17 @@ class GameCode {
         noStroke();
         rect(0f, dY - 80f, 400f, 80f);
         fill(175);
-        quad(0, dY - 80, 0, dY, 5, dY - 5, 5, dY - 75);
-        quad(400, dY - 80, 400, dY, 395, dY - 5, 395, dY - 75);
+        quad(0f, dY - 80f, 0f, dY, 5f, dY - 5f, 5f, dY - 75f);
+        quad(400f, dY - 80f, 400f, dY, 395f, dY - 5f, 395f, dY - 75f);
         fill(200);
-        quad(0, dY - 80, 5, dY - 75, 395, dY - 75, 400, dY - 80);
-        quad(0, dY, 5, dY - 5, 395, dY - 5, 400, dY);
+        quad(0f, dY - 80f, 5f, dY - 75f, 395f, dY - 75f, 400f, dY - 80f);
+        quad(0f, dY, 5f, dY - 5f, 395f, dY - 5f, 400f, dY);
         fill(185);
         stroke(100);
         strokeWeight(1);
         if (!titleScreen) {
-            quad(170, dY, 182, dY + 7, 218, dY + 7, 230, dY);
-            line(0, dY - 1, 400, dY - 1);
+            quad(170f, dY, 182f, dY + 7f, 218f, dY + 7f, 230f, dY);
+            line(0f, dY - 1f, 400f, dY - 1f);
         }
         stroke(0);
         strokeWeight(3);
@@ -3207,12 +3207,12 @@ class GameCode {
             noStroke();
             if (Level18 && !endGame) {
                 fill(255, 0, 0);
-                quad(5, 5, 10, 5, 32, 30, 27, 30);
-                quad(5, 30, 10, 30, 32, 5, 27, 5);
+                quad(5f, 5f, 10f, 5f, 32f, 30f, 27f, 30f);
+                quad(5f, 30f, 10f, 30f, 32f, 5f, 27f, 5f);
             }
             fill(0);
-            triangle(14, dY + 31, 14, dY + 24, 20, dY + 28);
-            triangle(22, dY + 12, 22, dY + 5, 16, dY + 8);
+            triangle(14f, dY + 31f, 14f, dY + 24f, 20f, dY + 28f);
+            triangle(22f, dY + 12f, 22f, dY + 5f, 16f, dY + 8f);
         }
         textSize(10);
         if ((mouseIsPressed || mouseJustReleased) && dist(mouseX, mouseY, 18, dY + 18) <= 11 && !titleScreen && !Level18) {
@@ -3267,7 +3267,7 @@ class GameCode {
         stroke(100);
         rect(362f, dY - 70f, 30f, 30f);
         for(int  lRep = 32; lRep < 311; lRep += 17) {
-            line(lRep, dY - 70, lRep, dY - 11);
+            line(lRep, dY - 70f, lRep, dY - 11f);
         }
         textSize(18);
         fill(75);
@@ -3298,7 +3298,7 @@ class GameCode {
         rect(15f + LevelSelect * 17f, dY - 70f, 17f, 60f);
         stroke(0, 0, 255);
         rect(321f, dY - 70f, 30f, 60f);
-        line(321, dY - 40, 350, dY - 40);
+        line(321f, dY - 40f, 350f, dY - 40f);
         fill(75);
         textSize(9);
         pushMatrix();
@@ -3458,7 +3458,7 @@ class GameCode {
             }
             stroke(125);
             fill(185);
-            quad(170, 323 + tS + tY, 182, 330 + tS + tY, 218, 330 + tS + tY, 230, 323 + tS + tY);
+            quad(170f, 323f + tS + tY, 182f, 330f + tS + tY, 218f, 330f + tS + tY, 230f, 323f + tS + tY);
             noStroke();
             rect(50f, 258f + tS + tY, 300f, 65f);
             fill(175);
