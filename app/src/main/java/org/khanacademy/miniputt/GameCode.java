@@ -3509,7 +3509,7 @@ class GameCode {
             text("START", 191f, 175f - tS - tY);
             noStroke();
             triangle(227f, 168f - tS - tY, 240f, 175f - tS - tY, 227f, 182f - tS - tY);
-            if ((mouseIsPressed || mouseJustReleased) && mouseX >= 133 && mouseX <= 150 && mouseY >= 203 - tS - tY && mouseY <= 227 - tS - tY) {
+            if ((mouseIsPressed || mouseJustReleased) && mouseX >= 123 && mouseX <= 160 && mouseY >= 193 - tS - tY && mouseY <= 237 - tS - tY) {
                 fill(255);
                 if (mouseJustReleased) {
                     if(tips){onOffString="OFF";tips=false;}
@@ -3519,7 +3519,7 @@ class GameCode {
                 fill(130, 83, 3);
             }
             triangle(145f, 207f - tS - tY, 145f, 222f - tS - tY, 138f, 215f - tS - tY);
-            if ((mouseIsPressed || mouseJustReleased) && mouseX >= 250 && mouseX <= 267 && mouseY >= 203 - tS && mouseY <= 227 - tS - tY) {
+            if ((mouseIsPressed || mouseJustReleased) && mouseX >= 240 && mouseX <= 277 && mouseY >= 193 - tS && mouseY <= 237 - tS - tY) {
                 fill(255);
                 if (mouseJustReleased) {
                     if(tips){onOffString="OFF";tips=false;}
@@ -3538,7 +3538,7 @@ class GameCode {
                     stroke(59, 39, 11);
                     rect(127f + sRep * 60f, 255f - tY, 25f, 25f);
                     noStroke();
-                    if ((mouseIsPressed || mouseJustReleased) && mouseX >= 115 + sRep * 60 && mouseX <= 122 + sRep * 60 && mouseY >= 260 - tY && mouseY <= 275 - tY) {
+                    if ((mouseIsPressed || mouseJustReleased) && mouseX >= 110 + sRep * 60 && mouseX <= 127 + sRep * 60 && mouseY >= 250 - tY && mouseY <= 285 - tY) {
                         fill(255);
                         if (mouseJustReleased) {
                             if(sRep==0){
@@ -3567,7 +3567,7 @@ class GameCode {
                         fill(130, 83, 3);
                     }
                     triangle(122f + sRep * 60f, 260f - tY, 122f + sRep * 60f, 275f - tY, 115f + sRep * 60f, 268f - tY);
-                    if ((mouseIsPressed || mouseJustReleased) && mouseX >= 157 + sRep * 60 && mouseX <= 164 + sRep * 60 && mouseY >= 260 - tY && mouseY <= 275 - tY) {
+                    if ((mouseIsPressed || mouseJustReleased) && mouseX >= 152 + sRep * 60 && mouseX <= 169 + sRep * 60 && mouseY >= 250 - tY && mouseY <= 285 - tY) {
                         fill(255);
                         if (mouseJustReleased) {
                             if(sRep==0){if(a<9){a+=1;}else{a=0;}}
