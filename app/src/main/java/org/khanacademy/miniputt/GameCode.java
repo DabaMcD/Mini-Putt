@@ -1559,7 +1559,7 @@ class GameCode {
         //LEVEL 11
         else if (Level11) {
             fill(30, 168, 2);
-            strokeWeight(5);
+            strokeWeight(5f);
             stroke(173, 116, 2);
             rect(50f, 90f, 300f, 220f);
             fill(128, 86, 2);
@@ -1570,9 +1570,9 @@ class GameCode {
             rect(165f, 143f, 70f, 115f);
             noStroke();
             fill(107, 72, 1);
-            rect(48f, 88f, 55f, 75f);
-            rect(48f, 238f, 55f, 75f);
-            rect(298f, 88f, 55f, 75f);
+            rect(47f, 87f, 55f, 75f);
+            rect(47f, 238f, 55f, 75f);
+            rect(298f, 87f, 55f, 75f);
             rect(298f, 238f, 55f, 75f);
             fill(0, 0, 0, 100);
             rect(55f, 170f, 40f, 61f);
@@ -1600,7 +1600,7 @@ class GameCode {
             fill(3, 148, 8);
             rect(108f, 141f, 55f, 28f);
             rect(238f, 233f, 55f, 28f);
-            strokeWeight(1);
+            strokeWeight(1f);
             for (int  bRep = 0; bRep < 3; bRep += 1) {
                 stroke(0, 125, 0);
                 line(110f + bRep * 20f, 168f, 115f + bRep * 20f, 143f);
@@ -1615,7 +1615,7 @@ class GameCode {
                 line(240f, 175f + bRep * 20f, 288f, 180f + bRep * 20f);
                 line(240f, 185f + bRep * 20f, 288f, 180f + bRep * 20f);
             }
-            strokeWeight(5);
+            strokeWeight(5f);
             stroke(100);
             line(104f, 170f + (4f * linePOS) / 3f, 104f, 190f + (4f * linePOS) / 3f);
             line(110f + linePOS, 165f, 130f + linePOS, 165f);
