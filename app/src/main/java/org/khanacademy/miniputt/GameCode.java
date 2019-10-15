@@ -3282,12 +3282,12 @@ class GameCode {
 
         //Bunker
         if (bunker) {
-            speedX = speedX/2;
-            speedY = speedY/2;
+            speedX = speedX / 2;
+            speedY = speedY / 2;
         }
 
         //Score Display
-        if (mouseJustReleased && mouseX > 170 && mouseX < 230 && mouseY <= 10 && !titleScreen) {
+        if (mouseJustReleased && mouseX > 150 && mouseX < 250 && mouseY <= 35 && !titleScreen) {
             ScoreDisplay = true;
             mouseJustReleased = false;
         }
