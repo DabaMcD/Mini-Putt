@@ -158,7 +158,19 @@ class GameCode {
 
         mouseJustReleased = false;
     }
-    static void restartProgram() {
+    static void setMouseX(float mouseX) {
+        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * och / Screen.height;
+    }
+    static void setMouseY(float mouseY) {
+        GameCode.mouseY = mouseY * och / Screen.height;
+    }
+    static void setMouseJustReleased(boolean mouseJustReleased) {
+        GameCode.mouseJustReleased = mouseJustReleased;
+    }
+    static void setMouseIsPressed(boolean mouseIsPressed) {
+        GameCode.mouseIsPressed = mouseIsPressed;
+    }
+    private static void restartProgram() {
         ballPOSx = 200;
         ballPOSy = 200;
         drop = false;
@@ -261,18 +273,6 @@ class GameCode {
         tY = 0;
         tipDisplay = false;
         endGame = false;
-    }
-    static void setMouseX(float mouseX) {
-        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * och / Screen.height;
-    }
-    static void setMouseY(float mouseY) {
-        GameCode.mouseY = mouseY * och / Screen.height;
-    }
-    static void setMouseJustReleased(boolean mouseJustReleased) {
-        GameCode.mouseJustReleased = mouseJustReleased;
-    }
-    static void setMouseIsPressed(boolean mouseIsPressed) {
-        GameCode.mouseIsPressed = mouseIsPressed;
     }
     private static void background(int r, int g, int b) {
         Paint paint = new Paint();
@@ -3098,8 +3098,10 @@ class GameCode {
         //Hole
         noStroke();
         fill(0, 0, 0, 100);
-        ellipse(holePOSx, holePOSy, 14, 14);
-        ellipse(holePOSx, holePOSy, 10, 10);
+        if (!titleScreen && !endGame) {
+            ellipse(holePOSx, holePOSy, 14, 14);
+            ellipse(holePOSx, holePOSy, 10, 10);
+        }
         if (dist(ballPOSx, ballPOSy, holePOSx, holePOSy) <= 10 - (speedX + speedY)/3 && speedX < 8 && speedY < 8 && !titleScreen && !endGame) {
             ballPOSx = holePOSx;
             ballPOSy = holePOSy;
