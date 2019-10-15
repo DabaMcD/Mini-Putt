@@ -482,8 +482,9 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Click to drop your ball in the dark green zone, then click again to putt it.", 35f, 90f);
-                text("The farther back you hold the putter, the harder the putt.", 65f, 320f);
+                textAlign(CENTER, BOTTOM);
+                text("Tap and release to your ball in the dark green zone, then tap again to putt it.", 200f, 90f);
+                text("The farther back you hold the putter, the harder the putt.", 200f, 320f);
             }
             //Boundaries
             if (ballPOSy >= 295) {
@@ -533,8 +534,9 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Make your way around obstacles to get to the hole.", 77f, 70f);
                 text("<--- Restart Hole", 40f, 30f);
+                textAlign(CENTER, BOTTOM);
+                text("Make your way around obstacles to get to the hole.", 200f, 70f);
             }
             //Boundaries
             if (ballPOSy >= 375) {
@@ -620,10 +622,11 @@ class GameCode {
                         textDiminish -= 5;
                     }
                 }
-                textSize(11);
+                textSize(10);
                 fill(255, 255, 0, textDiminish);
-                text("The faster your ball is going the more accurate you have to be to get it in the hole.", 5f, 45f);
-                text("If it is going too fast it can't go in the hole at all", 88f, 370f);
+                textAlign(CENTER, BOTTOM);
+                text("The faster your ball is going the more accurate you have to be to get it in the hole.", 200f, 45f);
+                text("If it is going too fast it can't go in the hole at all", 200f, 370f);
             }
             //Boundaries
             if (ballPOSy >= 345) {
@@ -740,8 +743,9 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Put your mouse over the tab at the top to see your score card", 50f, 105f);
-                text("^SCORE CARD^", 161f, 20f);
+                textAlign(CENTER, BOTTOM);
+                text("Tap on the tab at the top to see your score card", 200f, 105f);
+                text("^SCORE CARD^", 200f, 20f);
             }
             //Boundaries
             if (ballPOSy >= 315) {
@@ -832,7 +836,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Some obstacles may move, aim accordingly.", 95f, 105f);
+                textAlign(CENTER, BOTTOM);
+                text("Some obstacles may move, aim accordingly.", 200f, 105f);
             }
             //Boundaries
             if (ballPOSy >= 275) {
@@ -1065,7 +1070,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("There are some bugs in this hole, sorry.", 105f, 340f);
+                textAlign(CENTER, BOTTOM);
+                text("There are some bugs in this hole, use them to your advantage!", 200f, 340f);
             }
             //Boundaries
             if (ballPOSy >= 315) {
@@ -1210,7 +1216,6 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("This hole introduces slopes. The arrows point to the bottom\nwhile the large end is at the top.", 52f, 80f);
                 stroke(255, 255, 0, textDiminish);
                 strokeWeight(3);
                 line(50f, 350f, 150f, 350f);
@@ -1219,6 +1224,8 @@ class GameCode {
                 line(270f, 325f, 333f, 350f);
                 line(333f, 350f, 350f, 350f);
                 text("<SIDE VIEW", 300f, 370f);
+                textAlign(CENTER, BOTTOM);
+                text("This hole introduces slopes. The arrows point to the bottom\nwhile the large end is at the top.", 200f, 80f);
             }
             //Boundaries
             if (ballPOSy >= 295) {
@@ -1387,8 +1394,9 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("There are 2 drop zones in this hole; use which ever you like.", 50f, 75f);
-                text("There's also a bridge. Go under it to get to the hole", 80f, 360f);
+                textAlign(CENTER, BOTTOM);
+                text("There are 2 drop zones in this hole, use which ever you like.", 200f, 75f);
+                text("There's also a bridge. Go under it to get to the hole", 200f, 360f);
             }
             for (int  bRep = 0; bRep < 3; bRep += 1) {
                 stroke(0, 125, 0);
@@ -1792,7 +1800,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("This hole contains bunkers. Try to avoid them.", 90f, 90f);
+                textAlign(CENTER, BOTTOM);
+                text("This hole contains bunkers. Try to avoid them.", 200f, 90f);
             }
             holePOSx = 300;
             holePOSy = 200;
@@ -1973,7 +1982,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Don't putt your ball into the water", 120f, 90f);
+                textAlign(CENTER, BOTTOM);
+                text("Don't putt your ball into the water", 200f, 90f);
             }
             holePOSx = 310;
             holePOSy = 200;
@@ -2576,7 +2586,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Go into one of the holes to send the ball out the other side", 60f, 60f);
+                textAlign(CENTER, BOTTOM);
+                text("Go into one of the holes to send the ball out the other side", 200f, 60f);
             }
             dX1 = 55;
             dX2 = 95;
@@ -2843,7 +2854,8 @@ class GameCode {
                 }
                 textSize(11);
                 fill(255, 255, 0, textDiminish);
-                text("Putt your ball into the wheel or play it safe and go around", 63f, 70f);
+                textAlign(CENTER, BOTTOM);
+                text("Putt your ball into the wheel or play it safe and go around", 200f, 70f);
             }
             dX1 = 55;
             dX2 = 95;
@@ -3416,7 +3428,7 @@ class GameCode {
                 "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
                 "Use the walls to your advantage. If there is no straight\nshot, go for the rebound and try for the hole in one.",
                 "If you are having trouble with a hole, try short, controlled\nshots to get to the hole, then restart the hole and see if you\ncan replicate that with fewer putts.",
-                "Put your mouse over the score card a the top of\nthe screen to check your progress while you play.",
+                "Click on the score card tab a the top of\nthe screen to check your progress while you play.",
                 "Don't go into bunkers; they stop your ball almost immediately\nand are very difficult to get out of. Treat them with caution.",
                 "Slopes can come in handy when trying to get the ball\naround a corner, but they can also slow the ball down or\nsend it backwards, so aim carefully.",
                 "Water will reset your ball without resetting\nyour strokes, so avoid it at all costs."
@@ -3429,7 +3441,7 @@ class GameCode {
             textAlign(LEFT, CENTER);
             textSize(25);
             String splashPart = "";
-            translate(200, LevelMenu || tipDisplay ? 20 : 40);
+            translate(200f, LevelMenu || tipDisplay ? 20f : 40f);
             for (String txt : splashText) {
                 fill(0, 0, 0, 100);
                 text(txt, -textWidth("") / 2f + textWidth(splashPart) + 3f, 2f);
