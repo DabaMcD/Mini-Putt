@@ -3550,7 +3550,7 @@ class GameCode {
             textAlign(LEFT, CENTER);
             textSize(25);
             String splashPart = "";
-            translate(200f, LevelMenu || tipDisplay ? 20f : 40f);
+            translate(200f, 50 - tY);
             for (String txt : splashText) {
                 fill(0, 0, 0, 100);
                 text(txt, -textWidth("") / 2f + textWidth(splashPart) + 3f, 2f);
