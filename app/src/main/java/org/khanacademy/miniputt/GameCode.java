@@ -143,12 +143,12 @@ class GameCode {
 
     static void init() {
         ps.setStrokeCap(Paint.Cap.ROUND);
+        pf.setStyle(Paint.Style.FILL);
+        ps.setStyle(Paint.Style.STROKE);
     }
     static void draw(Canvas c) {
         frameCount ++;
         canvas = c;
-        pf.setStyle(Paint.Style.FILL);
-        ps.setStyle(Paint.Style.STROKE);
 
         canvas.save();
         canvas.translate((Screen.width - Screen.height) / 2, 0);
@@ -157,6 +157,110 @@ class GameCode {
         canvas.restore();
 
         mouseJustReleased = false;
+    }
+    static void restartProgram() {
+        ballPOSx = 200;
+        ballPOSy = 200;
+        drop = false;
+        Level1 = false;
+        Level2 = false;
+        Level3 = false;
+        Level4 = false;
+        Level5 = false;
+        Level6 = false;
+        Level7 = false;
+        Level8 = false;
+        Level9 = false;
+        Level10 = false;
+        Level11 = false;
+        Level12 = false;
+        Level13 = false;
+        Level14 = false;
+        Level15 = false;
+        Level16 = false;
+        Level17 = false;
+        Level18 = false;
+        LevelStart = true;
+        titleScreen = true;
+        power = 0;
+        powerX = 0;
+        powerY = 0;
+        shotLEFT = false;
+        shotUP = false;
+        shot = false;
+        dotx = 0;
+        doty = 0;
+        speedX = 0;
+        speedY = 0;
+        shotDiminish = 0;
+        resetShot = false;
+        holePOSx = 300;
+        holePOSy = 200;
+        dX1 = 75;
+        dX2 = 115;
+        dY1 = 165;
+        dY2 = 235;
+        eX = 100;
+        eY = 320;
+        oldX = 0;
+        oldY = 0;
+        L1S = 0;
+        L2S = 0;
+        L3S = 0;
+        L4S = 0;
+        L5S = 0;
+        L6S = 0;
+        L7S = 0;
+        L8S = 0;
+        L9S = 0;
+        L10S = 0;
+        L11S = 0;
+        L12S = 0;
+        L13S = 0;
+        L14S = 0;
+        L15S = 0;
+        L16S = 0;
+        L17S = 0;
+        L18S = 0;
+        LevelSelect = 0;
+        ScoreDisplay = false;
+        dY = 0;
+        restart = 0;
+        linePOS = 0;
+        lineUP = false;
+        grav = 1;
+        slopeX = false;
+        slopeY = false;
+        textDiminish = 255;
+        textDiminishB = 0;
+        underGround = false;
+        water = false;
+        underWater = false;
+        waterTime = 0;
+        tips = true;
+        PrevSlopeX = false;
+        PrevSlopeY = false;
+        PrevSpeedX = 0;
+        alertText = "";
+        slopeLEFT = false;
+        slopeRIGHT = false;
+        slopeUP = false;
+        slopeDOWN = false;
+        bunker = false;
+        UsedCommands = false;
+        delayTimer = 0;
+        selection = 0;
+        Bonus = 0;
+        LevelMenu = false;
+        a = 0;
+        b = 0;
+        c = 0;
+        tS = 7;
+        onOffString = "ON";
+        tipSelect = 0;
+        tY = 0;
+        tipDisplay = false;
+        endGame = false;
     }
     static void setMouseX(float mouseX) {
         GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * och / Screen.height;
