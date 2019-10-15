@@ -1,5 +1,6 @@
 package org.khanacademy.miniputt;
 
+import android.drm.DrmStore;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -3564,7 +3565,7 @@ class GameCode {
             textAlign(LEFT, CENTER);
             textSize(25);
             String splashPart = "";
-            translate(200f, 50 - tY);
+            translate(200f, 55 - tY - tS);
             for (String txt : splashText) {
                 fill(0, 0, 0, 100);
                 text(txt, -textWidth("") / 2f + textWidth(splashPart) + 3f, 2f);
@@ -3593,15 +3594,15 @@ class GameCode {
             }
             stroke(125);
             fill(185);
-            quad(170f, 323f + tS + tY, 182f, 330f + tS + tY, 218f, 330f + tS + tY, 230f, 323f + tS + tY);
+            quad(170f, 323f + tS + tY - 1, 182f, 330f + tS + tY - 1, 218f, 330f + tS + tY - 1, 230f, 323f + tS + tY - 1);
             noStroke();
-            rect(50f, 258f + tS + tY, 300f, 65f);
+            rect(50f, 258f + tS + tY - 1, 300f, 65f);
             fill(175);
-            quad(50f, 258f + tS + tY, 55f, 263f + tS + tY, 55f, 318f + tS + tY, 50f, 323f + tS + tY);
-            quad(350f, 258f + tS + tY, 345f, 263f + tS + tY, 345f, 318f + tS + tY, 350f, 323f + tS + tY);
+            quad(50f, 258f + tS + tY - 1, 55f, 263f + tS + tY - 1, 55f, 318f + tS + tY - 1, 50f, 323f + tS + tY - 1);
+            quad(350f, 258f + tS + tY - 1, 345f, 263f + tS + tY - 1, 345f, 318f + tS + tY - 1, 350f, 323f + tS + tY - 1);
             fill(200);
-            quad(50f, 258f + tS + tY, 55f, 263f + tS + tY, 345f, 263f + tS + tY, 350f, 258f + tS + tY);
-            quad(50f, 323f + tS + tY, 55f, 318f + tS + tY, 345f, 318f + tS + tY, 350f, 323f + tS + tY);
+            quad(50f, 258f + tS + tY - 1, 55f, 263f + tS + tY - 1, 345f, 263f + tS + tY - 1, 350f, 258f + tS + tY - 1);
+            quad(50f, 323f + tS + tY - 1, 55f, 318f + tS + tY - 1, 345f, 318f + tS + tY - 1, 350f, 323f + tS + tY - 1);
             textAlign(CENTER, CENTER);
             textSize(10);
             fill(0);
@@ -3635,6 +3636,7 @@ class GameCode {
                     titleScreen = false;
                     Level1 = true;
                     drop = true;
+                    LevelMenu = false;
                 }
                 fill(255);
             } else {
@@ -3806,7 +3808,21 @@ class GameCode {
                 textSize(12);
                 text("^Score Card^", 200f, 15f);
             }
-            textAlign(BOTTOM, LEFT);
+            canvas.save();
+            translate(382f, 382f);
+            textAlign(RIGHT, CENTER);
+            fill(255, 255, 0);
+            textSize(11f);
+            text("Restart ENTIRE game -->", 0f, 18f);
+            stroke(0);
+            strokeWeight(3f);
+            noFill();
+            arc(18f, 18f, 22f, 22f, 120f, 240f);
+            arc(18f, 18f, 22f, 22f, -60f, 60f);
+            fill(0);
+            triangle(14f, 31f, 14f, 24f, 20f, 28f);
+            triangle(22f, 12f, 22f, 5f, 16f, 8f);
+            canvas.restore();
         }
     }
 }
