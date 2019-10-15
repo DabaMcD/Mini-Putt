@@ -145,6 +145,8 @@ class GameCode {
         ps.setStrokeCap(Paint.Cap.ROUND);
         pf.setStyle(Paint.Style.FILL);
         ps.setStyle(Paint.Style.STROKE);
+
+        frameRate(60);
     }
     static void draw(Canvas c) {
         frameCount ++;
