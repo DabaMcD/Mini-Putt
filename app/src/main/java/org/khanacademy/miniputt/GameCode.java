@@ -3328,8 +3328,8 @@ class GameCode {
             noStroke();
             if (Level18 && !endGame) {
                 fill(255, 0, 0);
-                quad(5f, 5f, 10f, 5f, 32f, 30f, 27f, 30f);
-                quad(5f, 30f, 10f, 30f, 32f, 5f, 27f, 5f);
+                quad(5f, 5f + dY, 10f, 5f + dY, 32f, 30f + dY, 27f, 30f + dY);
+                quad(5f, 30f + dY, 10f, 30f + dY, 32f, 5f + dY, 27f, 5f + dY);
             }
             fill(0);
             triangle(14f, dY + 31f, 14f, dY + 24f, 20f, dY + 28f);
