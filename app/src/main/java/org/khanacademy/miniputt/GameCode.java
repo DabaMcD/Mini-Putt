@@ -3782,7 +3782,7 @@ class GameCode {
             rect(100f, 92f, 200f, 50f);
             rect(100f, 150f, 200f, 110f);
             textSize(12);
-            text((LST - ParSum[LevelSelect] + Bonus) < -11 && restart == 0 ? "The code to unlock\nLevel Select is (6, 1, 4)." : "You must get a score less\nthan -12 with no restarts to be\nshown the Level Select code", 200f, 290f);
+            text((LST - ParSum[LevelSelect] + Bonus) < -11 && restart == 0 ? "The code to unlock\nLevel Select is (6, 1, 4)." : "You must get a score of\n-12 or less with no restarts to be\nshown the Unlock Level Select code", 200f, 290f);
             fill(255);
             textSize(35);
             text("Game Over", 200f, 115f);
