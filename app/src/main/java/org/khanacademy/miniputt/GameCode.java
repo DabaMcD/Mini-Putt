@@ -3299,6 +3299,9 @@ class GameCode {
             ScoreDisplay = false;
             mouseJustReleased = false;
         }
+        if (titleScreen) {
+            ScoreDisplay = false;
+        }
         fill(185);
         noStroke();
         rect(0f, dY - 80f, 400f, 80f);
