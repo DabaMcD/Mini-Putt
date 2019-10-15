@@ -3809,7 +3809,7 @@ class GameCode {
                 text("^Score Card^", 200f, 15f);
             }
             canvas.save();
-            translate(382f, 382f);
+            translate(364f, 364f);
             textAlign(RIGHT, CENTER);
             fill(255, 255, 0);
             textSize(11f);
@@ -3823,6 +3823,9 @@ class GameCode {
             triangle(14f, 31f, 14f, 24f, 20f, 28f);
             triangle(22f, 12f, 22f, 5f, 16f, 8f);
             canvas.restore();
+            if (mouseJustReleased && mouseX > 364 && mouseY > 364) {
+                restartProgram();
+            }
         }
     }
 }
