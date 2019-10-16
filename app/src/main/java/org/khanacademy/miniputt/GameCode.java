@@ -153,9 +153,14 @@ class GameCode {
         canvas = c;
 
         canvas.save();
-        canvas.translate((Screen.width - Screen.height) / 2, 0);
-        canvas.scale(Screen.height / height, Screen.height / height, 0, 0);
-        pjsCode();
+        if (Screen.width > Screen.height) {
+            canvas.translate((Screen.width - Screen.height) / 2, 0);
+            canvas.scale(Screen.height / height, Screen.height / height, 0, 0);
+            pjsCode();
+        } else {
+            canvas.translate(0, (Screen.height - Screen.width) / 2);
+            canvas.scale(Screen.width / width, Screen.width / width, 0, 0);
+        }
         canvas.restore();
 
         mouseJustReleased = false;
