@@ -165,11 +165,19 @@ class GameCode {
 
         mouseJustReleased = false;
     }
-    static void setMouseX(float mouseX) {
-        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * height / Screen.height;
+    static void setMouseX(float x) {
+        if (Screen.width > Screen.height) {
+            mouseX = (x - (Screen.width - Screen.height) / 2f) * height / Screen.height;
+        } else {
+            mouseX = x * width / Screen.width;
+        }
     }
-    static void setMouseY(float mouseY) {
-        GameCode.mouseY = mouseY * height / Screen.height;
+    static void setMouseY(float y) {
+        if (Screen.width > Screen.height) {
+            mouseY = y * height / Screen.height;
+        } else {
+            mouseY = (y - (Screen.height - Screen.width) / 2f) * width / Screen.width;
+        }
     }
     static void setMouseJustReleased(boolean mouseJustReleased) {
         GameCode.mouseJustReleased = mouseJustReleased;
