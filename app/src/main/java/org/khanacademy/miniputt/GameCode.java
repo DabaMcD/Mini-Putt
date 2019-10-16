@@ -1,6 +1,5 @@
 package org.khanacademy.miniputt;
 
-import android.drm.DrmStore;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -22,8 +21,8 @@ class GameCode {
     private static int tav = BOTTOM; // Text Align Vertical
 
     // Drawing vars
-    private final static float ocw = 400; // Original Canvas Width
-    private final static float och = 400; // Original Canvas Height
+    private final static float width = 400; // Original Canvas Width
+    private final static float height = 400; // Original Canvas Height
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
     private static Canvas canvas;
@@ -155,17 +154,17 @@ class GameCode {
 
         canvas.save();
         canvas.translate((Screen.width - Screen.height) / 2, 0);
-        canvas.scale(Screen.height / och, Screen.height / och, 0, 0);
+        canvas.scale(Screen.height / height, Screen.height / height, 0, 0);
         pjsCode();
         canvas.restore();
 
         mouseJustReleased = false;
     }
     static void setMouseX(float mouseX) {
-        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * och / Screen.height;
+        GameCode.mouseX = (mouseX - (Screen.width - Screen.height) / 2f) * height / Screen.height;
     }
     static void setMouseY(float mouseY) {
-        GameCode.mouseY = mouseY * och / Screen.height;
+        GameCode.mouseY = mouseY * height / Screen.height;
     }
     static void setMouseJustReleased(boolean mouseJustReleased) {
         GameCode.mouseJustReleased = mouseJustReleased;
