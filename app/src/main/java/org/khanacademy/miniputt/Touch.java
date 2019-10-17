@@ -15,7 +15,7 @@ class Touch {
                         break;
                     case MotionEvent.ACTION_UP: // When user's finger is picked up off screen
                         GameCode.setMouseIsPressed(false);
-                        GameCode.setMouseJustReleased(true);
+                        GameCode.setMouseJustReleased();
                         break;
                 }
                 GameCode.setMouseX(event.getX());

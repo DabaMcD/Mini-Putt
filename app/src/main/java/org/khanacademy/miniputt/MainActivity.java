@@ -6,7 +6,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
-    private Thread thread;
     private GameView gameView;
 
     @Override
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Touch.setTouchListener(gameView);
     }
     private void startMainThread() {
-        thread = new Thread() {
+        Thread thread = new Thread() {
             public void run() {
                 while (true) {
                     long previousMillis = System.currentTimeMillis();
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                                 gameView.draw();
                             }
                         });
-                        Thread.sleep(Math.abs(previousMillis - System.currentTimeMillis() + GameCode.mpf));
+                        Thread.sleep(Math.abs(previousMillis - System.currentTimeMillis() + 50 / 3));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

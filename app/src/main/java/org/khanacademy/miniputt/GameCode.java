@@ -34,8 +34,6 @@ class GameCode {
     // Misc vars
     private static Path mp; // Miscellaneous Path
     private static long frameCount = 0;
-    static int mpf; // Millis per frame
-    private static String angleMode = "degrees";
 
     // PJS vars
     private static float ballPOSx = 200;
@@ -147,8 +145,6 @@ class GameCode {
         ps.setStyle(Paint.Style.STROKE);
         pm.setStyle(Paint.Style.FILL);
         pm.setColor(Color.BLACK);
-
-        frameRate(60);
     }
     static void draw(Canvas c) {
         frameCount ++;
@@ -188,8 +184,8 @@ class GameCode {
             mouseY = (y - (Screen.height - Screen.width) / 2f) * width / Screen.width;
         }
     }
-    static void setMouseJustReleased(boolean mouseJustReleased) {
-        GameCode.mouseJustReleased = mouseJustReleased;
+    static void setMouseJustReleased() {
+        GameCode.mouseJustReleased = true;
     }
     static void setMouseIsPressed(boolean mouseIsPressed) {
         GameCode.mouseIsPressed = mouseIsPressed;
@@ -298,10 +294,10 @@ class GameCode {
         tipDisplay = false;
         endGame = false;
     }
-    private static void background(int r, int g, int b) {
+    private static void background() {
         Paint paint = new Paint();
         paint.set(pf);
-        pf.setColor(Color.rgb(r, g, b));
+        pf.setColor(Color.rgb(107, 72, 1));
         canvas.drawRect(0f, 0f, 400f, 400f, pf);
         pf.set(paint);
     }
@@ -467,14 +463,11 @@ class GameCode {
     private static void translate(float x, float y) {
         canvas.translate(x, y);
     }
-    private static void rotate(float angle) {
-        canvas.rotate((angleMode.equals("degrees")) ? angle : (float) (angle * 360 / (2 * Math.PI)), 0, 0);
-    }
-    private static void frameRate(int fps) {
-        mpf = 1000 / fps;
+    private static void rotate() {
+        canvas.rotate(-90, 0, 0);
     }
     private static void pjsCode() {
-        background(107, 72, 1);
+        background();
 
         int[] LS = {L1S, L2S, L3S, L4S, L5S, L6S, L7S, L8S, L9S, L10S, L11S, L12S, L13S, L14S, L15S, L16S, L17S, L18S};
         int[] Par = {2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2};
@@ -3429,7 +3422,7 @@ class GameCode {
         textSize(9);
         pushMatrix();
         translate(12, dY - 32);
-        rotate(-90);
+        rotate();
         text("STROKES", 0f, 0f);
         text("PAR", -23f, 0f);
         popMatrix();
