@@ -140,6 +140,16 @@ class GameCode {
     private static boolean endGame = false;
     private static int[] Par = {2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2};
     private static int[] ParSum = {2, 5, 8, 11, 13, 15, 20, 22, 25, 28, 31, 34, 37, 40, 42, 46, 48, 50};
+    private static String[] tipString = {
+            "If you're backed up against a wall and can't draw\nback far enough, aim the other way for a rebound.",
+            "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
+            "Use the walls to your advantage. If there is no straight\nshot, go for the rebound and try for the hole in one.",
+            "If you are having trouble with a hole, try short, controlled\nshots to get to the hole, then restart the hole and see if you\ncan replicate that with fewer putts.",
+            "Click on the score card tab a the top of\nthe screen to check your progress while you play.",
+            "Don't go into bunkers; they stop your ball almost immediately\nand are very difficult to get out of. Treat them with caution.",
+            "Slopes can come in handy when trying to get the ball\naround a corner, but they can also slow the ball down or\nsend it backwards, so aim carefully.",
+            "Water will reset your ball without resetting\nyour strokes, so avoid it at all costs."
+    };
 
     static void init() {
         ps.setStrokeCap(Paint.Cap.ROUND);
@@ -472,7 +482,7 @@ class GameCode {
         background();
 
         int[] LS = {L1S, L2S, L3S, L4S, L5S, L6S, L7S, L8S, L9S, L10S, L11S, L12S, L13S, L14S, L15S, L16S, L17S, L18S};
-        int  LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
+        int LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
         if (speedX <= 0.1 && speedY <= 0.1) {
             resetShot = true;
             speedX = 0;
@@ -3118,23 +3128,23 @@ class GameCode {
                 if (mouseJustReleased) {
                     if (!LevelMenu) {
                         if(Level18){endGame=true;Level18 = false;}
-                        else if(Level17){Level18 = true;Level17 = false;}
-                        else if(Level16){Level17 = true;Level16 = false;}
-                        else if(Level15){Level16 = true;Level15 = false;}
-                        else if(Level14){Level15 = true;Level14 = false;}
-                        else if(Level13){Level14 = true;Level13 = false;}
-                        else if(Level12){Level13 = true;Level12 = false;}
-                        else if(Level11){Level12 = true;Level11 = false;}
-                        else if(Level10){Level11 = true;Level10 = false;}
-                        else if(Level9){Level10 = true;Level9 = false;}
-                        else if(Level8){Level9 = true;Level8 = false;}
-                        else if(Level7){Level8 = true;Level7 = false;}
-                        else if(Level6){Level7 = true;Level6 = false;}
-                        else if(Level5){Level6 = true;Level5 = false;}
-                        else if(Level4){Level5 = true;Level4 = false;}
-                        else if(Level3){Level4 = true;Level3 = false;}
-                        else if(Level2){Level3 = true;Level2 = false;}
-                        else if(Level1){Level2 = true;Level1 = false;}
+                        else if(Level17){Level18 = true;Level17 = false;L18S = 0;}
+                        else if(Level16){Level17 = true;Level16 = false;L17S = 0;}
+                        else if(Level15){Level16 = true;Level15 = false;L16S = 0;}
+                        else if(Level14){Level15 = true;Level14 = false;L15S = 0;}
+                        else if(Level13){Level14 = true;Level13 = false;L14S = 0;}
+                        else if(Level12){Level13 = true;Level12 = false;L13S = 0;}
+                        else if(Level11){Level12 = true;Level11 = false;L12S = 0;}
+                        else if(Level10){Level11 = true;Level10 = false;L11S = 0;}
+                        else if(Level9){Level10 = true;Level9 = false;L10S = 0;}
+                        else if(Level8){Level9 = true;Level8 = false;L9S = 0;}
+                        else if(Level7){Level8 = true;Level7 = false;L8S = 0;}
+                        else if(Level6){Level7 = true;Level6 = false;L7S = 0;}
+                        else if(Level5){Level6 = true;Level5 = false;L6S = 0;}
+                        else if(Level4){Level5 = true;Level4 = false;L5S = 0;}
+                        else if(Level3){Level4 = true;Level3 = false;L4S = 0;}
+                        else if(Level2){Level3 = true;Level2 = false;L3S = 0;}
+                        else if(Level1){Level2 = true;Level1 = false;L2S = 0;}
                         if (LevelSelect < 17) {
                             LevelSelect += 1;
                         }
@@ -3530,18 +3540,6 @@ class GameCode {
         oldX = ballPOSx;
         oldY = ballPOSy;
 
-        String[] tipString = {
-                "If you're backed up against a wall and can't draw\nback far enough, aim the other way for a rebound.",
-                "Slope affects your ball's speed. If the hole is at the top of\na slope, draw farther back to get the necessary extra power\nand get your ball up the hill.",
-                "Use the walls to your advantage. If there is no straight\nshot, go for the rebound and try for the hole in one.",
-                "If you are having trouble with a hole, try short, controlled\nshots to get to the hole, then restart the hole and see if you\ncan replicate that with fewer putts.",
-                "Click on the score card tab a the top of\nthe screen to check your progress while you play.",
-                "Don't go into bunkers; they stop your ball almost immediately\nand are very difficult to get out of. Treat them with caution.",
-                "Slopes can come in handy when trying to get the ball\naround a corner, but they can also slow the ball down or\nsend it backwards, so aim carefully.",
-                "Water will reset your ball without resetting\nyour strokes, so avoid it at all costs."
-        };
-
-
         if (titleScreen) {
             pushMatrix();
             final String[] splashText = "10,000+ votes!".split("");
@@ -3620,6 +3618,7 @@ class GameCode {
                     Level1 = true;
                     drop = true;
                     LevelMenu = false;
+                    L1S = 0;
                 }
                 fill(255);
             } else {
@@ -3728,24 +3727,24 @@ class GameCode {
                         if ((mouseIsPressed || mouseJustReleased) && mouseX >= 60 + mRep * 50 && mouseX <= 90 + mRep * 50 && mouseY >= 215 + lRep * 50 - tY && mouseY <= 245 + lRep * 50 + tY) {
                             fill(255);
                             if (mouseJustReleased) {
-                                if(mRep+1+lRep*6==1){Level1=true;LevelSelect=0;}
-                                if(mRep+1+lRep*6==2){Level2=true;LevelSelect=1;}
-                                if(mRep+1+lRep*6==3){Level3=true;LevelSelect=2;}
-                                if(mRep+1+lRep*6==4){Level4=true;LevelSelect=3;}
-                                if(mRep+1+lRep*6==5){Level5=true;LevelSelect=4;}
-                                if(mRep+1+lRep*6==6){Level6=true;LevelSelect=5;}
-                                if(mRep+1+lRep*6==7){Level7=true;LevelSelect=6;}
-                                if(mRep+1+lRep*6==8){Level8=true;LevelSelect=7;}
-                                if(mRep+1+lRep*6==9){Level9=true;LevelSelect=8;}
-                                if(mRep+1+lRep*6==10){Level10=true;LevelSelect=9;}
-                                if(mRep+1+lRep*6==11){Level11=true;LevelSelect=10;}
-                                if(mRep+1+lRep*6==12){Level12=true;LevelSelect=11;}
-                                if(mRep+1+lRep*6==13){Level13=true;LevelSelect=12;}
-                                if(mRep+1+lRep*6==14){Level14=true;LevelSelect=13;}
-                                if(mRep+1+lRep*6==15){Level15=true;LevelSelect=14;}
-                                if(mRep+1+lRep*6==16){Level16=true;LevelSelect=15;}
-                                if(mRep+1+lRep*6==17){Level17=true;LevelSelect=16;}
-                                if(mRep+1+lRep*6==18){Level18=true;LevelSelect=17;}
+                                if(mRep+1+lRep*6==1){Level1=true;LevelSelect=0;L1S=0;}
+                                if(mRep+1+lRep*6==2){Level2=true;LevelSelect=1;L2S=0;}
+                                if(mRep+1+lRep*6==3){Level3=true;LevelSelect=2;L3S=0;}
+                                if(mRep+1+lRep*6==4){Level4=true;LevelSelect=3;L4S=0;}
+                                if(mRep+1+lRep*6==5){Level5=true;LevelSelect=4;L5S=0;}
+                                if(mRep+1+lRep*6==6){Level6=true;LevelSelect=5;L6S=0;}
+                                if(mRep+1+lRep*6==7){Level7=true;LevelSelect=6;L7S=0;}
+                                if(mRep+1+lRep*6==8){Level8=true;LevelSelect=7;L8S=0;}
+                                if(mRep+1+lRep*6==9){Level9=true;LevelSelect=8;L9S=0;}
+                                if(mRep+1+lRep*6==10){Level10=true;LevelSelect=9;L10S=0;}
+                                if(mRep+1+lRep*6==11){Level11=true;LevelSelect=10;L11S=0;}
+                                if(mRep+1+lRep*6==12){Level12=true;LevelSelect=11;L12S=0;}
+                                if(mRep+1+lRep*6==13){Level13=true;LevelSelect=12;L13S=0;}
+                                if(mRep+1+lRep*6==14){Level14=true;LevelSelect=13;L14S=0;}
+                                if(mRep+1+lRep*6==15){Level15=true;LevelSelect=14;L15S=0;}
+                                if(mRep+1+lRep*6==16){Level16=true;LevelSelect=15;L16S=0;}
+                                if(mRep+1+lRep*6==17){Level17=true;LevelSelect=16;L17S=0;}
+                                if(mRep+1+lRep*6==18){Level18=true;LevelSelect=17;L18S=0;}
                                 titleScreen = false;
                             }
                         } else {
