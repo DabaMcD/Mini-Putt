@@ -138,6 +138,8 @@ class GameCode {
     private static float tY = 0;
     private static boolean tipDisplay = false;
     private static boolean endGame = false;
+    private static int[] Par = {2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2};
+    private static int[] ParSum = {2, 5, 8, 11, 13, 15, 20, 22, 25, 28, 31, 34, 37, 40, 42, 46, 48, 50};
 
     static void init() {
         ps.setStrokeCap(Paint.Cap.ROUND);
@@ -397,23 +399,23 @@ class GameCode {
         return w;
     }
     private static void triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
-        Path p = new Path();
-        p.moveTo(x1, y1);
-        p.lineTo(x2, y2);
-        p.lineTo(x3, y3);
-        p.close();
-        canvas.drawPath(p, pf);
-        canvas.drawPath(p, ps);
+        mp = new Path();
+        mp.moveTo(x1, y1);
+        mp.lineTo(x2, y2);
+        mp.lineTo(x3, y3);
+        mp.close();
+        canvas.drawPath(mp, pf);
+        canvas.drawPath(mp, ps);
     }
     private static void quad(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
-        Path p = new Path();
-        p.moveTo(x1, y1);
-        p.lineTo(x2, y2);
-        p.lineTo(x3, y3);
-        p.lineTo(x4, y4);
-        p.close();
-        canvas.drawPath(p, pf);
-        canvas.drawPath(p, ps);
+        mp = new Path();
+        mp.moveTo(x1, y1);
+        mp.lineTo(x2, y2);
+        mp.lineTo(x3, y3);
+        mp.lineTo(x4, y4);
+        mp.close();
+        canvas.drawPath(mp, pf);
+        canvas.drawPath(mp, ps);
     }
     private static void arc(float x, float y, float w, float h, float start, float stop) {
         RectF r = new RectF(x - w / 2, y - h / 2, x + w / 2, y + h / 2);
@@ -470,8 +472,6 @@ class GameCode {
         background();
 
         int[] LS = {L1S, L2S, L3S, L4S, L5S, L6S, L7S, L8S, L9S, L10S, L11S, L12S, L13S, L14S, L15S, L16S, L17S, L18S};
-        int[] Par = {2, 3, 3, 3, 2, 2, 5, 2, 3, 3, 3, 3, 3, 3, 2, 4, 2, 2};
-        int[] ParSum = {2, 5, 8, 11, 13, 15, 20, 22, 25, 28, 31, 34, 37, 40, 42, 46, 48, 50};
         int  LST = L1S + L2S + L3S + L4S + L5S + L6S + L7S + L8S + L9S + L10S + L11S + L12S + L13S + L14S + L15S + L16S + L17S + L18S;
         if (speedX <= 0.1 && speedY <= 0.1) {
             resetShot = true;
