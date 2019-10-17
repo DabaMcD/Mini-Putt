@@ -25,6 +25,7 @@ class GameCode {
     private final static float height = 400; // Original Canvas Height
     private static Paint pf = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint fill
     private static Paint ps = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint stroke
+    private static Paint pm = new Paint(Paint.ANTI_ALIAS_FLAG); // Paint miscellaneous
     private static Canvas canvas;
 
     // Mouse vars
@@ -145,6 +146,8 @@ class GameCode {
         ps.setStrokeCap(Paint.Cap.ROUND);
         pf.setStyle(Paint.Style.FILL);
         ps.setStyle(Paint.Style.STROKE);
+        pm.setStyle(Paint.Style.FILL);
+        pm.setColor(Color.BLACK);
 
         frameRate(60);
     }
@@ -152,16 +155,23 @@ class GameCode {
         frameCount ++;
         canvas = c;
 
-        canvas.save();
         if (Screen.width > Screen.height) {
-            canvas.translate((Screen.width - Screen.height) / 2, 0);
-            canvas.scale(Screen.height / height, Screen.height / height, 0, 0);
+            canvas.save();
+            canvas.translate((Screen.width - (Screen.height * width / height)) / 2f, 0f);
+            canvas.scale(Screen.height / height, Screen.height / height, 0f, 0f);
             pjsCode();
+            canvas.restore();
+            canvas.drawRect(0f, 0f, (Screen.width - (Screen.height * width / height)) / 2f, Screen.height, pm);
+            canvas.drawRect(Screen.height + (Screen.width - (Screen.height * width / height)) / 2f, 0, Screen.width, Screen.height, pm);
         } else {
-            canvas.translate(0, (Screen.height - Screen.width) / 2);
-            canvas.scale(Screen.width / width, Screen.width / width, 0, 0);
+            canvas.save();
+            canvas.translate(0f, (Screen.height - (Screen.width * height / width)) / 2f);
+            canvas.scale(Screen.width / width, Screen.width / width, 0f, 0f);
+            pjsCode();
+            canvas.restore();
+            canvas.drawRect(0f, 0f, Screen.width, (Screen.height - (Screen.width * height / width)) / 2f, pm);
+            canvas.drawRect(0f, Screen.width + (Screen.height - (Screen.width * height / width)) / 2f, Screen.width, Screen.height, pm);
         }
-        canvas.restore();
 
         mouseJustReleased = false;
     }
