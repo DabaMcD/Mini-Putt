@@ -9,7 +9,6 @@ import android.graphics.RectF;
 class GameCode {
     // Text vars
     private final static int CENTER = 0;
-    private final static int TOP = 1;
     private final static int BOTTOM = 2;
     private final static int LEFT = 3;
     private final static int RIGHT = 4;
@@ -306,13 +305,6 @@ class GameCode {
         canvas.drawRect(0f, 0f, 400f, 400f, pf);
         pf.set(paint);
     }
-    private static void background(int shade) {
-        Paint paint = new Paint();
-        paint.set(pf);
-        pf.setColor(Color.rgb(shade, shade, shade));
-        canvas.drawRect(0f, 0f, 400f, 400f, pf);
-        pf.set(paint);
-    }
     private static void noFill() {
         pf.setColor(Color.TRANSPARENT);
     }
@@ -351,9 +343,6 @@ class GameCode {
         RectF r = new RectF(x - (w / 2f), y - (h / 2f), x + (w / 2f), y + (h / 2f));
         canvas.drawOval(r, pf);
         canvas.drawOval(r, ps);
-    }
-    private static void textLeading(float dist) {
-        tl = dist;
     }
     private static void text(String txt, float x, float y) {
         drawMultilineText(txt, x, y);
@@ -445,18 +434,6 @@ class GameCode {
     private static double cos(double degrees) {
         return Math.cos(degrees * 2 * Math.PI / 360);
     }
-    private static double tan(double degrees) {
-        return Math.tan(degrees * 2 * Math.PI / 360);
-    }
-    private static double asin(double degrees) {
-        return Math.asin(degrees * 2 * Math.PI / 360);
-    }
-    private static double acos(double degrees) {
-        return Math.acos(degrees * 2 * Math.PI / 360);
-    }
-    private static double atan(double degrees) {
-        return Math.atan(degrees * 2 * Math.PI / 360);
-    }
     private static void beginShape() {
         mp = new Path();
     }
@@ -471,9 +448,6 @@ class GameCode {
         mp.close();
         canvas.drawPath(mp, pf);
         canvas.drawPath(mp, ps);
-    }
-    private static double random(double high) {
-        return high * Math.random();
     }
     private static double random(double low, double high) {
         return (high - low) * Math.random() + low;
@@ -495,12 +469,6 @@ class GameCode {
     }
     private static void rotate(float angle) {
         canvas.rotate((angleMode.equals("degrees")) ? angle : (float) (angle * 360 / (2 * Math.PI)), 0, 0);
-    }
-    private static void scale(float sx, float sy) {
-        canvas.scale(sx, sy, 0, 0);
-    }
-    private static void scale(float s) {
-        canvas.scale(s, s, 0, 0);
     }
     private static void frameRate(int fps) {
         mpf = 1000 / fps;
